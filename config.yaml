@@ -1,0 +1,33 @@
+# labbook 설정. 비밀번호는 여기에 넣지 않는다 (.env 사용).
+
+study_root: /home/nol/study
+claude_logs: ~/.claude/projects     # Claude Code 세션 로그 위치
+
+# 하루 = 전날 21:00 ~ 오늘 21:00 (KST). cron도 21:00 KST(= 12:00 UTC)에 돈다.
+day_cutoff: "21:00"
+
+mail:
+  to: hjm614@korea.ac.kr
+  smtp_host: smtp.gmail.com
+  smtp_port: 465                    # SSL
+  subject_prefix: "[연구일지]"
+
+summarizer:
+  command: claude                   # claude -p (Claude Code headless)
+  model: ""                         # 비우면 Claude Code 기본 모델
+  timeout_sec: 600
+
+scan:
+  exclude_dirs: [.git, __pycache__, .ipynb_checkpoints, node_modules, _labbook]
+  exclude_suffixes: [.lock, .pyc]
+  max_sample_files: 12              # 프로젝트별로 LLM에 보여줄 최근 변경 파일 수
+
+sessions:
+  max_turns_per_session: 60
+  prompt_chars: 600
+  reply_chars: 500
+
+stale_days: 7                       # active인데 이만큼 활동이 없으면 메일에 알림
+
+git:
+  push: false                       # 원격 저장소를 연결한 뒤 true로

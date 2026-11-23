@@ -1,0 +1,92 @@
+# 프로젝트 목록과 로드맵. 이 파일은 직접 편집한다 (프로그램은 메일에 "변경 제안"만 적는다).
+#
+# status:  active  = 진행 중 (메일 표에 나오고, stale_days 넘게 멈추면 알림)
+#          paused  = 보류 (메일에 한 줄로만)
+#          support = 다른 프로젝트가 쓰는 코드·계산 (활동은 기록하되 로드맵 없음)
+#          done    = 끝남/보관 (활동이 있으면 기록만)
+# path:    study/ 기준 경로. 가장 긴 경로가 먼저 매칭된다.
+# roadmap_file: 있으면 활동이 있는 날 그 파일 앞부분을 요약기에 같이 보여준다.
+# deadline: YYYY-MM-DD (메일에 D-day로 표시)
+#
+# 2026-11-23 처음 채움: 2026/README.md 색인과 각 폴더 문서를 보고 넣었다.
+# goal/next/deadline은 직접 확인해서 고쳐 주세요. "확인 필요"라고 적힌 곳은 추정이다.
+
+projects:
+  # ── 학위논문 후속 저널 논문 ──
+  - id: PLOIM
+    path: 2026/PLOIM
+    status: active
+    goal: "논문 1: 위상 지연 OIM Letter (메커니즘 + 하드웨어 가능성)"
+    roadmap_file: 2026/PLOIM/README.md
+    deadline:
+    next: []
+
+  - id: RLSA
+    path: 2026/RLSA
+    status: active
+    goal: "논문 2: 제작된 RLSA → 측정 보정 CDM/DWBA → 배치 탐색 → 재측정"
+    roadmap_file: 2026/RLSA/TODO.md
+    deadline:
+    next: []
+
+  # ── 학위논문 ──
+  - id: Dissertation
+    path: 2026/Dissertation
+    status: active
+    goal: "학위논문 원고·디펜스 (확인 필요: 남은 단계)"
+    roadmap_file: 2026/Dissertation/TODO.md
+    deadline:
+    next: []
+
+  # ── 과제·협업 ──
+  - id: Hanhwa
+    path: 2026/Hanhwa
+    status: active
+    goal: "한화 과제: ShipIR_KU, ksdpa, rfir_ui (확인 필요)"
+    deadline:
+    next: []
+
+  - id: BoKo
+    path: 2026/BoKo
+    status: active
+    goal: "PRET 기반 양자 리저버컴퓨팅 특허 보완 + PRETsimulation(GMM, arXiv 2508.05440 재현)"
+    deadline:
+    next: []
+
+  # ── 논문 밖의 새 작업 ──
+  - id: DiodeUnitDesign
+    path: 2026/DiodeUnitDesign
+    status: paused
+    goal: "BAR64-02V + FR-4 유닛 셀 설계 (CMA-ES, G1–G4). 11-01 멈춤, 디펜스 뒤 재개"
+    roadmap_file: 2026/DiodeUnitDesign/RESUME.md
+    deadline:
+    next: []
+
+  - id: CV
+    path: CV
+    status: active
+    goal: "CV 정리"
+    deadline:
+    next: []
+
+  # ── 논문 계산·엔진 (support) ──
+  - {id: beamnet,                   path: 2026/beamnet,                   status: support, goal: "역설계 신경망 (3장)"}
+  - {id: sunflower_nn,              path: 2026/sunflower_nn,              status: support, goal: "해바라기 슬롯쌍 순방향 모델 (2–3장)"}
+  - {id: laggedOIM,                 path: 2026/laggedOIM,                 status: support, goal: "위상 지연 OIM 탐색 노트·도구 (5장)"}
+  - {id: fullwave,                  path: 2026/fullwave,                  status: support, goal: "Meep/GPU FDTD 전파 계산"}
+  - {id: metasurantenna_draw,       path: 2026/metasurantenna_draw,       status: support, goal: "Julia 결합 쌍극자 모델"}
+  - {id: CombinatorialOptimization, path: 2026/CombinatorialOptimization, status: support, goal: "Ising 머신 엔진·실험 (4–5장)"}
+  - {id: fdtd_gpu,                  path: 2026/fdtd_gpu,                  status: support, goal: "GPU FDTD 엔진 (conformal PEC)"}
+
+  # ── 보류 ──
+  - {id: EMsimulations, path: 2026/EMsimulations,      status: paused, goal: "RCWA, FDTD3d, oled_design"}
+  - {id: fretsim,       path: 2026/fretsim,            status: paused, goal: "FRET 시뮬레이션 (확인 필요)"}
+  - {id: jaehee_NLP,    path: sideprojects/jaehee_NLP, status: paused, goal: "은둔고립 분류 한국어 NLP 논문 (재현성)"}
+  - {id: jaehee_meta,   path: sideprojects/jaehee_meta, status: paused, goal: "국내외 DB 통합 선별·원문 수집 (확인 필요)"}
+  - {id: TCGAanalyzer,  path: sideprojects/TCGAanalyzer, status: paused, goal: "TCGA pan-cancer 발현·생존 분석 (Phase 1)"}
+
+  # ── 보관 ──
+  - {id: archive-2026, path: 2026/_archive, status: done, goal: "2026 보관함"}
+  - {id: 2025,         path: 2025,          status: done, goal: "2025 프로젝트들"}
+  - {id: 2024,         path: 2024,          status: done, goal: "2024 프로젝트들"}
+  - {id: "~2023",      path: "~2023",       status: done, goal: "2023 이전 프로젝트들"}

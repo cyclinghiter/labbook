@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# labbook CLI. ~/.local/bin/lb 에 링크해 어디서나 쓴다.
+export PATH="$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
+DIR="$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)"
+PY="${LABBOOK_PYTHON:-/home/nol/anaconda3/bin/python3}"
+cd "$DIR" && exec "$PY" -m labbook "$@"

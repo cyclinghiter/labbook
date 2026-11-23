@@ -24,6 +24,10 @@ class ProjectIndex:
         return None
 
 
+def _excluded(rel, cfg):
+    return any(rel == x or rel.startswith(x.rstrip("/") + "/") for x in cfg["scan"].get("exclude_paths") or [])
+
+
 def _bucket(rel):
     """등록되지 않은 경로를 묶는 단위: 위에서 두 단계 폴더."""
     parts = rel.split("/")
@@ -43,9 +47,10 @@ def scan_files(cfg, index, start, end):
     for dp, dns, fns in os.walk(root):
         if ".git" in dns or ".git" in fns:
             repos.append(dp)
-        dns[:] = [d for d in dns if d not in ex_dirs]
         reldir = os.path.relpath(dp, root)
         reldir = "" if reldir == "." else reldir
+        dns[:] = [d for d in dns
+                  if d not in ex_dirs and not _excluded(f"{reldir}/{d}" if reldir else d, cfg)]
         pid = index.lookup(reldir) if reldir else None
         for fn in fns:
             if fn.endswith(ex_suf):
@@ -152,13 +157,17 @@ def parse_session(path, cfg, index, start, end):
             elif b.get("type") == "tool_use" and b.get("name") in EDIT_TOOLS:
                 fp = (b.get("input") or {}).get("file_path") or (b.get("input") or {}).get("notebook_path")
                 if fp and fp.startswith(root + "/"):  # 임시 폴더·메모리 파일은 빼고 연구 폴더 안만
-                    edited[os.path.relpath(fp, root)] = True
+                    rel = os.path.relpath(fp, root)
+                    if not _excluded(rel, cfg):
+                        edited[rel] = True
     if not turns or not cwd or not (cwd == root or cwd.startswith(root + "/")):
         return None
 
     votes = collections.Counter(index.lookup(f) for f in edited)
     votes.pop(None, None)
     cwd_rel = os.path.relpath(cwd, root)
+    if _excluded(cwd_rel, cfg):
+        return None
     guess = votes.most_common(1)[0][0] if votes else index.lookup(cwd_rel if cwd_rel != "." else "")
     kept = turns[-scfg["max_turns_per_session"]:]
     return {

@@ -20,6 +20,7 @@ summarizer:
 scan:
   exclude_dirs: [.git, __pycache__, .ipynb_checkpoints, node_modules, _labbook]
   exclude_suffixes: [.lock, .pyc]
+  exclude_paths: [sideprojects]     # study/ 기준. 파일·세션·커밋 모두 보지 않는다
   max_sample_files: 12              # 프로젝트별로 LLM에 보여줄 최근 변경 파일 수
 
 sessions:
@@ -30,4 +31,4 @@ sessions:
 stale_days: 7                       # active인데 이만큼 활동이 없으면 메일에 알림
 
 git:
-  push: false                       # 원격 저장소를 연결한 뒤 true로
+  push: true                        # 매일 커밋 뒤 origin으로 push

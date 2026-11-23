@@ -81,9 +81,6 @@ projects:
   # ── 보류 ──
   - {id: EMsimulations, path: 2026/EMsimulations,      status: paused, goal: "RCWA, FDTD3d, oled_design"}
   - {id: fretsim,       path: 2026/fretsim,            status: paused, goal: "FRET 시뮬레이션 (확인 필요)"}
-  - {id: jaehee_NLP,    path: sideprojects/jaehee_NLP, status: paused, goal: "은둔고립 분류 한국어 NLP 논문 (재현성)"}
-  - {id: jaehee_meta,   path: sideprojects/jaehee_meta, status: paused, goal: "국내외 DB 통합 선별·원문 수집 (확인 필요)"}
-  - {id: TCGAanalyzer,  path: sideprojects/TCGAanalyzer, status: paused, goal: "TCGA pan-cancer 발현·생존 분석 (Phase 1)"}
 
   # ── 보관 ──
   - {id: archive-2026, path: 2026/_archive, status: done, goal: "2026 보관함"}

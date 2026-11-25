@@ -1,0 +1,2132 @@
+{
+ "date": "2026-11-25",
+ "window": {
+  "start": "2026-11-24T21:00:00+09:00",
+  "end": "2026-11-25T21:00:00+09:00",
+  "partial": false
+ },
+ "generated_at": "2026-11-25T21:00:05+09:00",
+ "sessions": [
+  {
+   "session": "33c50f70",
+   "title": "Dissertation 1장 검토",
+   "cwd": "2026/Dissertation",
+   "project_guess": "PLOIM",
+   "n_prompts": 30,
+   "dropped_prompts": 0,
+   "turns": [
+    {
+     "t": "11-24 21:00",
+     "prompt": "동결된 배열이 이징 에너지의 국소 최솟값이 되려면 임계값이 이징 국소장에 작용해야 하고, 그러려면 이웃의 스핀 부호에 결합해야 한다. 이 부분이 좀 뜬금없긴 해. 갑자기 튀어나오는 느낌이라... 이 전환에 대한 부분은 충분한 설명이 필요할 듯 해. 그것만 반영된 버전 5.7을 출발점으로 삼아서, 데이터를 보강하고 science advance에 맞게 고치려고 해. 기본 검수 끝에 동의하지 않으면 알려줘.",
+     "reply": "v5.7을 만들었습니다. 바뀐 곳은 dOIM으로 넘어가는 전환 문단 하나이고, 영어·한국어 모두 v5.6 대비 빨간색 표시본이 있습니다. **파일** - `paper/letter_v5.7.{pdf,docx}`, `paper/letter_v5.7.ko.{pdf,docx}` (검정) - `paper/letter_v5.7_marked.{pdf,docx}`, `paper/letter_v5.7_marked.ko.{pdf,docx}` (v5.6 대비 빨간색) **전환 문단 (한국어판)** \"식 (7)의 임계값은 진동자 위상이 만드는 장의 크기 A_i로 진동자를 고른다. 동결된 배열이 이징 에너지의 국소 최솟값인지는 다른 양, 스핀 i의 이징 국소장 h_i ≡ Σ_j J_ij s_j가 정한다. s_i를 뒤집으면 이징 에너지가 2s_ih_i만큼 바뀌기 때문이다. 둘은 이웃의 위상이 이진일 때만 A_i = |h_i|로 일치하고, 위상은 ramp의 끝에서야 이진 값에 가까워진다. 그래서 ramp 동…"
+    },
+    {
+     "t": "11-24 21:06",
+     "prompt": "그건 일단 메모리에서 지우고, schematic 보다는 동역학적 특성을 좀 시각적으로 보여주는 그림들이 필요할 것 같아. 보충 자료는 나중에 건드리고, science advance에서는 더 본문으로 올리면서 강화할 내용들을 보는게 나을 거 같아. 여기도 supplementary 있나? 분량을 더 늘릴 수 있으니, 우선 그림 추천을 부탁할게. science advance에 올리려면 어떤 데이터를 추가하는게 좋을지, 기존 science advance에 올라와있는 Ising machine이나 physics based optimization 논문들을 찾아서 알고리즘을 설명하기 위한 좋은 방법을 고민해줘",
+     "reply": "선행 논문 조사와 우리 데이터 점검을 끝냈습니다. 결론부터 말하면, Science Advances의 Ising machine 논문들은 **장난감 예제의 궤적 + 퍼텐셜 스냅샷으로 메커니즘을 보이고, 그 다음에 벤치마크**를 놓습니다. 우리도 같은 순서로 그림을 짜면 됩니다. ## Science Advances 형식 - **Supplementary Materials 있습니다.** PDF 하나에 보충 텍스트(S1, S2, …), fig. S1…, table S1…을 넣고, 본문에서 참조합니다. SM에만 인용된 참고문헌은 본문 한도에 들어가지 않습니다(3자 정리 기준). - 본문 한도(약 15,000단어, 그림+표 10개, 참고문헌 약 80개)는 3자 정리이고 공식 페이지는 자동 접근이 막혀 확인하지 못했습니다. 투고 전에 브라우저로 한 번 보셔야 합니다. ## 선행 Sci. Adv. 논문이 알고리즘을 설명하는 방식 **dSB 논문(Goto 외 2021, 전문 확인):** - Resul…"
+    },
+    {
+     "t": "11-24 21:19",
+     "prompt": "figure를 오히려 막 넣으면 안되는데... 우선 그림들을 보여주고 시작하자. GPU도 우선순위를 뺏어와도 돼. 그림들을 먼저 그리고, figure들만 집어넣는다고 생각하자. v6로 아예 Science advance용 글도 만들어볼래? 여기서도 지금까지의 원칙들은 전부 적용되어야해. 특히, 수치 같은 것들은 본문에서 인용하는 값은 최소가 되어야 한다던지. 글에서 명료성을 유지하기 위해서 지금까지 했던 내용들을 요약 정리해서 원칙으로 먼저 가져야 할듯. 다른 에이전트에게 위임하지말고 혼자서 진행해줘. 항상 가능한 군더더기 없이 설명하되 설명이 생략되어서는 안돼.",
+     "reply": "원칙 정리와 후보 그림이 준비되었습니다. 모두 `paper/figs/v6cand/`에 있고, 한 장에 모은 `contact_sheet.png`도 있습니다. 원칙은 `paper/work/v6/PRINCIPLES.md`입니다(프레임·수식·정의·대명사·수치 최소화·기호·그림·Sci. Adv. 구성, 9항목). ## 후보 그림 (동역학) | # | 파일 | 보이는 것 | 데이터 | |---|---|---|---| | **F1** | `F1_single.png` | 진동자 하나, |Ω|와 h/w_i 고정, β만 올림. (a) V(x): 2β = 0.05(γ > h/w_i, 극소점 없음) → 0.25(정렬 극소점만) → 1.0(γ < 0, 반대 방향 극소점도 생김), 점선은 lag-off(처음부터 두 극소점). (b) 국소장과 반대인 상태에서 출발한 x(t): 계속 감김 / 정렬로 뒤집힘 / 반대인 채 lock / lag-off는 반대인 채 lock | 식 (9) 그대로 | | **F2** …"
+    },
+    {
+     "t": "11-24 21:34",
+     "prompt": "진행해서 v6로 한번 초안까지 작업해줘. 쭉",
+     "reply": "v6 초안을 영어·한국어로 끝냈습니다. **파일** - 영어: `paper/sciadv_v6.{pdf,docx,md}` (10쪽) - 한국어: `paper/sciadv_v6.ko.{pdf,docx,md}` (10쪽, 참고문헌 번호는 영어판과 동일) - 그림: `paper/figs/v6/fig1–fig5` (`paper/work/v6/figs/make_figs_v6.py`) - 원칙: `paper/work/v6/PRINCIPLES.md` - 빌드: `paper/tools/build_sciadv.py <en|ko> v6` (Word는 pandoc, PDF는 pandoc → LaTeX → lualatex) **구성** - Introduction: v5.7의 배경·충돌·기여 문단. - Results 네 절 + 벤치마크: ① 진동자 이징 머신의 위상 지연(식 1–3, 충돌), ② U(1) 불변성을 유지하는 injection(식 4–6), ③ 회전이 lock의 임계값을 만든다(식 7), ④ …"
+    },
+    {
+     "t": "11-24 22:09",
+     "prompt": "fig2가 너무 알아보기 힘들고, 뭔가 schematic에 가까운 그림이 하나 있어야되는데 그게 없어. 그리고 그림은 매번 그릴 때 보이는 것을 체크해야해. 근데 지금은 그렇지 않은 것 같고... 말하고자 하는 내용도 명쾌하지 않아. 그리고 벤치마크도 너무 빈약해. lag에 의한 회전 효과를 보여줄 수 있는 그림도 있어야하고, 그림 크기들도 조정해줘야해.",
+     "reply": ""
+    },
+    {
+     "t": "11-24 22:12",
+     "prompt": "fig2가 현재 알아보기 힘들고, 뭔가 schematic에 가까운 그림이 하나 있어야되는데 그게 없어. 그리고 그림은 매번 그릴 때 보이는 것을 체크해야해. 근데 지금은 그렇지 않았던 것 같아. sciadv에 갈거면 figure들이 더 풍성해야하고, 담을 수 있는 내용도 많잖아. 검토하고 수정하는 과정을 너가 계속 반복해서, 지금 까지 글에서 모호함과 생략이 아예 없도록 하고 논리도 이전 문단과 비교해서 뜬금없는 내용이나 연결성, 통일성이 있어야해. 그림 구성도 마찬가지고. 현재는 말하고자 하는 내용도 명쾌하지 않아. 그리고 벤치마크도 너무 빈약해. lag에 의한 회전 효과를 보여줄 수 있는 그림도 있어야하고, 그림 크기들도 조정해줘야해. 서식도 sciadv과 비슷하게 맞춰주면 좋을 것 같고. 제출 형태를 맞춰줘야해. 계속 진행해서 minor revision 판정이 나올때까지 반복하자. 작성은 네가 계속 진행하고, 검토는 메모같은 것을 아예 보지 못한 reviewer가 평가를 내리는걸로 해줘.",
+     "reply": ""
+    },
+    {
+     "t": "11-24 22:12",
+     "prompt": "fig2가 현재 알아보기 힘들고, 뭔가 schematic에 가까운 그림이 하나 있어야되는데 그게 없어. 그리고 그림은 매번 그릴 때 보이는 것을 체크해야해. 근데 지금은 그렇지 않았던 것 같아. sciadv에 갈거면 figure들이 더 풍성해야하고, 담을 수 있는 내용도 많잖아. 검토하고 수정하는 과정을 너가 계속 반복해서, 지금 까지 글에서 모호함과 생략이 아예 없도록 하고 논리도 이전 문단과 비교해서 뜬금없는 내용이나 연결성, 통일성이 있어야해. 그림 구성도 마찬가지고. 현재는 말하고자 하는 내용도 명쾌하지 않아. 그리고 벤치마크도 너무 빈약해. lag에 의한 회전 효과를 보여줄 수 있는 그림도 있어야하고, 그림 크기들도 조정해줘야해. 서식도 sciadv과 비슷하게 맞춰주면 좋을 것 같고. 제출 형태를 맞춰줘야해. 계속 진행해서 minor revision 판정이 나올때까지 반복하자. 작성은 네가 계속 진행하고, 검토는 메모같은 것을 아예 보지 못한 reviewer가 평가를 내리는걸로 해줘.",
+     "reply": ""
+    },
+    {
+     "t": "11-24 22:12",
+     "prompt": "fig2가 현재 알아보기 힘들고, 뭔가 schematic에 가까운 그림이 하나 있어야되는데 그게 없어. 그리고 그림은 매번 그릴 때 보이는 것을 체크해야해. 근데 지금은 그렇지 않았던 것 같아. sciadv에 갈거면 figure들이 더 풍성해야하고, 담을 수 있는 내용도 많잖아. 검토하고 수정하는 과정을 너가 계속 반복해서, 지금 까지 글에서 모호함과 생략이 아예 없도록 하고 논리도 이전 문단과 비교해서 뜬금없는 내용이나 연결성, 통일성이 있어야해. 그림 구성도 마찬가지고. 현재는 말하고자 하는 내용도 명쾌하지 않아. 그리고 벤치마크도 너무 빈약해. lag에 의한 회전 효과를 보여줄 수 있는 그림도 있어야하고, 그림 크기들도 조정해줘야해. 서식도 sciadv과 비슷하게 맞춰주면 좋을 것 같고. 제출 형태를 맞춰줘야해. 계속 진행해서 minor revision 판정이 나올때까지 반복하자. 작성은 네가 계속 진행하고, 검토는 메모같은 것을 아예 보지 못한 reviewer가 평가를 내리는걸로 해줘. 결과가 나올때까지는 반복해서 수정해야해. 단, 원본에서 너무 멀어지지 않도록 주의해. 처음부터 모든것을 다 검토하고 싶지는 않아.",
+     "reply": ""
+    },
+    {
+     "t": "11-24 22:13",
+     "prompt": "fig2가 현재 알아보기 힘들고, 뭔가 schematic에 가까운 그림이 하나 있어야되는데 그게 없어. 그리고 그림은 매번 그릴 때 보이는 것을 체크해야해. 근데 지금은 그렇지 않았던 것 같아. sciadv에 갈거면 figure들이 더 풍성해야하고, 담을 수 있는 내용도 많잖아. 검토하고 수정하는 과정을 너가 계속 반복해서, 지금 까지 글에서 모호함과 생략이 아예 없도록 하고 논리도 이전 문단과 비교해서 뜬금없는 내용이나 연결성, 통일성이 있어야해. 그림 구성도 마찬가지고. 현재는 말하고자 하는 내용도 명쾌하지 않아. 그리고 벤치마크도 너무 빈약해. lag에 의한 회전 효과를 보여줄 수 있는 그림도 있어야하고. 각 그림은 반드시 필요해야하고, 각 그림이 주장하고자 하는 바는 명료해야해. 서식도 sciadv과 비슷하게 맞춰주면 좋을 것 같고. 제출 형태를 맞춰줘야해. 계속 진행해서 minor revision 판정이 나올때까지 반복하자. 작성은 네가 계속 진행하고, 검토는 메모같은 것을 아예 보지 못한 reviewer가 평가를 내리는걸로 해줘. 결과가 나올때까지는 반복해서 수정해야해. 단, 원본에서 너무 멀어지지 않도록 주의해. 처음부터 모든것을 다 검토하고 …",
+     "reply": "1회차 준비가 끝났고, 메모를 보지 못한 심사자(새 에이전트, PDF만 제공)가 `sciadv_v6.1`을 읽고 있습니다. 보고서가 오면 지적을 반영해 v6.2를 만들고 다시 보내는 식으로 반복하겠습니다. **1회차에서 바뀐 것 (v6 → v6.1)** - **그림 1 (schematic, 새로):** (A) 식 (2)의 고정된 극 0, π와 Ω로 도는 네트워크, (B) 식 (4)의 극 φ, φ+π가 네트워크와 함께 돎, (C) 임계값 γ = |Ω| − 2β가 ramp와 함께 내려오며 lock할 수 있는 진동자가 늘어남. - **그림 2 (지연의 회전 효과):** (A) G22 지연 스캔(식 (2) vs 식 (4)), (B) 인스턴스 11개(Gset 4 + SK 7)에서 지연에 따른 최종 에너지 변화, (C) 동결 시점에 측정한 |Ω| vs 식 (6)의 값(dOIM, 5 인스턴스 × 6 지연, 측정값이 79–94%), (D) ramp 동안의 |Ω| vs 식 (6). - **그림 3…"
+    },
+    {
+     "t": "11-24 22:34",
+     "prompt": "round 2 진행하기 전에, nature-skills 패키지 다운로드 받아서 그 skill 활용해줄래? 지금 schematic 너무 한계가 크고 다른 figure들도 마찬가지야. 정말 직관적으로 진행되어야해.",
+     "reply": "nature-figure skill을 정식으로 불러 적용하고 있습니다. 새 설계의 schematic을 그렸고, 그림 4·5에 남은 글자 겹침을 마저 고치는 중입니다."
+    },
+    {
+     "t": "11-24 22:59",
+     "prompt": "이게 글자가 들어가면 안되는데... 지금 뭔가 수정 방향이 설명이 안되는걸 다 글로 빼는 방식이라 그래. 많이 고민해서 만들어야되는데 일단 만들고 봐서",
+     "reply": "지금까지는 설명이 안 되는 부분을 글로 메우는 식이었고, 그게 \"짜치는\" 원인이 맞습니다. 그리기를 멈추고 설계부터 다시 세웠습니다. 확인을 받고 그리겠습니다. **진단** - 원 위의 점(디스크)과 막대 카툰은 그 자체로 아무 물리도 보여주지 못해서, 결국 글자로 뜻을 붙여야 했습니다. 이전에 디스크 그림을 싫어하셨던 이유와 같습니다. - 이 논문의 기구 요소는 전부 동역학적 사실입니다. 회전한다, lock된다, 임계값이 내려온다. 동역학적 사실은 궤적으로 보여주는 것이 가장 직관적이고, 궤적은 축 기호 외에 글자가 필요 없습니다. **새 설계: 그림 1 = G22 한 번의 ramp, 위상 궤적으로 본 기구** (글자 없음, 축 기호와 범례 φ 하나만) - 가로축은 모두 β(ramp), 세로축은 θ_i/π를 unwrap한 값. 극(0, π)은 정수 눈금선으로 보입니다. - **A** lag-off: 궤적이 일찍 정수에서 평평해진다 → 극에 lock. - **B** 식 (2), α…"
+    },
+    {
+     "t": "11-24 23:02",
+     "prompt": "일단 okay 이제 개입 안할테니까, minor revision 까지 다시 진행해줘 loop",
+     "reply": "3라운드 심사 결과가 왔습니다. **major revision**이지만 주요 지적은 8개에서 3개로 줄었고, 셋 다 벤치마크 기술과 형식 문제입니다. **3라운드 주요 지적과 조치** - SK 벤치마크 명세 부족: dSB의 SK 설정(갱신식, c₀ = 0.5√(N−1)/√ΣJ², dt = 1.25로 0.5·1.25 중 선택), 머신별 튜닝 정책, 크기 목록, 크기별 해결 인스턴스 수, 공통 범위 지수(N ≤ 256: 0.60/0.51/0.35/0.28/0.31, N ≤ 512: 0.45/0.34/0.25/0.26), SA 프로토콜(Metropolis, β 0.1→6 선형, 2만 sweep × 32 restart), p_K 분해능을 Methods에 넣었습니다. - Gset 기여 분해: 표 1에 α·T_b 열과 2×2(lag × noise) 행, lag-off w_i = 1 행을 넣도록 스크립트를 짰고, 개발 집합 밖 40개 그래프의 도달 수(현재 dSB 설정 기준 20/27/31/2…"
+    },
+    {
+     "t": "11-25 00:18",
+     "prompt": "letter 5.7과 비교했을 때, 더 좋아졌다는 인상보다는 그냥 번잡해졌다는 인상밖에 없어. 일단, 5.7에서 식 (10)의 증명을 supplementary로 내리는 작업은 하나 해야할 거 같아. 레터로 낼지 adv에 낼지도 모르겠고... 지금 글이 letter 5.7의 구조보다 낫다고 확신해?",
+     "reply": "letter v5.8을 만들어 두었고, 질문에는 솔직하게 답하겠습니다. **결론부터: 지금 v6.x의 구조가 5.7보다 낫다고 확신하지 않습니다.** 구조 자체는 같습니다(모델 → 상대 위상 injection → 임계값 → dOIM → 벤치마크). 달라진 것은 밀도입니다. 심사 루프는 \"지적할 것이 없는 글\"을 향해 수렴하지, \"잘 읽히는 글\"을 향해 수렴하지 않습니다. 세 라운드 동안 벤치마크 단서, 튜닝 세부, 부트스트랩 통계, 명제의 가정이 Results 본문에 계속 끼어들었고, 그 결과가 번잡함입니다. 그 인상은 정확합니다. **v6.x에서 진짜로 남길 가치가 있는 것**은 세 가지뿐입니다. (1) 그림: 한 run의 위상 궤적(그림 1), dOIM의 어닐링 영역(그림 5). (2) 벤치마크 사실: run = 10⁶ MVM의 연속 ramp, 14개 개발 그래프 튜닝, dSB 설정이 개발 집합 최적이 아니었던 점, lag×noise 2×2 대조군. 이건 어느 학술지 심사자도 …"
+    },
+    {
+     "t": "11-25 00:27",
+     "prompt": "일단, 5.8에서 S3를 언급할 필요는 없을 거 같고... FIG 2,3 배치가 바뀌었어. 5.8에서 어떤 내용을 바꾸기는 나는 좀 애매하다고 보거든? 뭔가를 더 더하려고 해도, 좀 애매한 부분이 있어. 괜히 더했다가 좀 주장이 더러워질 것 같거든... 그런 의미에서 오히려 figure들에서 주장을 더 선명하게 explicit 하게 만드는 작업은 어디에 내도 필요할 거 같은데... letter 5.8의 figure들을 기준으로 그 그림이 주장을 완벽하게 뒷받침하도록 만들 수 있을까? 그 과정에서 figure를 추가하는건 괜찮은거지. 다만 그게 필수라면 sciadv로 가야하는거고. 우선 교수님과 주고받은 버전들과 letter 5.8을 제외하고는 먼저 한번 싹 삭제해야할 거 같아. 대신 5.8에는 4.3과의 차이를 남겨야하고. sciadv에 내도 결국 글의 뼈대는 letter 5.8로 해야할 것 같아. 그래서 우선 버전 정리 -> figure 개선 루프를 수행하고자 해. 혹시 궁금한게 있거나 디테일을 정할게 있으면 물어봐줘",
+     "reply": "dSB 재실행이 끝났고, 표 I에 영향이 있는 결과라 먼저 알립니다. 그림 판정은 아직 진행 중입니다. **dSB를 다른 머신과 같은 규칙(개발 집합 14개 그래프에서 평균 격차 최소)으로 튜닝하면** | 머신 | 도달 그래프 (54개 중) | 평균 격차 (%) | |---|---|---| | dSB, 표 I 설정 (K = 10⁵, dt = 0.75) | 40 | 0.099 ± 0.019 | | dSB, 개발 집합 최적 (K = 3×10⁴, dt = 0.5) | 43 | 0.083 ± 0.017 | | phase-lag dOIM | 45 | 0.073 ± 0.015 | 그래프별 짝 비교에서는 dOIM의 격차가 더 작은 그래프 20개, 같은 그래프 10개, 더 큰 그래프 24개이고, 평균 격차 차이는 −0.009점(run 재표집 95% 구간 −0.012 ~ −0.007)입니다. 둘 다 도달 40개, dOIM만 5개, dSB만 3개, 둘 다 못 한 6개. 공정하게 튜닝한 dSB와는 사…"
+    },
+    {
+     "t": "11-25 00:50",
+     "prompt": "근데 fig3에서 flips 그림이 필요한지 모르겠어",
+     "reply": "동의합니다. 그 패널에서 실제로 주장을 받치는 요소는 점구름이 아니라 두 곡선입니다. - **뒤집힘 점구름**이 보여주는 것은 \"dOIM에서 뒤집힘은 γ 아래에서만 일어난다\"인데, 본문은 이것을 관측으로 주장하지 않고 식 (10)의 귀결로만 말합니다. 주장하지 않은 것을 받치는 패널이라 없어도 됩니다. 게다가 한 run의 그림이고 시각적으로 무겁습니다. - **min_i s_ih_i/w_i 곡선과 γ 선**은 다릅니다. \"γ > 0에서 굳는 배열은 국소 최솟값\"이라는 주장의 눈에 보이는 증거가 이 둘뿐입니다. min이 β ≈ 0.40에서 0에 닿고 γ는 0.47에서야 0이 되는 것, 즉 국소 최솟값이 γ > 0에서 먼저 성립하는 것이 보입니다. 다만 이 주장은 캡션의 951/960(ramp 960개 중 951개가 모든 스핀이 장과 같은 방향인 배열에서 동결)이 모집단 수준에서 이미 받치고 있습니다. 그래서 선택지는 둘입니다. 1. **(a) 삭제.** 그림 3은 5.7처럼 (a) …"
+    },
+    {
+     "t": "11-25 00:51",
+     "prompt": "1번으로 가자, (a) 삭제하고 진행해줘. 그리고 대신 예전에 local minima에서 멈춰서 gamma > 0 에서 끝나는 그림도 하나 있지 않았나",
+     "reply": ""
+    },
+    {
+     "t": "11-25 00:52",
+     "prompt": "1번으로 가자, (a) 삭제하고 진행해줘. 그리고 대신 예전에 local minima에서 멈춰서 gamma > 0 에서 끝나는 그림도 하나 있지 않았나... 어쨌든 계속 루프 진행해줘",
+     "reply": "Gset 대조군 실행이 모두 끝나 표로 정리했습니다(work/v5_en/gset_controls_20261124.md). 같은 예산(그래프당 10⁸ MVM = 10⁶ MVM run 100개)입니다. | 머신 | 도달 그래프 (54개 중) | 평균 격차 (%) ± SE | |---|---|---| | lag-off, 무잡음 | 6 | 0.832 ± 0.093 | | lag-off, T_b 0.3 | 28 | 0.207 ± 0.024 | | phase-lag OIM, 무잡음 | 28 | 0.166 ± 0.030 | | phase-lag OIM, T_b 0.1 | 37 | 0.115 ± 0.021 | | lag-off dOIM, 무잡음 | 0 | 10.46 ± 1.02 | | lag-off dOIM, T_b 0.3 | 10 | 1.092 ± 0.149 | | phase-lag dOIM, 무잡음 | 31 | 0.170 ± 0.037 | | phase-lag dOIM, T_b 0.1 | 4…"
+    },
+    {
+     "t": "11-25 09:14",
+     "prompt": "일단 수정은 하지말자. 나중에 supplementary에 자료로 넣을 수 있게 예비 파일만 만들어두자. 그리고 figure들 보면, 오히려 의미 파악이 어려운 면들도 있어. 그림 3에서 gamma를 기준으로 플롯한다던가, 최종 감마에 따른 에너지 분포라던가... 꼭 이거일 필요는 없지만 가능한 많은 그림을 그려보면서 가장 논문의 주장을 생략없이, 직관적으로 그려주는 구성을 찾아야할 것 같아.",
+     "reply": "후보 갤러리를 다 그렸습니다. figs/v5.8_explore/contact.png(11개 패널)과 합성 후보 C2.png, C3.png입니다. 본문·그림 파일은 손대지 않았고, SM 예비 자료는 work/sm_prep_20261125/에 모아 두었습니다(2×2 대조군, 튜닝 격자, 지연 항등식, 식 (10) 증명, 지연 분산 데이터, README). **보이는 것, 후보별로** - **에너지 대 γ (G1, G2, C2a)** — 가장 좋습니다. 가로축을 β 대신 γ = |Ω| − 2β로 놓으면 지연 0.15·0.25·0.35π의 에너지 곡선이 거의 한 곡선으로 모여 γ → 0에서 best-known 선에 닿고, lag-off는 γ = −2β < 0이라 처음부터 문턱이 없어 −0.73에 멈춥니다. \"ramp는 문턱의 어닐링이다\"가 한 패널에 담깁니다. 다섯 인스턴스에서도 같습니다(G2). - **속도 지도를 (γ, A_i/w_i) 평면에 (G10, C2b)** — 문턱이 대각선 …"
+    },
+    {
+     "t": "11-25 10:25",
+     "prompt": "근데 그림을 많이 그린다고 좋은게 아닌데... 그런식으로 복잡도를 높이면 오히려 보기가 너무 힘들어지잖아. 그리고 (a)(b) 궤적 자체가 dtheta_dt 로 그리면 어때? 또, 2 by 2 그림이여야 될 거 같아.",
+     "reply": ""
+    },
+    {
+     "t": "11-25 10:28",
+     "prompt": "근데 그림을 많이 그린다고 좋은게 아닌데... 그런식으로 복잡도를 높이면 오히려 보기가 너무 힘들어지잖아. 그리고 (a)(b) 궤적 자체가 dtheta_dt 로 그리면 어때? 또, 2 by 2 그림이여야 될 거 같아. C2로 하되, 최종 에너지 그림도 같이 있는게 더 좋을 거 같아. 에너지가 낮아진다는 주장을 하는데 필요할 거 같아서. 근데 그림 2 문단을 바꿀 때, alpha = 0 인 경우에서는 어닐링이 없다고 주장해도 괜찮은거잖아. 어닐링을 만드려면 gamma > 0인 구간이 필요하고, 그게 |Omega|가 준다고 얘기할 수 있을거 같은데... 일단 기존의 inset 들은 최소화 하고 싶어.",
+     "reply": "설계 g를 그렸습니다. 그림은 figs/v5.8g/fig1.png–fig4.png이고, 삽입 그림은 모두 뺐습니다. **그림 1 (단일 단, 2×2)** - (a) 식 (2), α = π/4: 여섯 진동자의 dθ_i/dt. 고정 극을 지나며 속도가 요동하다가 β ≈ 0.45에서 injection이 결합을 이겨 전부 0으로 멈춥니다. (b) 식 (4): 속도가 하나씩 Ω(파선, −1.05)에 합류합니다. 강한 장(짙은 색)이 먼저, 약한 장(연한 색)이 β ≈ 0.4에서 마지막으로. \"함께 돈다\"와 \"국소장 순서로 lock된다\"가 위상 궤적보다 훨씬 또렷합니다. (c) α 스캔 최종 에너지, (d) 다섯 인스턴스. 이 둘은 전과 같습니다. **그림 2 (단일 단, γ 축)** - (a) H(s)/N 대 γ. 지연 0.15·0.25·0.35π의 곡선이 γ → 0에서 best-known 선에 모이고, lag-off는 γ = −2β < 0이라 처음부터 문턱이 없어 −0.73에 멈춥니다. …"
+    },
+    {
+     "t": "11-25 10:39",
+     "prompt": "근데, fig (d)가 오히려 weak 하지 않아? (a), (b)의 의의도 뭔지 사실 잘 모르겠고. fig 2에서도, gamma가 더 클때까지 보여줘야하는 거 같고... 이미지에 흰색 영역이 생겼어 2(c)에서. 그리고 최종 분포가 더 낫다고 주장할 때, 저 그림이 좋은건 맞을까? 뭔가 아직 그림이 충분히 주장을 담아내지 못하는 느낌인데...",
+     "reply": "설계 h를 그렸습니다. figs/v5.8h/fig1.png, fig2.png(그림 3·4는 삽입 그림만 뺀 f6)입니다. **그림 1 (2×2, 한 run의 머신 수준 곡선)** - (a) G22 한 ramp의 readout 에너지 H(s)/N 대 β: lag-off(검정)는 β ≈ 0.2에서 −0.73에 멈추고, 식 (2)+지연(회색)은 **β가 오를수록 에너지가 오히려 올라가** 0 근처에서 고정되며, 식 (4)+지연(파랑)은 best-known까지 내려갑니다. \"식 (2)는 지연 아래서 낮은 에너지의 이진 위상을 못 잡는다\"가 이 한 패널에 있습니다. - (b) 같은 ramp의 회전률 ⟨w_i dθ_i/dt⟩: lag-off는 0, 식 (2)는 −0.9에서 출발해 injection이 결합을 이기는 β ≈ 0.45에서 강제로 0이 되고, 식 (4)는 ramp 내내 −1.05로 돕니다. 진동자 여섯 개의 궤적 대신 머신 전체의 두 양으로 바꿨습니다. 의의가 분명합니다. - (c)…"
+    },
+    {
+     "t": "11-25 10:45",
+     "prompt": "그림 (1)의 d에서 그림이 너무 여러개니까 오히려 조금 보기가 곤란한게 있어. 어차피 다 G22에서 돌리고 있는데, 하나만 있어도 되는거 아닐까 싶고... alpha 가 더 클때 망가지는 것도 보여주면 어떨까?",
+     "reply": "설계 i가 완성되어 letter_v5.8i(en/ko, md·pdf·docx)로 빌드되어 있습니다. 그림은 figs/v5.8i, 변경 기록과 본문 수정 제안은 work/v5_en/FIGURE_CLAIMS_v58.md에 있습니다. 중간 폴더 v5.8g/v5.8h는 지웠고, 이전 설계 f6과 figs/v5.8은 비교용으로 남겼습니다. **최종 그림** - 그림 1: (a) 한 ramp의 readout 에너지, (b) 회전률, (c) 식 (4)의 최종 에너지 대 α(0…0.49π, 64 ramp, 같은 지속 시간·간격 0.01), (d) 최종 에너지 대 ramp 지속 시간. (c)는 U자형이고 식 (2) 값은 캡션에 숫자로만 두었습니다(0.05π에서 이미 −0.65). 본문의 −0.730/−0.751은 수렴 스캔에서 −0.7309/−0.7514로 그대로 맞습니다. - 그림 2: γ 축. (a) 지연 셋 + lag-off, 마지막 readout 변화 지점에 원(lag-off γ = −0.…"
+    },
+    {
+     "t": "11-25 17:32",
+     "prompt": "그림은 좋은데, (c)에서 eq 2는 안된다는걸 보여줄 방법은 없을까? fig2(b)와fig3(a)가 비슷한 내용을 말하고 있는데, 서로 heatmap의 값이 달라서 좀 애매해. 더 구체적으로 논리적으로 보여줄 방법이 필요하고, fig3에서 두 그래프의 크기가 맞지 않으며, 결국 local minima에 갈 수 있다는 증명이 그림으로 입증되지 않았어. fig4에서 lag off + noise나, dOIM의 결과도 필요한거 아닌가 싶어. fig 2에서 gamma = 0에서 수직으로 떨어지는 비교가 있었는데, 그 축이 없어진 것도 아쉽고. 다시 계속 설계를 진행해줘. 지금 데이터를 쓰고 싶긴한데, 완성도가 떨어져",
+     "reply": "설계 j를 완성해 letter_v5.8j(en/ko, md·pdf·docx)로 빌드했습니다. 그림은 figs/v5.8j, 설계 i는 지웠고 f6은 비교용으로 남겼습니다. 기록은 work/v5_en/FIGURE_CLAIMS_v58.md입니다. **말씀하신 네 가지에 대한 처리** - 그림 1(c): best-known 값에 대한 초과 에너지를 로그 축으로. 식 (2)는 0.05π에서 이미 0.1, π/4에서 0.7로 올라가고, 식 (4)는 0.022 → 0.001(π/4) → 0.022(0.49π)의 U자입니다. 두 injection이 한 패널에 있고 큰 α의 손실도 보입니다. 절대 에너지는 캡션 숫자로만 남습니다. - 그림 2(b)와 3(a): 둘 다 \"lock된 비율\"(|dθ_i/dt − Ω| < 0.05)로 통일했습니다. 같은 색눈금, 같은 칸 크기, 같은 물리적 크기. 2(b)는 OIM을 새로 돌려 (γ, A_i/w_i) 평면에 그렸고, 식 (7)의 대각선 아래가 비어 있습니…"
+    },
+    {
+     "t": "11-25 18:26",
+     "prompt": "locked fraction이 좀 별로야. 더 더 물리량에 기반한 값 없을까? 너무 임의의 값이잖아. 회전 속도로 해서 그리는게 나을거 같고... gamma = 0.75 부터 그리는게 나을 거 같아. gamma = 0 y축 선도 따로 그려주고. 그리고 두 그림의 물리적 의미가 너무 겹치는 거 같은데... 좋은 방법 없을까? fig 4는 네 개 다 그리니까 너무 알아보기가 힘드네",
+     "reply": "설계 k로 바꿔 letter_v5.8k(en/ko, md·pdf·docx)를 빌드했습니다. 그림은 figs/v5.8k, 설계 j는 지웠습니다. **말씀하신 점의 처리** - 임의 문턱 제거: 지도는 모두 속도 |dθ_i/dt − Ω|로 돌아갔습니다. 그림 2(b)는 OIM의 (γ, A_i/w_i) 속도 지도이고, 칸은 0.005 × 0.05입니다. - γ 범위: 그림 2의 두 패널 모두 γ = 0.78에서 시작해 −0.49까지입니다. 식 (4) 곡선은 0.78 이후만 그려 틀 밖으로 나가는 선이 없습니다. - γ = 0 선: 그림 2(a)(b)와 그림 3(b)에 세로선을 넣었습니다. - 두 그림의 겹침: 지도는 그림 2(b) 하나만 본문에 둡니다. dOIM을 (γ, s_i h_i/w_i) 평면에 속도로 그려 보니 OIM과 거의 같은 모양이었습니다. 두 머신 모두 자기 장과 반대인 스핀은 빠르게 움직이고, 차이는 \"무엇이 얼어붙는가\"에만 있습니다. 그래서 그림 3은 결과만 담습니다.…"
+    },
+    {
+     "t": "11-25 19:54",
+     "prompt": "fig 3가 말하는 바가 아직도 좀 애매한 느낌이 있어. fig 4 (a)도 아직 애매하고. 너는 왜 내가 애매하게 느끼는지 알아? 예측해서 한번 물어봐줄래",
+     "reply": "답변 드립니다. 짐작이 맞은 부분은 바로 고쳤고, 내용 자체의 적합성에 대한 제 판단을 먼저 씁니다. **내용은 Letter입니다.** 이 논문이 가진 것은 하나의 메커니즘(지연이 β ramp를 문턱 γ의 annealing으로 바꾼다)과 그 도출(식 1–10), 그리고 그것을 뒷받침하는 수치입니다. Sci. Adv.가 요구하는 \"넓은 의의\"를 성능으로 세우기에는 근거가 없습니다. dSB와는 동등(공정 조건 43 vs 45), CAC는 Gset에서 더 좋고(46), SK 지수는 0.24 vs dSB 0.22입니다. 하드웨어 실험도 없습니다. 반면 Letter로서는 완결됩니다. 하드웨어에 원래 들어 있던 성가신 요소(전파 지연)가 그 자체로 annealer가 된다는 점이 물리적 의의이고, 식 (4)의 상대 위상 injection이 그것을 가능하게 하는 발명입니다. 심사에서 나올 질문은 \"잡음 annealing보다 나은가\"인데, 이건 SK 4–12배와 Gset 37 vs 28로 답이 있…"
+    },
+    {
+     "t": "11-25 20:07",
+     "prompt": "fig 4 가 에러가 난거 같은데... 난 오히려 dOIM의 성질을 보여줄 수 있는 패널들을 좀 더 추천해주면 좋겠어.",
+     "reply": "그림 4는 고쳤습니다. 제가 블록을 잘라 붙이면서 데이터 루프가 빠져 빈 축만 남았던 것이고, 지금은 TTS 다섯 계열이 다시 들어가 letter_v5.8l(영문 5쪽)로 재빌드했습니다. dOIM의 성질을 보여줄 패널 후보를 기존 데이터로 다섯 개 그려 figs/v5.8_doim_cand/contact.png에 모았습니다. 제 평가와 함께 적습니다. **추천하는 것** - C5 **local minimum 보증, 인스턴스·지연별**: 동결 배열이 local minimum인 ramp의 비율을 α에 대해, OIM과 dOIM. dOIM은 다섯 인스턴스 모두 0.9–1.0(1 아래인 것은 모두 γ_F < 0에서 언 ramp). OIM은 Gset에서는 1에 가깝지만 SK에서 0–0.45로 무너집니다. 문턱이 A_i가 아니라 h_i에 걸린다는 dOIM의 정의가 결과로 드러나는 패널이고, 그림 3의 \"없음\" 패널이 하던 말을 비율로 보여줍니다. SK가 중요합니다. 연속 결합에서는 A_i와 |h…"
+    },
+    {
+     "t": "11-25 20:14",
+     "prompt": "dOIM의 성질은 fig 3에 보여주고, 그림 4는 benchmark를 보여줘야할 거 같은데",
+     "reply": "설계 m을 letter_v5.8m(en/ko, md·pdf·docx)으로 빌드했습니다. 그림은 figs/v5.8m이고 설계 l은 지웠습니다. **그림 3 (dOIM의 성질, 2×2)** - (a) G22에서 최종 에너지 대 α, dOIM과 OIM 나란히. 지연이 없으면 dOIM은 −0.621로 lag-off OIM(−0.731)보다 훨씬 나쁘고, 0.25π부터 best-known에 닿아 0.475π까지 평평합니다. OIM이 π/2로 가며 이득을 잃는 것과 달리 dOIM은 잃지 않습니다. 부호 결합 머신은 지연이 있어야만 동작한다는 것이 한눈에 보입니다. 0.49π 점은 간격 0.02에서 정렬 상태로 붕괴해(앞서 OIM과 같은 Euler 문제) 뺐고, 0.475·0.49π를 간격 0.005로 다시 돌리는 중입니다. - (b) dOIM의 readout flip 지도 (γ, s_i h_i/w_i). flip은 식 (10)의 선 아래에서 일어나고, 장과 반대인 스핀(s_i h_i < 0)…"
+    },
+    {
+     "t": "11-25 20:29",
+     "prompt": "근데 색이 너무 임의의 값이잖아. (b)는 별 의미가 없고... (d)도 너무 애매해. PL-OIM도 충분히 느리면 국소 최소에서 멈추게 할 수 있지 않아? 궁금하네... 왜 이런걸까? 그리고 (c) 그림에서 weakest field at freezing도 왜 두개의 값만 가지는걸까?",
+     "reply": "세 가지에 답합니다. (b)는 뺍니다. 색이 flip 횟수라는 임의 단위이고, 그림 2(b)와 같은 모양을 반복할 뿐입니다. **(c) 왜 두 값뿐인가** 데이터를 확인했습니다. 인스턴스의 양자화 때문이지 동역학 때문이 아닙니다. - Gset 네 그래프(G1, G11, G14, G22)는 결합이 ±1이라, dOIM이 언 모든 배열에 h_i = 0인 스핀(이웃의 찬반이 같은 스핀)이 반드시 있습니다. 960개 중 99–100 %에서 가장 약한 장이 정확히 0입니다. - SK1024_0은 결합이 ±1/32라 h_i가 1/32의 배수이고, 가장 약한 정렬 스핀의 장은 한 단위인 1/32 = 0.031입니다(몇 ramp는 0.094). - 그래서 가로축 값이 0과 0.031 둘뿐입니다. OIM의 min A_i/w_i는 위상장의 크기라 연속이어서 퍼집니다. 즉 이 패널에서 dOIM 쪽이 보여주는 것은 \"동결은 가장 약한 장에서\"라기보다 \"동결은 γ ≈ 0에서\"에 가깝고, 가장 약한 장이 0…"
+    },
+    {
+     "t": "11-25 20:35",
+     "prompt": "ㅇㅇ 그리고 마찬가지로 (a)도 fig 1의 그림이랑 겹치잖아. 이걸 그냥 단순한 변형으로 나열하는건 너무 임팩트가 약해. 다른 점만 보여줘도 되지 않을까 싶네. 걍 (c)는 살리고, 또 다른 제안을 몇개 해줘. 없으면 그냥 기존 + c로 가야하나. c랑 기존도 겹치는거 같은데",
+     "reply": ""
+    },
+    {
+     "t": "11-25 20:35",
+     "prompt": "ㅇㅇ 그리고 마찬가지로 (a)도 fig 1의 그림이랑 겹치잖아. 이걸 그냥 단순한 변형으로 나열하는건 너무 임팩트가 약해. 다른 점만 보여줘도 되지 않을까 싶네. 걍 (c)는 살리고, 또 다른 제안을 몇개 해줘. 없으면 그냥 기존 + c로 가야하나. c랑 기존도 겹치는거 같은데... 그리고 fig 4도 gset을 이런식으로 보여주면 그냥 어쩌라는거지? 라는 생각밖에 안들어. 다른 Ising machine에서 어떤 figure 들이 있는지를 좀 참조해주면 좋을거같아",
+     "reply": "SK 데이터에서 \"스텝 예산에 대한 평균 에너지\" 곡선(다섯 머신, N = 1024)을 벤치마크 후보로 그렸습니다. 문헌(Leleu 2021, Mohseni 2022 리뷰)에서 표준 벤치마크 그림은 \"크기 N에 대한 성공 확률·TTS\"와 \"고정 N에서의 TTS 분포\"이고, Gset은 표로 제시합니다. 지금은 \"장과 반대인 스핀 수 대 γ\" 계산과 느린 ramp 검사의 나머지가 끝나길 기다리고 있고, 끝나면 그림 3·4 후보를 묶어 제안하겠습니다."
+    }
+   ],
+   "edited_files": [
+    "2026/PLOIM/paper/work/v6/PRINCIPLES.md",
+    "2026/PLOIM/paper/tools/build_sciadv.py",
+    "2026/PLOIM/paper/sciadv_v6.md",
+    "2026/PLOIM/paper/work/v6/src_v6_ko.md",
+    "2026/PLOIM/paper/work/v6/FIGURE_CONTRACT.md",
+    "2026/PLOIM/paper/work/v6/figs/make_fig1_schematic.py",
+    "2026/PLOIM/paper/work/v6/figs/fig1_traces_run.py",
+    "2026/PLOIM/paper/work/v6/figs/make_fig1_traces.py",
+    "2026/PLOIM/paper/work/v6/sm_textS5_lag_identity.md",
+    "2026/PLOIM/theory/lagdisorder_20261124/lag_disorder_sk.py",
+    "2026/PLOIM/paper/work/v6/figs/make_figs_v63.py",
+    "2026/PLOIM/paper/work/v6/make_src_v63.py",
+    "2026/PLOIM/paper/work/v6/sm_tableS4_grids.md",
+    "2026/PLOIM/paper/work/v6/make_src_v64.py",
+    "2026/PLOIM/paper/work/v5_en/sm_proof_eq10_v58.md",
+    "2026/PLOIM/paper/work/v5_en/FIGURE_CLAIMS_v58.md",
+    "2026/PLOIM/paper/work/v5_en/make_figs_v58f1.py",
+    "2026/PLOIM/paper/work/v5_en/make_v58f1_captions.py",
+    "2026/PLOIM/paper/work/v5_en/make_figs_v58f2.py",
+    "2026/PLOIM/paper/work/v5_en/make_v58f2_captions.py",
+    "2026/PLOIM/paper/work/v5_en/explore_figs_20261125.py"
+   ],
+   "n_edited_files": 21
+  },
+  {
+   "session": "31ee0456",
+   "title": "study 폴더 폰 접속 링크",
+   "cwd": "2026/PLOIM",
+   "project_guess": "PLOIM",
+   "n_prompts": 1,
+   "dropped_prompts": 0,
+   "turns": [
+    {
+     "t": "11-25 09:33",
+     "prompt": "study 폴더 내 폰에서 접속할 수 있게 링크 하나 만들어줄래? safari에서 접속해서 앱으로 만들 수 있게. 이 서버는 꺼지지 않게 해줘",
+     "reply": "링크는 이미 있었습니다. study 폴더를 서빙하는 서버가 예전에 설정돼 계속 돌고 있어서 새로 만들지 않고 그대로 씁니다. **https://nolcom1.tail9ae6b2.ts.net** - **폰에서 먼저 할 일**: 아이폰(`iphone181`)의 Tailscale이 13일째 오프라인입니다. Tailscale 앱을 켜서 연결해야 링크가 열립니다. 이 링크는 본인 Tailscale 기기에서만 접속됩니다. - **앱으로 만들기**: Safari에서 링크 열기 → 공유 버튼 → \"홈 화면에 추가\". 홈 화면 아이콘과 전체 화면 실행에 필요한 설정은 페이지에 이미 들어 있고, 이름은 기본값이 \"File Browser\"라 추가할 때 바꾸면 됩니다. - **내용**: `/home/nol/study` 전체가 로그인 없이 읽기 전용으로 열립니다(보기·다운로드만 가능). **꺼지지 않게 한 것**: 기존 설정은 비정상 종료일 때만 재시작해서, 정상 종료나 kill에는 꺼진 채로 남았습니다…"
+    }
+   ],
+   "edited_files": [],
+   "n_edited_files": 0
+  },
+  {
+   "session": "859c733a",
+   "title": "ksdpa·ksdpa_ui만 남기는 아카이브 정리",
+   "cwd": "2026/Hanhwa",
+   "project_guess": "Hanhwa",
+   "n_prompts": 4,
+   "dropped_prompts": 0,
+   "turns": [
+    {
+     "t": "11-25 10:19",
+     "prompt": "(다) 도 무리가 없으면 진행해주고, 용어 통일도 진행해줘. API랑, 메뉴얼 자체를 좀 만들어야 할 거 같은데... 전체 메뉴얼을 문서화할 수 있어? 메뉴얼 양식은 표준적인 기계 메뉴얼 형식을 따라줘. 나머지도 다 권장대로 진행해줘. IR과는 묶지 말고, 우선 RF 만 가지고 만들어줘.",
+     "reply": ""
+    },
+    {
+     "t": "11-25 10:20",
+     "prompt": "(다) 도 무리가 없으면 진행해주고, 용어 통일도 진행해줘. API랑, 메뉴얼 자체를 좀 만들어야 할 거 같은데... 전체 메뉴얼을 문서화할 수 있어? 메뉴얼 양식은 표준적인 기계 메뉴얼 형식을 따라줘. 나머지도 다 권장대로 진행해줘. IR과는 묶지 말고, 우선 RF 만 가지고 만들어줘. 그리고 지금 버전대로 서버 재실행 한번 부탁할게. 내가 눌러보게",
+     "reply": ""
+    },
+    {
+     "t": "11-25 10:20",
+     "prompt": "(다) 도 무리가 없으면 진행해주고, 용어 통일도 진행해줘. API랑, 메뉴얼 자체를 좀 만들어야 할 거 같은데... 전체 메뉴얼을 문서화할 수 있어? 메뉴얼 양식은 표준적인 소프트웨어 메뉴얼 형식을 따라줘. 너가 자주 사용하는 양식을 사용하지 말고, AI티가 나지 않게 작업해줘. 나머지도 다 권장대로 진행해줘. IR과는 묶지 말고, 우선 RF 만 가지고 만들어줘. 그리고 지금 버전대로 서버 재실행 한번 부탁할게. 내가 눌러보게",
+     "reply": "요청하신 작업 중 첫 단계 워크플로가 돌고 있습니다. 서버는 송부 태그 상태로 다시 띄워 두었습니다. **지금 눌러 보실 수 있는 서버** - 주소: http://localhost:5174 (Tailscale에서는 http://100.117.160.113:5174) - 송부 태그 `rf-2026.11` 상태입니다. 아직 C1과 용어 통일이 들어가기 전입니다. - 실행 위치는 별도 작업 폴더 `/home/nol/study/2026/Hanhwa_rf_try`입니다. 송부 브랜치를 고치는 동안에도 이 화면은 바뀌지 않습니다. - 송부판 화면 설정은 기본으로 이 컴퓨터에서만 열리게 바뀌었습니다. 지금은 Tailscale 접속이 되도록 실행할 때만 모든 주소로 열어 두었고, 파일은 고치지 않았습니다. - 저장된 화면 상태 키가 v4로 바뀌어, 브라우저에 남아 있던 화면 상태는 초기화됩니다. - 옛 서버에는 배치된 위협 레이더가 없었고 표적만 기본값이라 잃은 설정은 없습니다. - 작업이 계산…"
+    },
+    {
+     "t": "11-25 11:27",
+     "prompt": "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation. <system-reminder> <tools-used-before-summary>Agent, AskUserQuestion, Bash, Edit, ListAgents, Monitor, Read, ScheduleWakeup, SendFeedback, Skill, StructuredOutput, SubagentHandback, TaskStop, ToolSearch, WebFetch, WebSearch, Workflow, Write</tools-used-before-summary> </system-reminder> Summary: 1. Primary Request and Intent: **Project** - Location: /home/nol/study/2026/Hanhwa (git master at dd0b7b6; no remote). - Research contract: \"운용조건에 따른 함…",
+     "reply": "매뉴얼 두 권과 패키지가 만들어졌고, 최종 검수도 통과했습니다. 지금은 PDF 몇 쪽을 직접 열어 모양을 확인하고 있습니다."
+    }
+   ],
+   "edited_files": [
+    "2026/Hanhwa/paperwork/2026-11/12_해면반사_표준조사_1124/README.md"
+   ],
+   "n_edited_files": 1
+  }
+ ],
+ "file_changes": {
+  "PLOIM": {
+   "count": 1635,
+   "ext": {
+    ".md": 505,
+    ".json": 351,
+    ".py": 296,
+    ".png": 125,
+    ".pdf": 59,
+    ".svg": 52
+   },
+   "recent": [
+    "2026/PLOIM/paper/work/v5_en/data_20261125/nviol_series.log",
+    "2026/PLOIM/paper/work/v5_en/data_20261125/nviol_series_G22_doim.npz",
+    "2026/PLOIM/paper/work/v5_en/data_20261125/locmin_duration.log",
+    "2026/PLOIM/paper/work/v5_en/data_20261125/locmin_duration.json",
+    "2026/PLOIM/paper/work/v5_en/data_20261125/nviol_series_G22_oim.npz",
+    "2026/PLOIM/paper/figs/v5.8_doim_cand/B1_energy_vs_steps_SK1024.png",
+    "2026/PLOIM/paper/work/v5_en/data_20261125/spinlock.log",
+    "2026/PLOIM/paper/work/v5_en/data_20261125/spinlock_SK1024_0_doim.npz",
+    "2026/PLOIM/paper/work/v5_en/data_20261125/spinlock_SK1024_0_oim.npz",
+    "2026/PLOIM/paper/work/v5_en/fig3_candidates2.py",
+    "2026/PLOIM/paper/work/v5_en/nviol_series_run.py",
+    "2026/PLOIM/paper/work/v5_en/data_20261125/spinlock_G22_doim.npz"
+   ]
+  },
+  "Dissertation": {
+   "count": 320,
+   "ext": {
+    ".md": 196,
+    ".png": 54,
+    ".py": 44,
+    ".yaml": 12,
+    ".tex": 7,
+    ".pdf": 3
+   },
+   "recent": [
+    "2026/Dissertation/.claude/skills/nature-writing/tests/scoped-drafting.md",
+    "2026/Dissertation/.claude/skills/nature-writing/templates/submission/title-page.tex",
+    "2026/Dissertation/.claude/skills/nature-writing/templates/submission/initial-cover-letter.tex",
+    "2026/Dissertation/.claude/skills/nature-writing/templates/submission/highlights-and-summary.tex",
+    "2026/Dissertation/.claude/skills/nature-writing/templates/submission/declarations-and-reviewers.tex",
+    "2026/Dissertation/.claude/skills/nature-writing/static/fragments/task/submission-package.md",
+    "2026/Dissertation/.claude/skills/nature-writing/static/fragments/task/manuscript.md",
+    "2026/Dissertation/.claude/skills/nature-writing/static/fragments/section/title.md",
+    "2026/Dissertation/.claude/skills/nature-writing/static/fragments/section/related-work.md",
+    "2026/Dissertation/.claude/skills/nature-writing/static/fragments/section/method.md",
+    "2026/Dissertation/.claude/skills/nature-writing/static/fragments/section/intro.md",
+    "2026/Dissertation/.claude/skills/nature-writing/static/fragments/section/experiments.md"
+   ]
+  },
+  "Hanhwa": {
+   "count": 8905,
+   "ext": {
+    ".json": 6743,
+    ".log": 654,
+    ".npz": 378,
+    ".png": 361,
+    ".py": 354,
+    ".md": 79
+   },
+   "recent": [
+    "2026/Hanhwa/archive/rf1124_tools/stage8/final_verify_r1/logs/smokegfs_run.out",
+    "2026/Hanhwa/archive/rf1124_tools/stage8/final_verify_r1/logs/smokegfs_server.log",
+    "2026/Hanhwa/archive/rf1124_tools/stage8/final_verify_r1/logs/smokegfs_smoke.log",
+    "2026/Hanhwa/archive/rf1124_tools/stage8/final_verify_r1/logs/smokegfs_server.pid",
+    "2026/Hanhwa/archive/rf1124_tools/stage8/final_verify_r1/logs/smoke_run.out",
+    "2026/Hanhwa/archive/rf1124_tools/stage8/final_verify_r1/logs/smoke_server.log",
+    "2026/Hanhwa/archive/rf1124_tools/stage8/final_verify_r1/logs/smoke_smoke.log",
+    "2026/Hanhwa/archive/rf1124_tools/stage8/final_verify_r1/tools/leak.py",
+    "2026/Hanhwa/archive/rf1124_tools/stage8/final_verify_r1/logs/smoke_server.pid",
+    "2026/Hanhwa/archive/rf1124_tools/stage8/final_verify_r1/tools/smoke.sh",
+    "2026/Hanhwa/archive/rf1124_tools/stage8/final_verify_r1/logs/probe_server.log",
+    "2026/Hanhwa/archive/rf1124_tools/stage8/final_verify_r1/tools/probe2.py"
+   ]
+  }
+ },
+ "unregistered_changes": {
+  "2026/Hanhwa_rf_try": {
+   "count": 1855,
+   "ext": {
+    ".py": 561,
+    ".png": 360,
+    ".log": 202,
+    ".txt": 180,
+    ".npz": 128,
+    ".json": 115
+   },
+   "recent": [
+    "2026/Hanhwa_rf_try/validation/requirements.txt",
+    "2026/Hanhwa_rf_try/validation/red_2001/scripts/run_red.py",
+    "2026/Hanhwa_rf_try/validation/red_2001/scripts/red_compare.py",
+    "2026/Hanhwa_rf_try/validation/red_2001/scripts/red_common.py",
+    "2026/Hanhwa_rf_try/validation/red_2001/scripts/fig_red_timeseries.py",
+    "2026/Hanhwa_rf_try/validation/red_2001/scripts/fig_red_inputs.py",
+    "2026/Hanhwa_rf_try/validation/red_2001/scripts/fig_red_error.py",
+    "2026/Hanhwa_rf_try/validation/red_2001/scripts/fig_red_edh.py",
+    "2026/Hanhwa_rf_try/validation/red_2001/results/run_red.log",
+    "2026/Hanhwa_rf_try/validation/red_2001/results/low__era5.npz",
+    "2026/Hanhwa_rf_try/validation/red_2001/results/low__buoy.npz",
+    "2026/Hanhwa_rf_try/validation/red_2001/results/high__era5.npz"
+   ]
+  },
+  "2026/Hanhwa_proto_gamma": {
+   "count": 6,
+   "ext": {
+    ".py": 6
+   },
+   "recent": [
+    "2026/Hanhwa_proto_gamma/ksdpa/tests/test_sea_boundary.py",
+    "2026/Hanhwa_proto_gamma/ksdpa/src/ksdpa/object/radar.py",
+    "2026/Hanhwa_proto_gamma/ksdpa/src/ksdpa/engine/dmft.py",
+    "2026/Hanhwa_proto_gamma/ksdpa/src/ksdpa/twoway.py",
+    "2026/Hanhwa_proto_gamma/ksdpa/src/ksdpa/api.py",
+    "2026/Hanhwa_proto_gamma/ksdpa/src/ksdpa/engine/sea_boundary.py"
+   ]
+  },
+  "2026/Hanhwa_delivery": {
+   "count": 205,
+   "ext": {
+    ".py": 85,
+    ".npz": 26,
+    ".tsx": 19,
+    ".json": 17,
+    ".md": 15,
+    ".ts": 9
+   },
+   "recent": [
+    "2026/Hanhwa_delivery/KSDPA_RF_rf-2026.11.zip",
+    "2026/Hanhwa_delivery/KSDPA_RF_rf-2026.11/validation/requirements.txt",
+    "2026/Hanhwa_delivery/KSDPA_RF_rf-2026.11/validation/red_2001/scripts/run_red.py",
+    "2026/Hanhwa_delivery/KSDPA_RF_rf-2026.11/validation/red_2001/scripts/red_compare.py",
+    "2026/Hanhwa_delivery/KSDPA_RF_rf-2026.11/validation/red_2001/scripts/red_common.py",
+    "2026/Hanhwa_delivery/KSDPA_RF_rf-2026.11/validation/red_2001/scripts/fig_red_timeseries.py",
+    "2026/Hanhwa_delivery/KSDPA_RF_rf-2026.11/validation/red_2001/scripts/fig_red_inputs.py",
+    "2026/Hanhwa_delivery/KSDPA_RF_rf-2026.11/validation/red_2001/scripts/fig_red_error.py",
+    "2026/Hanhwa_delivery/KSDPA_RF_rf-2026.11/validation/red_2001/scripts/fig_red_edh.py",
+    "2026/Hanhwa_delivery/KSDPA_RF_rf-2026.11/validation/red_2001/results/run_red.log",
+    "2026/Hanhwa_delivery/KSDPA_RF_rf-2026.11/validation/red_2001/results/low__era5.npz",
+    "2026/Hanhwa_delivery/KSDPA_RF_rf-2026.11/validation/red_2001/results/low__buoy.npz"
+   ]
+  },
+  "2026/Hanhwa_rf_release": {
+   "count": 144,
+   "ext": {
+    ".py": 49,
+    ".npz": 20,
+    ".tsx": 16,
+    ".md": 15,
+    ".json": 12,
+    ".ts": 7
+   },
+   "recent": [
+    "2026/Hanhwa_rf_release/docs/KSDPA_RF_인터페이스_설계_기술서.pdf",
+    "2026/Hanhwa_rf_release/docs/KSDPA_RF_인터페이스_설계_기술서.docx",
+    "2026/Hanhwa_rf_release/docs/KSDPA_RF_소프트웨어_사용자_매뉴얼.pdf",
+    "2026/Hanhwa_rf_release/docs/KSDPA_RF_소프트웨어_사용자_매뉴얼.docx",
+    "2026/Hanhwa_rf_release/ksdpa_ui/API.md",
+    "2026/Hanhwa_rf_release/ksdpa_ui/backend/data/example_config.yaml",
+    "2026/Hanhwa_rf_release/docs/가정_한계.md",
+    "2026/Hanhwa_rf_release/README.md",
+    "2026/Hanhwa_rf_release/docs/설치_실행.md",
+    "2026/Hanhwa_rf_release/ksdpa_ui/backend/smoke_test.py",
+    "2026/Hanhwa_rf_release/ksdpa_ui/frontend/src/errors.ts",
+    "2026/Hanhwa_rf_release/ksdpa_ui/backend/pair.py"
+   ]
+  }
+ },
+ "git_commits": [
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "66c1e20",
+   "time": "2026-11-25T11:00",
+   "subject": "docs: SUM and IDD after review (accuracy fixes, cover and index, figure and table layout)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "f2c9489",
+   "time": "2026-11-25T10:40",
+   "subject": "API.md: rcs_rev on a config with an RCS, the last coverage ring, area threats optional"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "054456e",
+   "time": "2026-11-25T10:22",
+   "subject": "Limits doc §5: the exported RCS grid is the upload's own uniform step when it has one"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "dadd050",
+   "time": "2026-11-25T10:22",
+   "subject": "example_config.yaml: the target comment says the RCS in use stays"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "c2d272b",
+   "time": "2026-11-25T08:59",
+   "subject": "docs: software user manual (KSDPA-RF-SUM-001, .docx and .pdf)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "09bebab",
+   "time": "2026-11-25T08:05",
+   "subject": "docs: interface design description (KSDPA-RF-IDD-001, .docx and .pdf)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "1e370ea",
+   "time": "2026-11-25T07:57",
+   "subject": "API.md: four example messages as the backend prints them"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "61af596",
+   "time": "2026-11-25T06:45",
+   "subject": "Span notices: one value when both ends print the same; RCS elevation as \"a° ~ b°\""
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "f584f52",
+   "time": "2026-11-25T06:43",
+   "subject": "Config file: a target rcs entry that is not a VB signature mapping is a 400, never ignored"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "a5b0529",
+   "time": "2026-11-25T06:42",
+   "subject": "Request validation errors in Korean: field and received value, still 400 bad_request"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "fc8e773",
+   "time": "2026-11-25T06:39",
+   "subject": "Tests: plain descriptions instead of internal item IDs in two comments"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "f27a3d5",
+   "time": "2026-11-25T06:38",
+   "subject": "Doc residuals: example config names the 상황도 [불러오기] button; 설정 파일 wording; smoke date"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "06ffbaf",
+   "time": "2026-11-25T06:38",
+   "subject": "Area tab: \"기준 Pd\" label; comments say \"R 끝 Pd\""
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "8ba5a4a",
+   "time": "2026-11-25T06:38",
+   "subject": "Own-ship wording: 자함 for the scene's target object in messages and API.md"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "753ca7e",
+   "time": "2026-11-25T06:36",
+   "subject": "Heading wording: 헤딩 (the screen's word) instead of 침로 in the backend message and API.md"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "c875c21",
+   "time": "2026-11-25T05:49",
+   "subject": "README: delivery date 2026-11-25, as validation/CHANGELOG_수치.md states"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "8e27e7c",
+   "time": "2026-11-25T05:42",
+   "subject": "CHANGELOG_수치.md: plain names and dates instead of item IDs and hashes; the 11-25 state"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "52877c4",
+   "time": "2026-11-25T05:42",
+   "subject": "validation: results regenerated at the final code; run_red.log lists the delivered files"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "c48125a",
+   "time": "2026-11-25T05:22",
+   "subject": "Limits doc §1.1: the fixed sea boundary stays; the C test and the next-version plan"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "37193f6",
+   "time": "2026-11-25T05:19",
+   "subject": "Revert C1 (sea boundary): the delivery keeps the fixed boundary (NO_GO)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "4f6b17e",
+   "time": "2026-11-25T03:34",
+   "subject": "N-UIF-02 (API.md): \"R 끝 Pd\" in the two places the first commit missed"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "45a7b93",
+   "time": "2026-11-25T03:33",
+   "subject": "Input checks (API.md): date the new rules 2026-11-25 instead of \"rf-2026.11 송부본부터\""
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "b3b39d9",
+   "time": "2026-11-25T03:31",
+   "subject": "Doc residuals: README run blocks, TMPDIR created first, standard_cases_08.json source"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "5b5f9a0",
+   "time": "2026-11-25T03:30",
+   "subject": "gfs.remove_stale_dirs: an OSError in one directory is reported on stderr, start-up goes on"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "70a6c79",
+   "time": "2026-11-25T03:30",
+   "subject": "Input checks: refuse out-of-range positions, non-string names, unknown rcs_profile, non-finite RCS"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "d6eea0c",
+   "time": "2026-11-25T03:05",
+   "subject": "Korean messages: the core's remaining English errors name the field and the received value"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "68607f4",
+   "time": "2026-11-25T02:52",
+   "subject": "C1 (sea boundary) docs: describe the 'local' default and KSDPA_SEA_BOUNDARY"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "538bbbe",
+   "time": "2026-11-25T02:46",
+   "subject": "API.md prose: ksdpa.radar, pipeline.blend_column, two_ray / free_space with the elevation pattern"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "931ca99",
+   "time": "2026-11-25T02:44",
+   "subject": "T-UIB-01: the GFS layer says what it shows (등압면만 · 1000 hPa 고도 기준 · 증발 덕트 없음)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "272bffb",
+   "time": "2026-11-25T02:40",
+   "subject": "N-UIF-02: one UI term per thing (사분, 불러오기, 자함 높이, 위협 레이더 없음, Pd, GFS 레이어)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "d9ccd23",
+   "time": "2026-11-25T02:24",
+   "subject": "C1 (sea boundary): test and bc docstrings state what the release measures"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "1003d9a",
+   "time": "2026-11-25T01:56",
+   "subject": "C1 (sea boundary): 'local' is the default (PEConfig.sea and KSDPA_SEA_BOUNDARY)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "1197eed",
+   "time": "2026-11-25T01:46",
+   "subject": "C1 (sea boundary): KSDPA_SEA_BOUNDARY in the UI backend, default 'fixed'"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "9247bfa",
+   "time": "2026-11-25T01:45",
+   "subject": "C1 (sea boundary): SeaBoundary 'local' / 'fixed' in the core, default 'fixed'"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "fd4427c",
+   "time": "2026-11-24T15:23",
+   "subject": "B-VAL-02, validation docs: release values, run times, py3.9 vs py3.10; no machine paths"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "f65739c",
+   "time": "2026-11-24T15:23",
+   "subject": "X-PKG-01, P-PKG-01/03/04, Q45: Korean README, VERSION and docs/"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "89e0dbf",
+   "time": "2026-11-24T15:11",
+   "subject": "P-PKG-03: ksdpa 0.4.0; requirements pinned to the tested Python 3.10"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "b55c8b5",
+   "time": "2026-11-24T15:11",
+   "subject": "P-PKG-02: drop the internal-only files; export-ignore the dev files"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "d624f90",
+   "time": "2026-11-24T15:10",
+   "subject": "X-RAD-01, X-RAD-02, T-RAD-01 (doc): RadarSpec and Shnidman docs; Korean SpecIncompleteError"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "c564733",
+   "time": "2026-11-24T15:10",
+   "subject": "X-ENV-04: inputs outside a model's range get a notice, not a silent extrapolation"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "6def9fa",
+   "time": "2026-11-24T15:10",
+   "subject": "X-ENG-01/02/03, X-ENV-01/02: core docs say what the code does"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "008881a",
+   "time": "2026-11-24T14:47",
+   "subject": "validation: results regenerated with the release code; CHANGELOG_수치.md"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "c474372",
+   "time": "2026-11-24T14:01",
+   "subject": "T-UIB-02: the two_ray and free_space comparison methods apply the elevation pattern"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "0762529",
+   "time": "2026-11-24T13:52",
+   "subject": "B-UIB-03: the config export writes an uploaded RCS so it reads back the same"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "095dc70",
+   "time": "2026-11-24T13:47",
+   "subject": "B-UIB-04: duct kind and EDH fallback at 50 m, as API.md says"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "be086f6",
+   "time": "2026-11-24T13:42",
+   "subject": "T-ENV-01: GFS land columns at gh - orog; their 0-2 m on the 2 m -> 0.995-sigma gradient"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "07c795b",
+   "time": "2026-11-24T13:34",
+   "subject": "T-ENV-02: one saturation vapour pressure (Buck 1981 + f(p)); RH = e / e_s; manual q from e"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "f56d2cf",
+   "time": "2026-11-24T13:29",
+   "subject": "T-ENG-03: one standard earth, a_e = 1e6/0.118 m (0.118 M/m), everywhere"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "be16e7c",
+   "time": "2026-11-24T13:23",
+   "subject": "T-ENG-02: full-path solver grid n_z = 2^k + 1 (DST-I on an FFT of 2^(k+1))"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "4869f13",
+   "time": "2026-11-24T12:23",
+   "subject": "SeaBoundary 'local': fix the verifier's findings (two-way, C2, fast cap, test frame)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "436d35e",
+   "time": "2026-11-24T12:21",
+   "subject": "S-UIF-01: the map pages share their polar grid, view and toolbar note code"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "9e047a1",
+   "time": "2026-11-24T12:09",
+   "subject": "X-UIF-01: frontend comments point to what ships"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "057a48e",
+   "time": "2026-11-24T12:08",
+   "subject": "B-UIF-03: the release dev server listens on 127.0.0.1 only; remote viewing is opt-in"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "b6ae5c4",
+   "time": "2026-11-24T12:07",
+   "subject": "B-UIF-02: the own-ship RCS '기본값' button is always shown"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "70f69e7",
+   "time": "2026-11-24T12:07",
+   "subject": "B-UIF-01: the route's failed-point ✕ is drawn so it can be seen"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "d777e1e",
+   "time": "2026-11-24T12:06",
+   "subject": "S-UIF-02: one copy of the small frontend helpers"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "1bed7ab",
+   "time": "2026-11-24T12:03",
+   "subject": "N-UIF-01: frontend names say what they hold"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "ac587ad",
+   "time": "2026-11-24T12:02",
+   "subject": "D-UIF-04: drop the old-backend and old-localStorage branches; LS_KEY v4"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "66c1e20",
+   "time": "2026-11-25T11:00",
+   "subject": "docs: SUM and IDD after review (accuracy fixes, cover and index, figure and table layout)"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "f2c9489",
+   "time": "2026-11-25T10:40",
+   "subject": "API.md: rcs_rev on a config with an RCS, the last coverage ring, area threats optional"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "054456e",
+   "time": "2026-11-25T10:22",
+   "subject": "Limits doc §5: the exported RCS grid is the upload's own uniform step when it has one"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "dadd050",
+   "time": "2026-11-25T10:22",
+   "subject": "example_config.yaml: the target comment says the RCS in use stays"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "c2d272b",
+   "time": "2026-11-25T08:59",
+   "subject": "docs: software user manual (KSDPA-RF-SUM-001, .docx and .pdf)"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "09bebab",
+   "time": "2026-11-25T08:05",
+   "subject": "docs: interface design description (KSDPA-RF-IDD-001, .docx and .pdf)"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "1e370ea",
+   "time": "2026-11-25T07:57",
+   "subject": "API.md: four example messages as the backend prints them"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "61af596",
+   "time": "2026-11-25T06:45",
+   "subject": "Span notices: one value when both ends print the same; RCS elevation as \"a° ~ b°\""
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "f584f52",
+   "time": "2026-11-25T06:43",
+   "subject": "Config file: a target rcs entry that is not a VB signature mapping is a 400, never ignored"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "a5b0529",
+   "time": "2026-11-25T06:42",
+   "subject": "Request validation errors in Korean: field and received value, still 400 bad_request"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "fc8e773",
+   "time": "2026-11-25T06:39",
+   "subject": "Tests: plain descriptions instead of internal item IDs in two comments"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "f27a3d5",
+   "time": "2026-11-25T06:38",
+   "subject": "Doc residuals: example config names the 상황도 [불러오기] button; 설정 파일 wording; smoke date"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "06ffbaf",
+   "time": "2026-11-25T06:38",
+   "subject": "Area tab: \"기준 Pd\" label; comments say \"R 끝 Pd\""
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "8ba5a4a",
+   "time": "2026-11-25T06:38",
+   "subject": "Own-ship wording: 자함 for the scene's target object in messages and API.md"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "753ca7e",
+   "time": "2026-11-25T06:36",
+   "subject": "Heading wording: 헤딩 (the screen's word) instead of 침로 in the backend message and API.md"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "c875c21",
+   "time": "2026-11-25T05:49",
+   "subject": "README: delivery date 2026-11-25, as validation/CHANGELOG_수치.md states"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "8e27e7c",
+   "time": "2026-11-25T05:42",
+   "subject": "CHANGELOG_수치.md: plain names and dates instead of item IDs and hashes; the 11-25 state"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "52877c4",
+   "time": "2026-11-25T05:42",
+   "subject": "validation: results regenerated at the final code; run_red.log lists the delivered files"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "c48125a",
+   "time": "2026-11-25T05:22",
+   "subject": "Limits doc §1.1: the fixed sea boundary stays; the C test and the next-version plan"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "37193f6",
+   "time": "2026-11-25T05:19",
+   "subject": "Revert C1 (sea boundary): the delivery keeps the fixed boundary (NO_GO)"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "4f6b17e",
+   "time": "2026-11-25T03:34",
+   "subject": "N-UIF-02 (API.md): \"R 끝 Pd\" in the two places the first commit missed"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "45a7b93",
+   "time": "2026-11-25T03:33",
+   "subject": "Input checks (API.md): date the new rules 2026-11-25 instead of \"rf-2026.11 송부본부터\""
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "b3b39d9",
+   "time": "2026-11-25T03:31",
+   "subject": "Doc residuals: README run blocks, TMPDIR created first, standard_cases_08.json source"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "5b5f9a0",
+   "time": "2026-11-25T03:30",
+   "subject": "gfs.remove_stale_dirs: an OSError in one directory is reported on stderr, start-up goes on"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "70a6c79",
+   "time": "2026-11-25T03:30",
+   "subject": "Input checks: refuse out-of-range positions, non-string names, unknown rcs_profile, non-finite RCS"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "d6eea0c",
+   "time": "2026-11-25T03:05",
+   "subject": "Korean messages: the core's remaining English errors name the field and the received value"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "68607f4",
+   "time": "2026-11-25T02:52",
+   "subject": "C1 (sea boundary) docs: describe the 'local' default and KSDPA_SEA_BOUNDARY"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "538bbbe",
+   "time": "2026-11-25T02:46",
+   "subject": "API.md prose: ksdpa.radar, pipeline.blend_column, two_ray / free_space with the elevation pattern"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "931ca99",
+   "time": "2026-11-25T02:44",
+   "subject": "T-UIB-01: the GFS layer says what it shows (등압면만 · 1000 hPa 고도 기준 · 증발 덕트 없음)"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "272bffb",
+   "time": "2026-11-25T02:40",
+   "subject": "N-UIF-02: one UI term per thing (사분, 불러오기, 자함 높이, 위협 레이더 없음, Pd, GFS 레이어)"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "d9ccd23",
+   "time": "2026-11-25T02:24",
+   "subject": "C1 (sea boundary): test and bc docstrings state what the release measures"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "1003d9a",
+   "time": "2026-11-25T01:56",
+   "subject": "C1 (sea boundary): 'local' is the default (PEConfig.sea and KSDPA_SEA_BOUNDARY)"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "1197eed",
+   "time": "2026-11-25T01:46",
+   "subject": "C1 (sea boundary): KSDPA_SEA_BOUNDARY in the UI backend, default 'fixed'"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "9247bfa",
+   "time": "2026-11-25T01:45",
+   "subject": "C1 (sea boundary): SeaBoundary 'local' / 'fixed' in the core, default 'fixed'"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "fd4427c",
+   "time": "2026-11-24T15:23",
+   "subject": "B-VAL-02, validation docs: release values, run times, py3.9 vs py3.10; no machine paths"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "f65739c",
+   "time": "2026-11-24T15:23",
+   "subject": "X-PKG-01, P-PKG-01/03/04, Q45: Korean README, VERSION and docs/"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "89e0dbf",
+   "time": "2026-11-24T15:11",
+   "subject": "P-PKG-03: ksdpa 0.4.0; requirements pinned to the tested Python 3.10"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "b55c8b5",
+   "time": "2026-11-24T15:11",
+   "subject": "P-PKG-02: drop the internal-only files; export-ignore the dev files"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "d624f90",
+   "time": "2026-11-24T15:10",
+   "subject": "X-RAD-01, X-RAD-02, T-RAD-01 (doc): RadarSpec and Shnidman docs; Korean SpecIncompleteError"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "c564733",
+   "time": "2026-11-24T15:10",
+   "subject": "X-ENV-04: inputs outside a model's range get a notice, not a silent extrapolation"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "6def9fa",
+   "time": "2026-11-24T15:10",
+   "subject": "X-ENG-01/02/03, X-ENV-01/02: core docs say what the code does"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "008881a",
+   "time": "2026-11-24T14:47",
+   "subject": "validation: results regenerated with the release code; CHANGELOG_수치.md"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "c474372",
+   "time": "2026-11-24T14:01",
+   "subject": "T-UIB-02: the two_ray and free_space comparison methods apply the elevation pattern"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "0762529",
+   "time": "2026-11-24T13:52",
+   "subject": "B-UIB-03: the config export writes an uploaded RCS so it reads back the same"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "095dc70",
+   "time": "2026-11-24T13:47",
+   "subject": "B-UIB-04: duct kind and EDH fallback at 50 m, as API.md says"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "be086f6",
+   "time": "2026-11-24T13:42",
+   "subject": "T-ENV-01: GFS land columns at gh - orog; their 0-2 m on the 2 m -> 0.995-sigma gradient"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "07c795b",
+   "time": "2026-11-24T13:34",
+   "subject": "T-ENV-02: one saturation vapour pressure (Buck 1981 + f(p)); RH = e / e_s; manual q from e"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "f56d2cf",
+   "time": "2026-11-24T13:29",
+   "subject": "T-ENG-03: one standard earth, a_e = 1e6/0.118 m (0.118 M/m), everywhere"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "be16e7c",
+   "time": "2026-11-24T13:23",
+   "subject": "T-ENG-02: full-path solver grid n_z = 2^k + 1 (DST-I on an FFT of 2^(k+1))"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "4869f13",
+   "time": "2026-11-24T12:23",
+   "subject": "SeaBoundary 'local': fix the verifier's findings (two-way, C2, fast cap, test frame)"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "436d35e",
+   "time": "2026-11-24T12:21",
+   "subject": "S-UIF-01: the map pages share their polar grid, view and toolbar note code"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "9e047a1",
+   "time": "2026-11-24T12:09",
+   "subject": "X-UIF-01: frontend comments point to what ships"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "057a48e",
+   "time": "2026-11-24T12:08",
+   "subject": "B-UIF-03: the release dev server listens on 127.0.0.1 only; remote viewing is opt-in"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "b6ae5c4",
+   "time": "2026-11-24T12:07",
+   "subject": "B-UIF-02: the own-ship RCS '기본값' button is always shown"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "70f69e7",
+   "time": "2026-11-24T12:07",
+   "subject": "B-UIF-01: the route's failed-point ✕ is drawn so it can be seen"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "d777e1e",
+   "time": "2026-11-24T12:06",
+   "subject": "S-UIF-02: one copy of the small frontend helpers"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "1bed7ab",
+   "time": "2026-11-24T12:03",
+   "subject": "N-UIF-01: frontend names say what they hold"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "ac587ad",
+   "time": "2026-11-24T12:02",
+   "subject": "D-UIF-04: drop the old-backend and old-localStorage branches; LS_KEY v4"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "66c1e20",
+   "time": "2026-11-25T11:00",
+   "subject": "docs: SUM and IDD after review (accuracy fixes, cover and index, figure and table layout)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "f2c9489",
+   "time": "2026-11-25T10:40",
+   "subject": "API.md: rcs_rev on a config with an RCS, the last coverage ring, area threats optional"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "054456e",
+   "time": "2026-11-25T10:22",
+   "subject": "Limits doc §5: the exported RCS grid is the upload's own uniform step when it has one"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "dadd050",
+   "time": "2026-11-25T10:22",
+   "subject": "example_config.yaml: the target comment says the RCS in use stays"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "c2d272b",
+   "time": "2026-11-25T08:59",
+   "subject": "docs: software user manual (KSDPA-RF-SUM-001, .docx and .pdf)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "09bebab",
+   "time": "2026-11-25T08:05",
+   "subject": "docs: interface design description (KSDPA-RF-IDD-001, .docx and .pdf)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "1e370ea",
+   "time": "2026-11-25T07:57",
+   "subject": "API.md: four example messages as the backend prints them"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "61af596",
+   "time": "2026-11-25T06:45",
+   "subject": "Span notices: one value when both ends print the same; RCS elevation as \"a° ~ b°\""
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "f584f52",
+   "time": "2026-11-25T06:43",
+   "subject": "Config file: a target rcs entry that is not a VB signature mapping is a 400, never ignored"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "a5b0529",
+   "time": "2026-11-25T06:42",
+   "subject": "Request validation errors in Korean: field and received value, still 400 bad_request"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "fc8e773",
+   "time": "2026-11-25T06:39",
+   "subject": "Tests: plain descriptions instead of internal item IDs in two comments"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "f27a3d5",
+   "time": "2026-11-25T06:38",
+   "subject": "Doc residuals: example config names the 상황도 [불러오기] button; 설정 파일 wording; smoke date"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "06ffbaf",
+   "time": "2026-11-25T06:38",
+   "subject": "Area tab: \"기준 Pd\" label; comments say \"R 끝 Pd\""
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "8ba5a4a",
+   "time": "2026-11-25T06:38",
+   "subject": "Own-ship wording: 자함 for the scene's target object in messages and API.md"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "753ca7e",
+   "time": "2026-11-25T06:36",
+   "subject": "Heading wording: 헤딩 (the screen's word) instead of 침로 in the backend message and API.md"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "c875c21",
+   "time": "2026-11-25T05:49",
+   "subject": "README: delivery date 2026-11-25, as validation/CHANGELOG_수치.md states"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "8e27e7c",
+   "time": "2026-11-25T05:42",
+   "subject": "CHANGELOG_수치.md: plain names and dates instead of item IDs and hashes; the 11-25 state"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "52877c4",
+   "time": "2026-11-25T05:42",
+   "subject": "validation: results regenerated at the final code; run_red.log lists the delivered files"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "c48125a",
+   "time": "2026-11-25T05:22",
+   "subject": "Limits doc §1.1: the fixed sea boundary stays; the C test and the next-version plan"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "37193f6",
+   "time": "2026-11-25T05:19",
+   "subject": "Revert C1 (sea boundary): the delivery keeps the fixed boundary (NO_GO)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "4f6b17e",
+   "time": "2026-11-25T03:34",
+   "subject": "N-UIF-02 (API.md): \"R 끝 Pd\" in the two places the first commit missed"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "45a7b93",
+   "time": "2026-11-25T03:33",
+   "subject": "Input checks (API.md): date the new rules 2026-11-25 instead of \"rf-2026.11 송부본부터\""
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "b3b39d9",
+   "time": "2026-11-25T03:31",
+   "subject": "Doc residuals: README run blocks, TMPDIR created first, standard_cases_08.json source"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "5b5f9a0",
+   "time": "2026-11-25T03:30",
+   "subject": "gfs.remove_stale_dirs: an OSError in one directory is reported on stderr, start-up goes on"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "70a6c79",
+   "time": "2026-11-25T03:30",
+   "subject": "Input checks: refuse out-of-range positions, non-string names, unknown rcs_profile, non-finite RCS"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "d6eea0c",
+   "time": "2026-11-25T03:05",
+   "subject": "Korean messages: the core's remaining English errors name the field and the received value"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "68607f4",
+   "time": "2026-11-25T02:52",
+   "subject": "C1 (sea boundary) docs: describe the 'local' default and KSDPA_SEA_BOUNDARY"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "538bbbe",
+   "time": "2026-11-25T02:46",
+   "subject": "API.md prose: ksdpa.radar, pipeline.blend_column, two_ray / free_space with the elevation pattern"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "931ca99",
+   "time": "2026-11-25T02:44",
+   "subject": "T-UIB-01: the GFS layer says what it shows (등압면만 · 1000 hPa 고도 기준 · 증발 덕트 없음)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "272bffb",
+   "time": "2026-11-25T02:40",
+   "subject": "N-UIF-02: one UI term per thing (사분, 불러오기, 자함 높이, 위협 레이더 없음, Pd, GFS 레이어)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "d9ccd23",
+   "time": "2026-11-25T02:24",
+   "subject": "C1 (sea boundary): test and bc docstrings state what the release measures"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "1003d9a",
+   "time": "2026-11-25T01:56",
+   "subject": "C1 (sea boundary): 'local' is the default (PEConfig.sea and KSDPA_SEA_BOUNDARY)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "1197eed",
+   "time": "2026-11-25T01:46",
+   "subject": "C1 (sea boundary): KSDPA_SEA_BOUNDARY in the UI backend, default 'fixed'"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "9247bfa",
+   "time": "2026-11-25T01:45",
+   "subject": "C1 (sea boundary): SeaBoundary 'local' / 'fixed' in the core, default 'fixed'"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "fd4427c",
+   "time": "2026-11-24T15:23",
+   "subject": "B-VAL-02, validation docs: release values, run times, py3.9 vs py3.10; no machine paths"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "f65739c",
+   "time": "2026-11-24T15:23",
+   "subject": "X-PKG-01, P-PKG-01/03/04, Q45: Korean README, VERSION and docs/"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "89e0dbf",
+   "time": "2026-11-24T15:11",
+   "subject": "P-PKG-03: ksdpa 0.4.0; requirements pinned to the tested Python 3.10"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "b55c8b5",
+   "time": "2026-11-24T15:11",
+   "subject": "P-PKG-02: drop the internal-only files; export-ignore the dev files"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "d624f90",
+   "time": "2026-11-24T15:10",
+   "subject": "X-RAD-01, X-RAD-02, T-RAD-01 (doc): RadarSpec and Shnidman docs; Korean SpecIncompleteError"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "c564733",
+   "time": "2026-11-24T15:10",
+   "subject": "X-ENV-04: inputs outside a model's range get a notice, not a silent extrapolation"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "6def9fa",
+   "time": "2026-11-24T15:10",
+   "subject": "X-ENG-01/02/03, X-ENV-01/02: core docs say what the code does"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "008881a",
+   "time": "2026-11-24T14:47",
+   "subject": "validation: results regenerated with the release code; CHANGELOG_수치.md"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "c474372",
+   "time": "2026-11-24T14:01",
+   "subject": "T-UIB-02: the two_ray and free_space comparison methods apply the elevation pattern"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "0762529",
+   "time": "2026-11-24T13:52",
+   "subject": "B-UIB-03: the config export writes an uploaded RCS so it reads back the same"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "095dc70",
+   "time": "2026-11-24T13:47",
+   "subject": "B-UIB-04: duct kind and EDH fallback at 50 m, as API.md says"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "be086f6",
+   "time": "2026-11-24T13:42",
+   "subject": "T-ENV-01: GFS land columns at gh - orog; their 0-2 m on the 2 m -> 0.995-sigma gradient"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "07c795b",
+   "time": "2026-11-24T13:34",
+   "subject": "T-ENV-02: one saturation vapour pressure (Buck 1981 + f(p)); RH = e / e_s; manual q from e"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "f56d2cf",
+   "time": "2026-11-24T13:29",
+   "subject": "T-ENG-03: one standard earth, a_e = 1e6/0.118 m (0.118 M/m), everywhere"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "be16e7c",
+   "time": "2026-11-24T13:23",
+   "subject": "T-ENG-02: full-path solver grid n_z = 2^k + 1 (DST-I on an FFT of 2^(k+1))"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "4869f13",
+   "time": "2026-11-24T12:23",
+   "subject": "SeaBoundary 'local': fix the verifier's findings (two-way, C2, fast cap, test frame)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "436d35e",
+   "time": "2026-11-24T12:21",
+   "subject": "S-UIF-01: the map pages share their polar grid, view and toolbar note code"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "9e047a1",
+   "time": "2026-11-24T12:09",
+   "subject": "X-UIF-01: frontend comments point to what ships"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "057a48e",
+   "time": "2026-11-24T12:08",
+   "subject": "B-UIF-03: the release dev server listens on 127.0.0.1 only; remote viewing is opt-in"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "b6ae5c4",
+   "time": "2026-11-24T12:07",
+   "subject": "B-UIF-02: the own-ship RCS '기본값' button is always shown"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "70f69e7",
+   "time": "2026-11-24T12:07",
+   "subject": "B-UIF-01: the route's failed-point ✕ is drawn so it can be seen"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "d777e1e",
+   "time": "2026-11-24T12:06",
+   "subject": "S-UIF-02: one copy of the small frontend helpers"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "1bed7ab",
+   "time": "2026-11-24T12:03",
+   "subject": "N-UIF-01: frontend names say what they hold"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "ac587ad",
+   "time": "2026-11-24T12:02",
+   "subject": "D-UIF-04: drop the old-backend and old-localStorage branches; LS_KEY v4"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "66c1e20",
+   "time": "2026-11-25T11:00",
+   "subject": "docs: SUM and IDD after review (accuracy fixes, cover and index, figure and table layout)"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "f2c9489",
+   "time": "2026-11-25T10:40",
+   "subject": "API.md: rcs_rev on a config with an RCS, the last coverage ring, area threats optional"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "054456e",
+   "time": "2026-11-25T10:22",
+   "subject": "Limits doc §5: the exported RCS grid is the upload's own uniform step when it has one"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "dadd050",
+   "time": "2026-11-25T10:22",
+   "subject": "example_config.yaml: the target comment says the RCS in use stays"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "c2d272b",
+   "time": "2026-11-25T08:59",
+   "subject": "docs: software user manual (KSDPA-RF-SUM-001, .docx and .pdf)"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "09bebab",
+   "time": "2026-11-25T08:05",
+   "subject": "docs: interface design description (KSDPA-RF-IDD-001, .docx and .pdf)"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "1e370ea",
+   "time": "2026-11-25T07:57",
+   "subject": "API.md: four example messages as the backend prints them"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "61af596",
+   "time": "2026-11-25T06:45",
+   "subject": "Span notices: one value when both ends print the same; RCS elevation as \"a° ~ b°\""
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "f584f52",
+   "time": "2026-11-25T06:43",
+   "subject": "Config file: a target rcs entry that is not a VB signature mapping is a 400, never ignored"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "a5b0529",
+   "time": "2026-11-25T06:42",
+   "subject": "Request validation errors in Korean: field and received value, still 400 bad_request"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "fc8e773",
+   "time": "2026-11-25T06:39",
+   "subject": "Tests: plain descriptions instead of internal item IDs in two comments"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "f27a3d5",
+   "time": "2026-11-25T06:38",
+   "subject": "Doc residuals: example config names the 상황도 [불러오기] button; 설정 파일 wording; smoke date"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "06ffbaf",
+   "time": "2026-11-25T06:38",
+   "subject": "Area tab: \"기준 Pd\" label; comments say \"R 끝 Pd\""
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "8ba5a4a",
+   "time": "2026-11-25T06:38",
+   "subject": "Own-ship wording: 자함 for the scene's target object in messages and API.md"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "753ca7e",
+   "time": "2026-11-25T06:36",
+   "subject": "Heading wording: 헤딩 (the screen's word) instead of 침로 in the backend message and API.md"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "c875c21",
+   "time": "2026-11-25T05:49",
+   "subject": "README: delivery date 2026-11-25, as validation/CHANGELOG_수치.md states"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "8e27e7c",
+   "time": "2026-11-25T05:42",
+   "subject": "CHANGELOG_수치.md: plain names and dates instead of item IDs and hashes; the 11-25 state"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "52877c4",
+   "time": "2026-11-25T05:42",
+   "subject": "validation: results regenerated at the final code; run_red.log lists the delivered files"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "c48125a",
+   "time": "2026-11-25T05:22",
+   "subject": "Limits doc §1.1: the fixed sea boundary stays; the C test and the next-version plan"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "37193f6",
+   "time": "2026-11-25T05:19",
+   "subject": "Revert C1 (sea boundary): the delivery keeps the fixed boundary (NO_GO)"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "4f6b17e",
+   "time": "2026-11-25T03:34",
+   "subject": "N-UIF-02 (API.md): \"R 끝 Pd\" in the two places the first commit missed"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "45a7b93",
+   "time": "2026-11-25T03:33",
+   "subject": "Input checks (API.md): date the new rules 2026-11-25 instead of \"rf-2026.11 송부본부터\""
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "b3b39d9",
+   "time": "2026-11-25T03:31",
+   "subject": "Doc residuals: README run blocks, TMPDIR created first, standard_cases_08.json source"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "5b5f9a0",
+   "time": "2026-11-25T03:30",
+   "subject": "gfs.remove_stale_dirs: an OSError in one directory is reported on stderr, start-up goes on"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "70a6c79",
+   "time": "2026-11-25T03:30",
+   "subject": "Input checks: refuse out-of-range positions, non-string names, unknown rcs_profile, non-finite RCS"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "d6eea0c",
+   "time": "2026-11-25T03:05",
+   "subject": "Korean messages: the core's remaining English errors name the field and the received value"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "68607f4",
+   "time": "2026-11-25T02:52",
+   "subject": "C1 (sea boundary) docs: describe the 'local' default and KSDPA_SEA_BOUNDARY"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "538bbbe",
+   "time": "2026-11-25T02:46",
+   "subject": "API.md prose: ksdpa.radar, pipeline.blend_column, two_ray / free_space with the elevation pattern"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "931ca99",
+   "time": "2026-11-25T02:44",
+   "subject": "T-UIB-01: the GFS layer says what it shows (등압면만 · 1000 hPa 고도 기준 · 증발 덕트 없음)"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "272bffb",
+   "time": "2026-11-25T02:40",
+   "subject": "N-UIF-02: one UI term per thing (사분, 불러오기, 자함 높이, 위협 레이더 없음, Pd, GFS 레이어)"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "d9ccd23",
+   "time": "2026-11-25T02:24",
+   "subject": "C1 (sea boundary): test and bc docstrings state what the release measures"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "1003d9a",
+   "time": "2026-11-25T01:56",
+   "subject": "C1 (sea boundary): 'local' is the default (PEConfig.sea and KSDPA_SEA_BOUNDARY)"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "1197eed",
+   "time": "2026-11-25T01:46",
+   "subject": "C1 (sea boundary): KSDPA_SEA_BOUNDARY in the UI backend, default 'fixed'"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "9247bfa",
+   "time": "2026-11-25T01:45",
+   "subject": "C1 (sea boundary): SeaBoundary 'local' / 'fixed' in the core, default 'fixed'"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "fd4427c",
+   "time": "2026-11-24T15:23",
+   "subject": "B-VAL-02, validation docs: release values, run times, py3.9 vs py3.10; no machine paths"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "f65739c",
+   "time": "2026-11-24T15:23",
+   "subject": "X-PKG-01, P-PKG-01/03/04, Q45: Korean README, VERSION and docs/"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "89e0dbf",
+   "time": "2026-11-24T15:11",
+   "subject": "P-PKG-03: ksdpa 0.4.0; requirements pinned to the tested Python 3.10"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "b55c8b5",
+   "time": "2026-11-24T15:11",
+   "subject": "P-PKG-02: drop the internal-only files; export-ignore the dev files"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "d624f90",
+   "time": "2026-11-24T15:10",
+   "subject": "X-RAD-01, X-RAD-02, T-RAD-01 (doc): RadarSpec and Shnidman docs; Korean SpecIncompleteError"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "c564733",
+   "time": "2026-11-24T15:10",
+   "subject": "X-ENV-04: inputs outside a model's range get a notice, not a silent extrapolation"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "6def9fa",
+   "time": "2026-11-24T15:10",
+   "subject": "X-ENG-01/02/03, X-ENV-01/02: core docs say what the code does"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "008881a",
+   "time": "2026-11-24T14:47",
+   "subject": "validation: results regenerated with the release code; CHANGELOG_수치.md"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "c474372",
+   "time": "2026-11-24T14:01",
+   "subject": "T-UIB-02: the two_ray and free_space comparison methods apply the elevation pattern"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "0762529",
+   "time": "2026-11-24T13:52",
+   "subject": "B-UIB-03: the config export writes an uploaded RCS so it reads back the same"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "095dc70",
+   "time": "2026-11-24T13:47",
+   "subject": "B-UIB-04: duct kind and EDH fallback at 50 m, as API.md says"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "be086f6",
+   "time": "2026-11-24T13:42",
+   "subject": "T-ENV-01: GFS land columns at gh - orog; their 0-2 m on the 2 m -> 0.995-sigma gradient"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "07c795b",
+   "time": "2026-11-24T13:34",
+   "subject": "T-ENV-02: one saturation vapour pressure (Buck 1981 + f(p)); RH = e / e_s; manual q from e"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "f56d2cf",
+   "time": "2026-11-24T13:29",
+   "subject": "T-ENG-03: one standard earth, a_e = 1e6/0.118 m (0.118 M/m), everywhere"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "be16e7c",
+   "time": "2026-11-24T13:23",
+   "subject": "T-ENG-02: full-path solver grid n_z = 2^k + 1 (DST-I on an FFT of 2^(k+1))"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "4869f13",
+   "time": "2026-11-24T12:23",
+   "subject": "SeaBoundary 'local': fix the verifier's findings (two-way, C2, fast cap, test frame)"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "436d35e",
+   "time": "2026-11-24T12:21",
+   "subject": "S-UIF-01: the map pages share their polar grid, view and toolbar note code"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "9e047a1",
+   "time": "2026-11-24T12:09",
+   "subject": "X-UIF-01: frontend comments point to what ships"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "057a48e",
+   "time": "2026-11-24T12:08",
+   "subject": "B-UIF-03: the release dev server listens on 127.0.0.1 only; remote viewing is opt-in"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "b6ae5c4",
+   "time": "2026-11-24T12:07",
+   "subject": "B-UIF-02: the own-ship RCS '기본값' button is always shown"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "70f69e7",
+   "time": "2026-11-24T12:07",
+   "subject": "B-UIF-01: the route's failed-point ✕ is drawn so it can be seen"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "d777e1e",
+   "time": "2026-11-24T12:06",
+   "subject": "S-UIF-02: one copy of the small frontend helpers"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "1bed7ab",
+   "time": "2026-11-24T12:03",
+   "subject": "N-UIF-01: frontend names say what they hold"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "ac587ad",
+   "time": "2026-11-24T12:02",
+   "subject": "D-UIF-04: drop the old-backend and old-localStorage branches; LS_KEY v4"
+  }
+ ],
+ "notes": [],
+ "last_activity": {
+  "fretsim": "2026-04-30",
+  "DiodeUnitDesign": "2026-11-09",
+  "beamnet": "2026-10-30",
+  "BoKo": "2026-11-24",
+  "PLOIM": "2026-11-25",
+  "fullwave": "2026-11-09",
+  "metasurantenna_draw": "2026-10-07",
+  "laggedOIM": "2026-11-09",
+  "RLSA": "2026-11-16",
+  "fdtd_gpu": "2026-10-31",
+  "archive-2026": "2026-11-10",
+  "EMsimulations": "2026-07-21",
+  "Dissertation": "2026-11-25",
+  "CombinatorialOptimization": "2026-10-16",
+  "sunflower_nn": "2026-11-10",
+  "Hanhwa": "2026-11-25",
+  "~2023": "2023-12-20",
+  "2025": "2025-12-22",
+  "2024": "2024-11-19",
+  "CV": "2026-11-23"
+ },
+ "summary": {
+  "headline": "PLOIM은 Sci. Adv.판 v6 심사 루프(3라운드 major revision)를 멈추고 letter v5.8을 뼈대로 그림 설계를 g→m까지 반복했고, Hanhwa는 RF 송부판 rf-2026.11의 코드 정리·매뉴얼 두 권·패키지 작업을 했다.",
+  "projects": [
+   {
+    "id": "PLOIM",
+    "done": [
+     "dOIM 전환 문단 하나만 보강한 `letter_v5.7`(en/ko, v5.6 대비 빨간색 표시본 포함)을 만들었다.",
+     "Science Advances판 v6 초안(en/ko 각 10쪽, 그림 fig1–5, 원칙 `paper/work/v6/PRINCIPLES.md` 9항목)을 만들고 v6.1부터 메모를 못 본 reviewer 심사 루프를 돌렸으나, 3라운드도 major revision(주요 지적 8 → 3개, 벤치마크 기술·형식)이었다.",
+     "연구자가 v6.x를 '5.7보다 번잡해졌다'고 평가해, 식 (10) 증명을 supplementary로 내린 letter v5.8을 만들고 Sci. Adv.로 가더라도 뼈대는 v5.8로 하기로 했다.",
+     "dSB를 다른 머신과 같은 규칙(개발 집합 14개 그래프)으로 튜닝해 다시 돌렸다: 도달 43/54·평균 격차 0.083 ± 0.017 %(표 I 설정 40·0.099 ± 0.019, phase-lag dOIM 45·0.073 ± 0.015).",
+     "Gset lag×noise 대조군 실행을 끝내 `work/v5_en/gset_controls_20261124.md`에 정리하고, 본문은 고치지 않은 채 SM 예비 자료를 `work/sm_prep_20261125/`에 모았다(2×2 대조군, 튜닝 격자, 지연 항등식, 식 (10) 증명, 지연 분산 데이터, README).",
+     "v5.8 그림 설계를 g→m으로 반복해 `letter_v5.8m`(en/ko, md·pdf·docx)까지 빌드했다: inset 제거, γ 축 에너지 곡선, 속도 |dθ_i/dt − Ω| 지도(γ = 0.78부터, γ = 0 세로선), 그림 3 flips 패널 삭제, 그림 4 빈 축 오류 수정; 기록은 `work/v5_en/FIGURE_CLAIMS_v58.md`."
+    ],
+    "issues": [
+     "투고처 미정: 연구자는 'Letter로 낼지 Sci. Adv.로 낼지 모르겠다'고 했고, Claude 판단은 '내용은 Letter'(공정 튜닝 dSB와 43 vs 45로 동등, CAC는 Gset 46으로 더 좋음, 하드웨어 실험 없음). 연구자 결정 필요.",
+     "그림 3·4 미확정: 연구자가 설계 m의 그림 3 (a)는 그림 1과 겹치고 (b)는 의미가 없으며 (d)는 애매하고, 그림 4의 Gset 표현도 전달력이 없다고 지적함.",
+     "공정 튜닝 dSB(43)와 대조군 결과는 표 I에 영향이 있으나 본문·표에는 미반영(연구자: '일단 수정은 하지 말자').",
+     "00:27에 요청한 버전 정리(교수님과 주고받은 판과 letter 5.8만 남기고 삭제, 5.8에 v4.3 대비 차이 기록)는 수행 여부가 기록에서 확인되지 않음.",
+     "Sci. Adv. 본문 한도(약 15,000단어, 그림+표 10개, 참고문헌 약 80개)는 3자 정리 기준이고 공식 페이지는 자동 접근이 막혀 확인하지 못함."
+    ],
+    "next": [
+     "'장과 반대인 스핀 수 대 γ' 계산과 느린 ramp 검사가 끝나면 그림 3·4 후보를 묶어 제안받기(세션 마지막 응답 기준 계산 대기 중).",
+     "dOIM α 스캔의 0.475·0.49π 점을 간격 0.005로 재실행한 결과 반영(0.49π는 간격 0.02에서 붕괴해 제외된 상태).",
+     "그림 4 벤치마크 표현 재설계: 문헌(Leleu 2021, Mohseni 2022 리뷰)의 표준인 '크기 N 대 성공 확률·TTS', '고정 N의 TTS 분포'(Gset은 표) 참조; SK N = 1024 '스텝 예산 대 평균 에너지' 곡선이 후보로 그려져 있음."
+    ]
+   },
+   {
+    "id": "Hanhwa",
+    "done": [
+     "RF 송부판(태그 `rf-2026.11`, ksdpa 0.4.0, Python 3.10 고정) 정리 커밋 58개: 엔진·환경 수치 통일(T-ENG-02 격자 n_z = 2^k + 1, T-ENG-03 표준 지구 a_e = 1e6/0.118 m, T-ENV-02 포화수증기압 Buck 1981 + f(p), T-ENV-01 GFS 육지 열), UI 버그 수정(B-UIB-03/04, B-UIF-01/02/03), 내부 전용 파일 제거, 한국어 README·VERSION·docs.",
+     "해면 경계 C1('local'/'fixed')을 넣고 기본값을 'local'로 바꿨다가 NO_GO로 되돌려(37193f6), 송부판은 고정 경계를 유지하고 한계 문서 §1.1에 C 시험과 다음 버전 계획을 적었다.",
+     "UI 용어 통일(N-UIF-02: 사분, 불러오기, 자함 높이, 위협 레이더 없음, Pd, GFS 레이어; 헤딩·자함·기준 Pd)과 한국어 오류 메시지, 입력 검사 강화(범위 밖 위치, 문자열 아닌 이름, 모르는 rcs_profile, 유한하지 않은 RCS 거부)를 넣었다.",
+     "매뉴얼 두 권을 .docx/.pdf로 만들었다: 소프트웨어 사용자 매뉴얼(KSDPA-RF-SUM-001), 인터페이스 설계 기술서(KSDPA-RF-IDD-001); 검토 뒤 정확성·표지·색인·그림·표 배치를 고쳤고(66c1e20) API.md도 보완했다.",
+     "검증 결과를 최종 코드로 다시 만들고 `validation/CHANGELOG_수치.md`를 정리했으며, 세션 응답 기준 패키지 작성과 최종 검수 통과까지 됐다(`Hanhwa_delivery/KSDPA_RF_rf-2026.11.zip`).",
+     "송부 태그 `rf-2026.11` 상태의 서버를 별도 작업 폴더 `Hanhwa_rf_try`에서 다시 띄웠다(http://localhost:5174); 그 밖에 `paperwork/2026-11/12_해면반사_표준조사_1124/README.md` 수정, 파일 변경 8905개(주로 .json 6743, .log 654, 최근 경로 `archive/rf1124_tools/stage8/final_verify_r1/`)는 검증·스모크 출력으로 보임."
+    ],
+    "issues": [
+     "재실행한 서버는 C1·용어 통일이 들어가기 전의 `rf-2026.11` 태그 상태로 기록됨; 이후 커밋을 반영해 다시 띄웠는지는 기록에 없음.",
+     "해면 경계 'local'(C1)은 NO_GO 판정으로 이번 송부판에서 빠짐."
+    ],
+    "next": [
+     "매뉴얼 PDF 쪽 모양 확인 마무리(세션 마지막 응답 시점에 진행 중).",
+     "연구자가 재실행된 서버를 직접 눌러 확인(요청: '내가 눌러보게').",
+     "해면 경계 'local'은 다음 버전 계획으로 넘김(한계 문서 §1.1)."
+    ]
+   },
+   {
+    "id": "Dissertation",
+    "done": [
+     "파일 320개 변경(주로 .md 196, .png 54, .py 44); 최근 경로가 모두 `.claude/skills/nature-writing/` 아래라 원고가 아니라 skill 패키지 파일로 보임(PLOIM 세션의 cwd가 2026/Dissertation이었고 그 세션에서 nature-skills 패키지 다운로드를 요청함)."
+    ]
+   }
+  ],
+  "other": [
+   "study 폴더 폰 접속(세션 31ee0456): 새로 만들지 않고 이미 돌던 서버의 링크 https://nolcom1.tail9ae6b2.ts.net 을 그대로 쓰기로 했고, 서버가 꺼지지 않게 하는 조치를 했다(기존 설정은 비정상 종료일 때만 재시작; 바꾼 내용은 기록이 잘려 확인 안 됨). `/home/nol/study` 전체가 로그인 없이 읽기 전용이고 본인 Tailscale 기기에서만 접속됨. 아이폰(`iphone181`) Tailscale이 13일째 오프라인이라 앱을 켜야 열림.",
+   "미등록 폴더 변경: `2026/Hanhwa_rf_try` 1855개, `2026/Hanhwa_delivery` 205개, `2026/Hanhwa_rf_release` 144개, `2026/Hanhwa_proto_gamma` 6개(sea_boundary 관련 .py). 커밋 해시가 `2026/Hanhwa`와 같아(58개가 4곳에 중복 집계) Hanhwa 항목에 묶었다. projects에 경로 등록이 필요해 보임."
+  ],
+  "roadmap_suggestions": [
+   {
+    "id": "PLOIM",
+    "suggestion": "로드맵 문서의 원고 표 맨 위가 'v6 검토 루프(진행 중)'인데, 11-25에 v6 루프를 멈추고 뼈대를 letter v5.8로 정했음(현재 `letter_v5.8m`, 그림 설계 루프 진행 중). 표를 'letter v5.8 그림 루프(진행 중)' / 'v6·v6.1(보류, 참고)'로 갱신하고 next에 '그림 3·4 확정 → 투고처(Letter / Sci. Adv.) 결정'을 넣을 만함. 근거: 00:18–00:27 연구자 지시('뼈대는 letter 5.8'), 19:54 '내용은 Letter' 판단."
+   },
+   {
+    "id": "Hanhwa",
+    "suggestion": "goal의 '(확인 필요)'를 오늘 기록대로 'RF 송부판 rf-2026.11(ksdpa 0.4.0 + ksdpa_ui, 매뉴얼 SUM/IDD)'로 구체화하고, next에 '해면 경계 local(C1) 다음 버전'을 넣을 만함. 근거: 커밋 58개, README 송부 날짜 2026-11-25, 37193f6(NO_GO), 세션 제목 'ksdpa·ksdpa_ui만 남기는 아카이브 정리'. 실제 송부 여부는 기록에 없음."
+   }
+  ]
+ },
+ "summary_error": null
+}

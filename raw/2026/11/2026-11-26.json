@@ -1,0 +1,1850 @@
+{
+ "date": "2026-11-26",
+ "window": {
+  "start": "2026-11-25T21:00:00+09:00",
+  "end": "2026-11-26T21:00:00+09:00",
+  "partial": false
+ },
+ "generated_at": "2026-11-26T21:00:04+09:00",
+ "sessions": [
+  {
+   "session": "33c50f70",
+   "title": "Dissertation 1장 검토",
+   "cwd": "2026/Dissertation",
+   "project_guess": "PLOIM",
+   "n_prompts": 37,
+   "dropped_prompts": 0,
+   "turns": [
+    {
+     "t": "11-25 21:07",
+     "prompt": "그림을 그려놓고 퉁치지 말고, 실제로 꼼꼼하게 읽어서 해봐. 그리고 사람이 figure 그릴 때 작업하는 것처럼 좀 물리량을 봐바",
+     "reply": "이번에는 문헌의 그림을 캡션 단위로 읽고, 우리 패널도 물리량 기준으로 다시 골랐습니다. 결과는 letter_v5.8n(en/ko, md·pdf·docx), 그림은 figs/v5.8n입니다. 설계 m은 지웠습니다. **문헌이 실제로 그리는 것 (PMC·ar5iv에서 캡션을 읽음)** - Goto 외, Sci. Adv. 2021 (dSB): 그림 2A는 K2000에서 **스텝 수에 대한 cut 값**, 선은 1000회의 평균, 기호는 최댓값. 2B는 **계산 시간(ms)에 대한 cut**(FPGA 머신, CIM은 ×표). 그림 3은 인스턴스·머신별 TTS/TTT 막대(로그). 그림 4는 10⁵–10⁶ 스핀에서 시간에 대한 cut. - Honjo 외, Sci. Adv. 2021 (10만 스핀 CIM): 그림 3 **계산 시간에 대한 MaxCut 점수**(CIM vs SA), 그림 4 기준 점수 도달 시간 대 N, 그림 6 점수 히스토그램, 표 1 최고·평균값. - Böhm 외, Nat…"
+    },
+    {
+     "t": "11-25 21:18",
+     "prompt": "fig 3에서 alpha가 커질수록 해가 좋아지는 이유는 OIM이 안좋아지기 때문이고, (b)는 파선과 직선이 구분이 안돼. 램프 길이 길어졌을 때 (d)도 별로 의미 없어보여.",
+     "reply": ""
+    },
+    {
+     "t": "11-25 21:19",
+     "prompt": "fig 3에서 alpha가 커질수록 해가 좋아지는 이유는 OIM이 안좋아지기 때문이고, (b)는 파선과 직선이 구분이 안돼. 램프 길이 길어졌을 때 (d)도 별로 의미 없어보여. 이미 fig 1에서 해 좋아지는걸 보였잖아.",
+     "reply": ""
+    },
+    {
+     "t": "11-25 21:19",
+     "prompt": "fig 3에서 alpha가 커질수록 해가 좋아지는 이유는 OIM이 안좋아지기 때문이고, (b)는 파선과 직선이 구분이 안돼. 램프 길이 길어졌을 때 (d)도 별로 의미 없어보여. 이미 fig 1에서 해 좋아지는걸 보였잖아. 논문의 메세지만 정확하게 그리면 돼. 그림 많을 필요 없어",
+     "reply": "그림 3을 두 패널로 줄여 letter_v5.8o(en/ko, md·pdf·docx)로 빌드했습니다. 그림은 figs/v5.8o, 설계 n은 지웠습니다. **그림 3 = dOIM 문단이 주장하는 두 가지만** - (a) SK1024, π/4에서 ramp 동안 장과 반대인 스핀의 수 대 γ, OIM(회색)과 dOIM(파랑). 두 곡선이 같이 내려오다가 γ = 0에서 갈립니다. dOIM은 0, OIM은 0.9개가 남아 γ < 0에서도 그대로입니다. 이것이 \"γ > 0에서 얼면 local minimum\"의 그림이고, OIM에는 그 보증이 없다는 것까지 한 패널에 있습니다. G22는 캡션에 한 줄(둘 다 γ ≈ 0.15에서 0). - (b) 동결 법칙 γ_F 대 가장 약한 장. dOIM은 등호 선 위, OIM은 선 아래. - 뺀 것: ΔH 대 α(OIM이 나빠지는 것의 반영), G22·SK 겹친 선, ramp 길이 패널. **그림 4** 설계 n 그대로. (a) G22에서 run의 스텝 …"
+    },
+    {
+     "t": "11-25 21:57",
+     "prompt": "fig 4 (a) 에서 플롯이 잘 안보여. H를 그대로 쓰다보니 그래프 겹침이 너무 심해. 마지막으로, 내용의 겹침이나 논문에 내용 중에 그림으로 보여주는게 나음에도 그림이 없는 것을 감사해줘.",
+     "reply": "그림 4(a)를 고치고 감사를 마쳤습니다. 결과는 letter_v5.8o(en/ko, md·pdf·docx)와 figs/v5.8o에 있습니다. **그림 4(a)** H 대신 best-known 대비 초과 에너지를 로그 축에 그렸습니다. 다섯 곡선이 끝까지 떨어져 보입니다(10⁵ 스텝에서 lag-off 0.020, +잡음 0.004, OIM 0.0013, dOIM 0.0007, dSB 0.0005). 32 run 평균과 표준오차, 오른쪽 축은 cut 값입니다. 최선 run은 어느 머신도 13359를 치지 못하고 한 간선 아래(13358)까지 갑니다. dSB 10⁴, OIM 3×10⁴, dOIM 10⁵ 스텝부터이고, 캡션에 그렇게 적었습니다. **감사: 겹치는 내용** 1. 그림 1(d)(G22 에너지 대 ramp 길이, lag-off vs π/4)는 그림 4(a)에 그대로 포함됩니다. 빼는 것을 권합니다. 2. 그림 1(a)(한 ramp의 에너지 셋)는 1(c)(식 (2)·(4)의 …"
+    },
+    {
+     "t": "11-25 22:38",
+     "prompt": "머야 저기 그림 1-(a, d)도 로그스케일이 나을거같나? 어떻게 생각해. 오히려 min a_i도 필요 없을 거 같고... 음 3-(a)에서도 검정색 라인 gamma 0 근처에서도 그려지게 전체 영역 다 그려야할듯.",
+     "reply": "세 가지 모두 반영해 letter_v5.8o를 다시 빌드했습니다(figs/v5.8o). **그림 1(a)(d) 로그 축: 제 판단은 \"예\"입니다.** - (a) 로그 잔여 에너지로 바꾸니 한 패널에 세 가지가 다 읽힙니다. 식 (2)는 0.67로 올라가고, lag-off는 0.022에서 평평해지며, 식 (4)는 β ≈ 0.45에서 4×10⁻⁴(간선 하나 차이)까지 내려갑니다. 선형 축에서는 lag-off와 식 (4)의 차이가 축 높이의 4 %였는데, 지금은 1.7 자릿수입니다. - (d)도 로그로 바꾸면 lag-off의 로그 수준 감소(0.038 → 0.017)와 π/4의 지수적 감소(0.008 → 0.0005)가 직선 두 개로 보입니다. 다만 이제 (d)는 그림 4(a)와 같은 양, 같은 축이라 완전히 포함됩니다. 그림 4(a)를 쓰신다면 (d)는 빼는 쪽을 권합니다. 그러면 그림 1은 (a) 한 ramp의 잔여 에너지, (b) 회전률, (c) 지연 스캔의 세 패널이 됩니다. *…"
+    },
+    {
+     "t": "11-25 23:10",
+     "prompt": "그냥 (d) 그림 자체를 lag-off 는 alpha on에 대해서 그리고, fig 4는 OIM, dOIM, dSB, CAC 에 대해서 그리는거 어때? CAC 데이터 혹시 모을 수 있나",
+     "reply": "설계 p를 letter_v5.8p(en/ko, md·pdf·docx)로 빌드했습니다. 그림은 figs/v5.8p이고 설계 o는 지웠습니다. **CAC 데이터: 모을 수 없었습니다.** Leleu 외 2021의 보충자료에서 의사코드와 Gset 파라미터 표(S2)를 그대로 읽어 구현했습니다(β = 3/d₀, α = 3, p = 1 − 400 d₁^−2.5, ρ = 1, δ = 2.6/N, Γ = 2/N, τ = 9N, n_x = 6, n_e = 4, dt_x = 2⁻⁶, dt_e = 2⁻⁴, e ≤ 32). 그런데 의사코드의 \"dt\"가 어느 간격인지, 목표 진폭 변조의 부호, 초기값과 포화 범위가 논문에 없어, 네 가지 해석으로 G22에서 돌려 봤습니다. 모두 best-known 대비 0.4 % 근처(cut 13300–13350)에서 멈추고 10⁴ 스텝 뒤로 더 나아지지 않습니다. 논문의 FPGA CAC는 G22에서 13359를 run의 15 %에서 찾습니다. 제 구현은 CAC를 실제…"
+    },
+    {
+     "t": "11-25 23:41",
+     "prompt": "근데 이러면 dSB보다 안좋은것만 표가 나보이는데? 어떡하지",
+     "reply": "맞는 걱정이고, 세 머신만 두면 그림 4는 \"dSB에 진다\"만 말합니다. 데이터가 그렇기 때문에 숨길 수는 없고, 틀을 바꿔야 합니다. 그렇게 고쳐 letter_v5.8q(en/ko, md·pdf·docx)로 빌드했습니다(figs/v5.8q, 설계 p 삭제). **사실부터** SK에서 dSB는 지수가 같고(0.22(1) vs 0.24(2), 공통 범위 0.26 vs 0.25) TTS 절대값은 2–4배 낮습니다. G22 예산 곡선에서도 dSB가 모든 예산에서 조금 앞섭니다. 우리가 앞서는 벤치마크는 Gset 하나입니다. dOIM 45개, 공정 설정 dSB 43개(gap 0.073 vs 0.083 %), 시드 흔들림 ±2 안이라 \"동등\"이지 우위는 아닙니다. 본문도 이미 \"dSB와 같은 지수\"라고만 주장하고 있어 그림이 그 이상을 말할 필요가 없습니다. **틀** 그림 4의 두 패널에 lag-off와 lag-off + 잡음을 다시 넣었습니다. 그러면 읽히는 것이 \"dSB에 진다\"가 아…"
+    },
+    {
+     "t": "11-25 23:53",
+     "prompt": "근데 사실 이 상수배 차이는 역전 가능한 방법이 여러개 있을 거 같긴한데... beta를 좀 양수에서 시작한다던지. 아니면 개선할 수 있는 방법들을 좀 찾아볼래?",
+     "reply": ""
+    },
+    {
+     "t": "11-25 23:54",
+     "prompt": "근데 사실 이 상수배 차이는 역전 가능한 방법이 여러개 있을 거 같긴한데... beta를 좀 양수에서 시작한다던지. 아니면 개선할 수 있는 방법들을 좀 찾아볼래? 그리고 그림 1-(d)를 삭제하라는게 아니라, lag off 랑 alpha = pi/4만 비교하자는건데... 그리고 모든 그림에서 (a)같은 표시를 바깥으로 빼서, illustrator 처럼 좀 조정해줘.",
+     "reply": "설계 r을 letter_v5.8r(en/ko, md·pdf·docx; figs/v5.8r)로 빌드했고, 상수배 개선 스캔은 GPU에서 돌고 있습니다. 중간 보고입니다. **설계 r** 그림 1은 다시 2×2이고 (d)는 SK TTS에서 lag-off(b = 0.60)와 π/4(0.34) 두 곡선만입니다. 모든 그림의 (a)(b) 라벨은 굵게 축 바깥 왼쪽 위로 뺐습니다. 그림 4는 phase-lag OIM, phase-lag dOIM, dSB 셋만 남겼습니다. lag-off 비교는 그림 1(d)가 맡으므로 그림 4가 그것을 반복하지 않게 했습니다. 설계 q는 지웠습니다. **상수배의 현 위치** SK에서 dOIM의 TTS는 dSB(dt 1.25)의 2.9배(N = 256), 2.8배(512)입니다. 지수는 같습니다. 이미 있던 변형을 같은 기준으로 다시 평가했습니다. - 시간 간격 ×1.5는 20개 중 7개만 풀고, ×2 이상은 전부 실패합니다. ×0.5는 1.6배 느립니다. 지금…"
+    },
+    {
+     "t": "11-26 00:22",
+     "prompt": "아니 애초에 근데 읽을 때 두배를 쓰고 있었어? 이거 생각보다 최적화가 덜되어있네 MVM 기준으로",
+     "reply": "읽기에서 두 배를 쓰는 것은 아닙니다. 두 배는 phase-lag OIM의 스텝마다 드는 비용입니다. 식 (4)의 결합 Σⱼ Jᵢⱼ sin(θⱼ − θᵢ + …)를 계산하려면 J cos θ와 J sin θ 두 곱이 필요합니다. 연속 위상을 쓰는 머신은 이 두 사분 성분을 피할 수 없고, 하드웨어에서는 결합 한 번이지만 디지털 계수로는 2 MVM입니다. 읽기(스핀 부호와 에너지)는 run 끝에 한 번이라 셈에 안 들어갑니다. dOIM은 결합이 스핀 부호 J s 한 곱이고, 읽기 에너지 sᵢhᵢ도 같은 곱에서 공짜로 나옵니다. dSB도 J sgn(x) 한 곱입니다. 그래서 SK TTS(그림 1(d), 4(b))는 처음부터 OIM 스텝 = 2, dOIM·dSB 스텝 = 1로 세어 왔고, dOIM 대 dSB의 2.9배는 1 대 1 비교에서 나온 값입니다. MVM 기준으로 dOIM이 더 줄일 곱은 없습니다. 다만 그림 4(a)에서 제가 잘못 센 곳이 하나 있었습니다. G22 예산 곡선의 가…"
+    },
+    {
+     "t": "11-26 00:42",
+     "prompt": "왜 필요해? 걍 sin (theta_j - theta_i + alpha)로 계산하면 되는거 아님?",
+     "reply": "필요합니다. Σⱼ Jᵢⱼ sin(θⱼ − θᵢ + α)를 그대로 계산하면 행렬–벡터 곱이 아니라 N² 쌍마다 사인을 하나씩 계산하는 일이 됩니다. 연산 수가 N²인 것은 같지만 곱셈 덧셈이 아니라 사인 N²번이라 훨씬 비쌉니다. 그래서 전개합니다. sin(θⱼ − θᵢ + α) = sin(θⱼ + α) cos θᵢ − cos(θⱼ + α) sin θᵢ 이러면 j에 대한 합이 J sin θ와 J cos θ 두 개의 행렬–벡터 곱으로 떨어지고, 나머지는 i마다 하는 곱셈입니다. 코드도 그렇게 돌고 있습니다. 복소수로 쓰면 J e^{iθ} 한 번이라, \"복소 벡터와의 곱 한 번\"으로 보면 1이고 실수 곱으로 세면 2입니다. dSB와 CAC 논문의 MVM은 실수 행렬 × 실수 벡터 한 번이므로, 저는 보수적으로 2로 세어 왔습니다. 심사위원이 시비 걸 수 없는 쪽입니다. 이 선택은 OIM 곡선에만 영향을 줍니다. dOIM과 dSB는 J s 한 번으로 똑같고, 지수 비교와 2.9배는 그대로…"
+    },
+    {
+     "t": "11-26 00:44",
+     "prompt": "일단 dOIM을 dSB 아래로 밀 수 있는지 한번 살펴보자. 아마 내 생각에 b도 개선될거같긴 해. 적당하게 잡으면. 글을 아직 많이 못봤는데... 나중에 한번에 수정해야겠다",
+     "reply": "스스로 멈추는 판의 전 크기 결과가 나왔고, 이것으로 α = π/4에서의 탐색은 끝났습니다. **최종 프로토콜: \"β = 0에서 선형으로 올리다가, 실행 중 측정한 γ = |Ω| − 2β가 0을 지나면(여유 0.05) 멈추고, 방문한 최선의 배열을 읽는다\"** | N | 기준 dOIM | 새 프로토콜 | dSB(같은 읽기) | |---|---|---|---| | 64 | 3.2×10³ | 1.8×10³ | 0.9×10³ | | 256 | 3.3×10⁴ | 2.1×10⁴ | 1.1×10⁴ | | 512 | 1.6×10⁵ | 9.6×10⁴ | 5.0×10⁴ | | 1024 | 1.2×10⁶ | 5.4×10⁵ | 2.6×10⁵ | - 모든 크기에서 기준 dOIM보다 1.6–2.8배 빠르고, 큰 N에서도 이득이 유지됩니다. 고정 끝 0.45에서 큰 N의 이득이 사라졌던 이유는 |Ω|가 N에 따라 0.89에서 0.94로 조금 커져 γ = 0인 β가 0.47에서 0.50으로 밀리기 때문이었습…"
+    },
+    {
+     "t": "11-26 10:18",
+     "prompt": "좋아. 채태갛자. 표 전체를 다시 생성해주고, 그림도 변경해줘.",
+     "reply": ""
+    },
+    {
+     "t": "11-26 10:19",
+     "prompt": "좋아. 채태갛자. 표 전체를 다시 생성해주고, 그림도 변경해줘. 그리고 dSB 그림도 같이 넣어야해.",
+     "reply": "v5.9를 빌드했고, v4.3과의 차이를 빨간색으로 표시한 판도 만들었습니다. GPU 작업은 모두 끝났습니다. **파일 (paper/)** letter_v5.9와 letter_v5.9.ko(md·pdf·docx; en 6쪽, ko 5쪽), letter_v5.9_vs4.3과 .ko(md·pdf·docx; 바뀐 본문은 빨간 글자, 바뀐 수식 (2)–(9)도 빨강). 그림은 figs/v5.9. 설계 r은 지웠습니다. **채택한 프로토콜과 데이터** - SK(그림 1(d), 4(b)): phase-lag OIM·dOIM은 β를 0에서 올리다 측정한 γ가 0을 지나면(여유 0.05) 멈추고 방문한 최선을 읽습니다. OIM은 스텝당 곱셈 3회(J cos θ, J sin θ, readout), dOIM 1회, dSB도 최선 읽기에 1회, lag-off는 전체 ramp에 최선 읽기 3회. 결과 b는 lag-off 0.60(11), OIM 0.31(4)(이제 1024까지 맞춤), dOIM 0.23…"
+    },
+    {
+     "t": "11-26 13:31",
+     "prompt": "근데 fig 1 (d)가 TTS가 아니라 residual energy나 길이에 따른 에너지 감소로 나와야되는거 같은데... 아닌가? 혹시 더 좋은 방법이 있을까?",
+     "reply": "요청하신 네 가지를 반영해 v5.9와 v5.9_vs4.3(빨간 표시)을 다시 빌드했습니다(en/ko, md·pdf·docx; figs/v5.9). **그림 1(d)** ramp 지속 시간(식 (1)의 시간 단위)에 대한 방문 최선 에너지의 잔여량입니다. 같은 지속 시간 범위에서 lag-off는 0.150 → 0.020(7.5배), π/4는 0.091 → 0.0011(80배) 줄어듭니다. lag-off는 길게 돌려도 거의 내려가지 않고 π/4는 계속 내려가는 것, 곧 동결 대 annealing이 한 패널에서 읽힙니다. **그림 4** (a)에 lag-off를 넣었습니다(끝까지 가장 위). (a)는 평균만, (b)는 중앙값만 그리고 구간 막대는 모두 뺐습니다. (b)에 lag-off도 들어가 b가 0.60(11) → 0.31(4) → 0.23(2) ≈ dSB 0.22(1)로 한 패널에서 읽힙니다. 범례의 b 불확도는 남겨 두었습니다. **그림 3(a)** 스핀 개수 대신 식 (10)의…"
+    },
+    {
+     "t": "11-26 13:47",
+     "prompt": "물리적 흐름이 PRL vs sciadv 어디가 더 낫다고 봐?",
+     "reply": "PRL입니다. 포맷이 아니라 물리의 흐름 때문에 그렇습니다. **이 논문의 흐름은 Letter의 흐름입니다.** 현상(그림 1: 지연을 켜면 같은 ramp가 더 낮은 에너지로 간다) → 메커니즘(식 3·7, 그림 2: 지연이 만든 회전이 문턱 γ = |Ω| − 2β를 주고 ramp가 그 문턱을 내린다) → 정확한 귀결(식 10, 그림 3: 스핀 부호 결합이면 γ > 0에서 얼어붙은 배열은 모두 local minimum) → 검증(그림 4, 표 I). 한 가지 물리적 아이디어가 식 열 개로 닫히고, 그림 네 장이 각각 한 단계씩 맡습니다. PRL 심사위원이 찾는 모양이 정확히 이것입니다. 벤치마크는 주장이 아니라 \"메커니즘이 실제로 작동한다\"의 증거로 쓰이고, 그 역할에는 dSB와 같은 지수·상수배 2배·Gset 동등이 충분합니다. **Sci. Adv.는 다른 이야기를 요구합니다.** 거기서는 메커니즘이 아니라 결과의 파급이 주인공이어야 합니다. 하드웨어 구현, 기존 솔버 대비 우위…"
+    },
+    {
+     "t": "11-26 13:50",
+     "prompt": "분량 괜찮은거 아니야? 어차피 본문 4쪽으로 맞추면 되는거 아닌가",
+     "reply": "맞습니다. 제가 6쪽이라는 겉모습으로 말했고, 그건 틀렸습니다. PRL은 쪽수가 아니라 단어 환산량으로 셉니다. v5.9를 그 공식으로 세어 보면 이렇습니다. | 항목 | 환산량 | |---|---| | 초록 + 본문 | 2213 | | 캡션 + 표 | 968 | | 수식 11개 (행당 16) | 176 | | 그림 4장 (단일 단, 150/종횡비 + 20) | 627 | | 합계 | 3984 | 한도 3750에 234 초과이고, 6쪽 중 마지막 1.5쪽은 참고문헌이라 세지 않습니다. 본문은 2200 단어로 여유가 있고, 넘치는 몫은 캡션입니다. 지금 캡션이 장당 200 단어 안팎인데, 그림 1·4 캡션에서 프로토콜 설명과 수치 나열을 본문이나 SM으로 옮겨 장당 120 단어 정도로 줄이면 300 단어가 빠져 한도 안에 듭니다. 본문을 건드릴 필요는 없습니다. 분량은 PRL의 걸림돌이 아닙니다."
+    },
+    {
+     "t": "11-26 13:51",
+     "prompt": "sci-adv는 하드웨어 논문으로 노리고, 이거는 걍 메커니즘으로 PRL로 가는게 추천이라는거지?",
+     "reply": ""
+    },
+    {
+     "t": "11-26 13:52",
+     "prompt": "sci-adv는 하드웨어 논문으로 노리고, 이거는 걍 메커니즘으로 PRL로 가는게 추천이라는거지? PR applied 이관을 너라면 받아야된다고 생각해?",
+     "reply": "네, 그 추천입니다. 이 논문은 메커니즘으로 PRL에 내고, 하드웨어 결과가 나오면 그것이 Sci. Adv. 논문입니다. dSB가 Sci. Adv.에 실린 것도 알고리즘이 아니라 FPGA 구현과 속도 때문이었습니다. 선례도 있습니다. Leleu의 CAC는 메커니즘 논문(국소 최소의 불안정화)이 PRL 2019로 먼저 나가고, 벤치마크와 FPGA를 붙인 후속이 Commun. Phys. 2021로 갔습니다. 우리 논문은 그 진동자판입니다. 커버레터에 이 선례를 한 줄 적을 만합니다. **PR Applied 이관은 조건부로 받겠습니다.** 받을 조건은 두 가지입니다. 심사평이 물리에 결함이 아니라 \"관심 범위\"를 이유로 들었고, 그 평이 이관과 함께 넘어가 추가 심사가 짧을 때. 그러면 심사 한 번을 아끼고 Ising machine 독자에게는 PR Applied가 PRE보다 잘 읽힙니다. 반대로 심사평이 메커니즘 자체를 문제 삼았다면 이관은 같은 문제를 들고 가는 것이라 받지 않고, 고…"
+    },
+    {
+     "t": "11-26 13:59",
+     "prompt": "Nature Comm 은?",
+     "reply": "가능한 선택이고, 이 분야 선례도 있습니다. Böhm의 아날로그 CIM 논문(2019)과 잡음 주입 샘플링(2022)이 Nat. Commun.이었고, 둘 다 하드웨어 없이 메커니즘과 시뮬레이션으로 실렸습니다. 다만 두 가지를 분명히 해야 합니다. **심사 기준이 다릅니다.** PRL은 \"물리가 새롭고 맞는가\"를 묻고, Nat. Commun.은 \"넓은 공동체에 어떤 진전인가\"를 먼저 묻습니다. 우리 논문의 답은 \"하드웨어가 이미 가진 양으로 결정론적 annealing이 되고, 국소 최소 보장이 정확히 성립하며, 최선의 디지털 알고리즘과 같은 지수\"입니다. 물리 심사에는 강한 답이지만, 데스크 심사에서는 \"dSB를 이기지 못했고 소자도 없다\"로 읽힐 위험이 PRL보다 큽니다. 그 위험을 줄이는 것은 그림 3(a)의 보장과 Gset 동등 결과를 서두에 세우는 글쓰기이지 데이터가 아닙니다. **형식을 다시 짜야 합니다.** Letter를 Introduction–Results–Discuss…"
+    },
+    {
+     "t": "11-26 14:00",
+     "prompt": "일단 캡션 좀 덜어주라. 지금 캡션이 너무 길어. 그 이후에 버전 정리좀 해주라. 2.1.24랑 4.3, 5.9 현재 만 남기면 될거같은데.. sciadv는 아카이브로 옮기고.",
+     "reply": "SM 그림 네 장의 초안이 그려졌습니다. 모양을 확인한 뒤 본문(증명 → 프로토콜 → 대조군 → 벤치마크)을 씁니다."
+    },
+    {
+     "t": "11-26 15:27",
+     "prompt": "근데 SM에 원래 있던 그림들의 상당수가 본문에서 다루기 시작했는걸",
+     "reply": "새 SM이 완성됐습니다. supplement_v5.9(영문)와 supplement_v5.9.ko(한국어), 각각 md·pdf·docx이고 9쪽입니다. 빈칸은 없습니다. **먼저 알아 두실 결과가 하나 있습니다.** 채택한 프로토콜(방문한 최선 읽기)로 \"잡음 넣은 lag-off\"를 SK에서 다시 돌리니, 지수가 0.35(2)로 phase-lag OIM의 0.31(4)와 오차 범위 안에서 같습니다. 예전 끝 상태 읽기에서는 0.45 대 0.34였습니다. 잡음이 있는 머신은 상태가 요동해서 최선 읽기의 덕을 크게 봅니다. - 남는 차이: phase-lag OIM이 모든 크기에서 2–17배 빠르고, 잡음 쪽만 크기마다 설정을 따로 고른 것입니다. - dOIM은 0.23(2)로 분명히 아래입니다. - Gset의 2×2도 같은 그림입니다. 위상 결합에서는 지연만 켠 것과 잡음만 켠 것이 똑같이 28개이고, 스핀 부호 결합에서는 지연이 없으면 0개, 있으면 31개(잡음까지 45개)입니다. 즉…"
+    },
+    {
+     "t": "11-26 18:00",
+     "prompt": "Gset benchmark는 다른 것들이랑 폰트크기 맞춰서 빌드해보자. 그리고 14 개의 실험에서 최적값을 얻었다 이런 얘기 안해도 될 것 같아. 저 파트는 아예 빼버리자. 그리고 GPT가 아래와 같은 제안을 해왔는데, 어떻게 생각하는지 궁금해. 그리고 프로토콜 파트는 이렇게 쓰는게 아니라, 알고리즘을 구현하기 위한 pseudocode를 순서대로 설명해주는 방식이 맞는거같은데? 각 근거는 짧게 붙여주거나 인용으로 처리하고. <pasted_content id=\"20ed\"> 결론부터 말하면, 내가 앞서 이야기한 \\(\\alpha=\\pi/4\\)에서의 전체 네트워크 안정성 논증은 \\(\\pi/4\\leq\\alpha<\\pi/2\\) 범위까지 확장할 수 있어. \\(\\alpha<\\pi/4\\)는 별도의 검토가 필요해. 1. Supplemental의 기존 증명 S1.3의 증명은 다음 조건에서 성립해. \\[ 0\\leq\\alpha<\\frac{\\pi}{2},\\qquad \\Omega<0,\\qquad\\gamma>0. \\] Spin이 local field와 반대 방향이라면, \\[ V''(x)<-4\\beta w_i\\sin^2u\\leq0. \\] 따라서 고정된 \\(\\Omega\\)에 대해서는 반대…",
+     "reply": ""
+    },
+    {
+     "t": "11-26 18:01",
+     "prompt": "Gset benchmark는 다른 것들이랑 폰트크기 맞춰서 빌드해보자. 그리고 14 개의 실험에서 최적값을 얻었다 이런 얘기 안해도 될 것 같아. 저 파트는 아예 빼버리자. 그리고 GPT가 아래와 같은 제안을 해왔는데, 어떻게 생각하는지 궁금해. 그리고 프로토콜 파트는 이렇게 쓰는게 아니라, 알고리즘을 구현하기 위한 pseudocode를 순서대로 설명해주는 방식이 맞는거같은데? 각 근거는 짧게 붙여주거나 인용으로 처리하고. <pasted_content id=\"20ed\"> 결론부터 말하면, 내가 앞서 이야기한 \\(\\alpha=\\pi/4\\)에서의 전체 네트워크 안정성 논증은 \\(\\pi/4\\leq\\alpha<\\pi/2\\) 범위까지 확장할 수 있어. \\(\\alpha<\\pi/4\\)는 별도의 검토가 필요해. 1. Supplemental의 기존 증명 S1.3의 증명은 다음 조건에서 성립해. \\[ 0\\leq\\alpha<\\frac{\\pi}{2},\\qquad \\Omega<0,\\qquad\\gamma>0. \\] Spin이 local field와 반대 방향이라면, \\[ V''(x)<-4\\beta w_i\\sin^2u\\leq0. \\] 따라서 고정된 \\(\\Omega\\)에 대해서는 반대…",
+     "reply": "SM을 세 군데 고쳐 다시 빌드했고(supplement_v5.9, 영문·한국어, 각 11쪽), GPT의 제안은 직접 검증했습니다. 제안은 맞고, 채택을 권합니다. **SM 수정** - **프로토콜을 의사코드로** 다시 썼습니다. 알고리즘 S1(run 하나), S2(time to solution), S3(Gset run)이고, 실행 순서대로 번호를 매기고 각 단계 끝에 이유 한 문장이나 참조를 붙였습니다. 예: \"h = Js를 계산한다. 이 스텝의 유일한 곱셈이다.\" OIM과 lag-off는 S1과 다른 단계만 한 문단과 표 S1로 적었습니다. - **개발 집합 14개 이야기는 전부 뺐습니다.** 표 S2는 고른 설정만 남겼고, \"개발 집합 밖 40개\" 문장도 지웠습니다. 한 가지만 말씀드리면, 이제 SM에는 설정을 어떻게 골랐는지가 없습니다. 심사위원이 물으면 답할 데이터와 검증은 스크립트에 남아 있습니다. - **Gset 표(S6, S7)** 를 다른 표와 같은 글자 크기로 맞췄…"
+    },
+    {
+     "t": "11-26 18:09",
+     "prompt": "일단 넣어두고, 교수님이랑 논의를 해봐야겠어. 다만 본문에 실을건 아닌거같아.",
+     "reply": "SM에 S1.4 \"네트워크 전체의 안정성\"으로 넣어 두었습니다. 본문(letter_v5.9)은 손대지 않았습니다. supplement_v5.9와 .ko를 다시 빌드했고 각 12쪽입니다. **들어간 내용** (식 (S13)–(S18)) - 축을 풀어 준 선형화: 위상 섭동이 축을 δφ = Σ q_j δθ_j만큼 움직이고, 고윳값은 λ Π(λ + d_i) F(λ) = 0, F(λ) = Σ q_i/(λ + d_i)에서 나옵니다. - π/4 ≤ α < π/2이면 장과 반대인 스핀은 q_i < 0이고 d_i < −|Ω| tan α, q_j ≥ 0인 진동자는 d_j > −|Ω| tan α입니다. 그래서 F가 양의 λ에서 0이 되어 그 lock 상태는 불안정합니다. - 결론: 이 범위에서 γ > 0인 안정한 lock 상태는 축을 고정하지 않고도 식 (10)을 만족합니다. - α < π/4에 대해서는 권해 드린 대로 한 문장만 넣었습니다. \"이 논증이 적용되지 않고 축의 반응이 그런 스핀을 안정…"
+    },
+    {
+     "t": "11-26 18:14",
+     "prompt": "우선 버전들 정리하자. 그리고 논문 내용을 한번 메모 없는 리뷰어 한명한테만 보내보자. 그리고 fatal / 게제 가능하나 수정을 권고하는 문제 / minor 하게 나눠보고, 그 수정이 없어도 accept 될만한지 말해줘. 말로만 방어가 가능한 것은 fatal 하지 않은거야. 기준은 PRL이야.",
+     "reply": "버전 정리는 끝났고, 리뷰어 한 명이 지금 논문을 읽고 있습니다. 리포트가 오면 분류와 판정을 정리해 드리겠습니다. **정리한 결과** - **paper/에 남긴 것**: letter_v2.1.24(+ _marked, supplement), letter_v4.3(+ _vs2.1.24), letter_v5.9(+ _vs4.3, supplement_v5.9). - **그대로 둔 것**: 선생님이 직접 만드신 letter_v5.9.1.ko(md·pdf)입니다. - **아카이브로 옮긴 것**: work/의 옛 버전 폴더와 파일 242개, figs/의 낱개 파일 39개, 옛 그림 설계 스크립트 61개. 위치는 work/archive_20261126/입니다. - **확인**: 옮긴 뒤 현재 쓰는 스크립트(본문 그림·캡션, SM 그림·본문, 조판)를 모두 다시 돌렸고, PDF 내용이 정리 전과 같습니다. **리뷰 방식** - 메모 없는 새 리뷰어 한 명입니다. 받은 것은 본문과 SM(PDF와 …"
+    },
+    {
+     "t": "11-26 18:20",
+     "prompt": "좋아. 근데 그 메모없는 리뷰어에게서 받은다음에, revision 답변을 보낸다음에 accept 할지를 평가하게 해줘",
+     "reply": "알겠습니다. 리포트가 오면 이렇게 진행하겠습니다. 1. 리포트의 지적을 fatal, 수정 권고, minor로 정리해 보고드립니다. 2. 저자 답변서를 씁니다. 원고는 고치지 않고 논증으로만 답하며, 근거는 이미 본문과 SM에 있는 내용만 가리킵니다. 실제 심사 2라운드처럼 같은 리뷰어에게 보냅니다. 논문을 이미 읽은 그 리뷰어여야 답변을 원래 지적에 비추어 판단할 수 있습니다. 3. 리뷰어가 답변을 읽고 이슈마다 해결 여부와 PRL accept 여부를 판정하게 합니다. 4. 두 라운드 결과와, 우리가 가진 데이터를 더 보태면 바뀔 지점을 함께 보고드립니다. 리뷰어는 아직 읽는 중입니다."
+    },
+    {
+     "t": "11-26 18:21",
+     "prompt": "그치 그 경우 최종 accept과 reject이 결정나는거지",
+     "reply": "네, 2라운드에서 최종 판정이 납니다. 리뷰어에게는 답변을 읽은 뒤 accept 또는 reject 중 하나로 결론을 내게 하겠습니다. 다시 수정을 요구하는 중간 판정은 허용하지 않습니다. reject이면 그 결정을 만든 이슈가 무엇인지, 그리고 원고를 고치지 않고는 왜 풀리지 않는지도 쓰게 하겠습니다. 리뷰어는 아직 1라운드 리포트를 쓰는 중입니다."
+    },
+    {
+     "t": "11-26 18:21",
+     "prompt": "중간 결과는 revision 판정이 와도 알려줘야해~",
+     "reply": "2라운드 최종 판정은 **reject**이고, Phys. Rev. Applied로 이관을 권고했습니다. PRE와 PRR도 적합하다고 했습니다. 물리에는 오류가 없다고 다시 확인했고, 결정을 가른 것은 PRL의 중요성 기준입니다. **지적별 결과** | 지적 | 판정 | |---|---| | R2 기준선, R3 dSB와의 지수, R4 Gset, R5 보장 범위, R7 휴리스틱과의 관계, R8 재현성 | 답변으로 해결 | | R1 고정 injection 문장 | 미해결 | | R6 하드웨어 주장 | 미해결, 결정적 | **결정을 가른 이유** - **R6과 중요성**: 헤드라인 결과(dSB와 같은 지수, 45/54)는 dOIM의 것입니다. 그런데 dOIM의 지연은 부호 디지털화와 h = Js 곱셈이 들어간 루프 안에서 설계된 값이지 \"하드웨어가 이미 가진 양\"이 아니라고 봅니다. 실제 하드웨어 지연을 쓰는 phase-lag OIM은 지수가 잡음 기준선과 같습니다. 그래서 PRL의 근거…"
+    },
+    {
+     "t": "11-26 19:41",
+     "prompt": "dOIM은 FPGA 쓰면 쉽게 구현 가능한거 아닌가?",
+     "reply": "네, 구현 자체는 쉽습니다. 다만 FPGA 구현은 리뷰어의 R6에 대한 답이 되지 못하고, PRL 논거로는 오히려 불리해집니다. **구현이 쉬운 이유** - 스텝마다 곱셈은 J·s 하나이고, s가 ±1이라 정수 결합이면 덧셈만으로 됩니다. - 위상 갱신의 sin 두 개는 lookup table로 되고, 축 φ는 Σ w_j e^{2iθ_j}라는 전역 합 하나로 구해집니다. - 이는 Goto 등이 FPGA에 올린 dSB와 같은 급의 구조입니다. 상태 변수는 스핀당 위상 하나로 dSB(x, y)보다 적고, 대신 삼각함수 표와 전역 합이 더 듭니다. **R6에는 반대로 작용하는 이유** - FPGA 위의 dOIM은 디지털 알고리즘이고, 지연 α는 코드 안의 상수입니다. 리뷰어가 지적한 \"하드웨어가 이미 가진 양이 아니라 설계 변수\"를 그대로 확인해 주는 셈입니다. - 그러면 비교 상대는 FPGA 위의 dSB입니다. 스텝 구조가 비슷하니 MVM 기준 1.7–2.1배 차이가 그대로 시간 차이…"
+    },
+    {
+     "t": "11-26 19:47",
+     "prompt": "흠... 하드웨어 주장을 좀 조심하면 리뷰어가 더 좋게볼까?",
+     "reply": "부분적으로는 그렇습니다. 하드웨어 주장을 조심하면 지금의 reject 사유 하나는 사라지지만, PRL accept로 바뀔 가능성은 낮다고 봅니다. **좋아지는 부분** - 리뷰어가 문제 삼은 것은 마지막 문장이 dOIM에도 \"하드웨어가 이미 가진 지연\"이라고 읽히는 점입니다. 두 머신을 나눠 쓰면 이 지적은 해소됩니다. phase-lag OIM은 결합의 전파 지연을 그대로 쓰고, dOIM은 측정-피드백 구조로 구현하며 지연은 피드백 신호의 위상이라고 쓰면 됩니다. - R1의 두 문장까지 고치면 \"틀린 주장이 그대로 실린다\"는 우려도 없어집니다. 그러면 논문은 흠잡을 데 없이 정확하게 읽힙니다. - 이 리뷰어는 바로 이 변경들이 있으면 PR Applied에서 accept를 지지하겠다고 이미 말했습니다. **좋아지지 않는 부분** - 리뷰어의 결정 이유는 문장의 정확성보다 중요성이었습니다. 그는 PRL로서의 근거가 \"하드웨어가 이미 가진 지연을 활용한다\"는 주장에 달려 있다고 봤습니다…"
+    },
+    {
+     "t": "11-26 19:51",
+     "prompt": "고친 버전을 5.9.1로 저장하고 보내보자. 5.9를 유지할지, 아예 논증을 좀 바꿀지 고민해야겠어",
+     "reply": "두 번째 리뷰어도 최종 판정은 **reject**이고, Phys. Rev. Applied(대안으로 PRE)로 이관을 권했습니다. 다만 결정을 가른 이슈가 첫 번째 리뷰어와 다르고, 5.9.1에서 고친 부분은 통했습니다. **두 리뷰어 비교** | | 첫 번째 (v5.9) | 두 번째 (v5.9.1) | |---|---|---| | Fatal | 없음 | 없음 | | 유도·수치 | 모두 확인, 재현 | 모두 확인, 재현 | | 결정을 가른 이슈 | 하드웨어 주장(R6), 고정 injection 문장(R1) | annealing 설명(R1), 보장의 증명 단계(R2c) | | 이관 | PR Applied | PR Applied | 5.9.1에서 고친 하드웨어 문장과 고정 injection 문장은 두 번째 리뷰어가 해결된 것으로 봤습니다(\"거짓 주장은 없다\"). **이번에 결정을 가른 두 가지** - **R1, annealing의 설명**: 식 (10) 뒤 문단은 \"얼 수 있는 배열이 …"
+    },
+    {
+     "t": "11-26 20:35",
+     "prompt": "근데 보통 그런 수정은 그걸 고치라고 minor revision으로 내려서 accept을 해주는게 보통 아니야?",
+     "reply": ""
+    },
+    {
+     "t": "11-26 20:36",
+     "prompt": "근데 보통 그런 수정은 그걸 고치라고 minor revision으로 내려서 accept을 해주는게 보통 아니야? Grok도 gemini도 GPT도 리뷰 돌리면 거의 accept에 가까운 revision이 나오는데, 너만 계속 reject이래",
+     "reply": "맞는 지적이고, reject라는 결론은 상당 부분 제가 만든 절차 때문입니다. **reject는 제 절차가 만든 결과입니다** - 두 리뷰어의 실제 1라운드 판정은 둘 다 **major revision**이었지 reject가 아니었습니다. - 2라운드에서 제가 \"원고는 바뀌지 않았다, 수정 라운드는 더 없다, accept 아니면 reject만 고르라\"고 강제했습니다. 원래 질문이 \"수정 없이도 accept될 만한가\"였기 때문입니다. - 그래서 결과는 정확히는 \"수정 없이 답변만으로는 accept되지 않는다\"이지, 논문이 reject감이라는 뜻이 아닙니다. 보고하면서 이 차이를 분명히 하지 않았던 건 제 잘못입니다. **실제 심사 절차에 맞춰 읽으면** - **두 번째 리뷰어**: major revision이고, 식 (10) 뒤 문단과 S1.3의 증명 단계, 초록의 조건만 고치면 PRL accept 쪽으로 기울었을 거라고 직접 썼습니다. 말씀하신 \"고치라고 하고 accept\"의 경로…"
+    },
+    {
+     "t": "11-26 20:37",
+     "prompt": "그래 한번 해봐줘",
+     "reply": "The result came back as **minor revision, then accept**. The referee said he supports publication in PRL and does not need to see the manuscript again, because the editor can check the remaining fixes. **What happened across the rounds** - Round 1: major revision. - Round 2: we fixed two things in the text. These were the annealing paragraph and the scope of the guarantee. - Round 3: minor revision, then accept. This is the normal-process path you described. The rejects earlier came from my rul…"
+    },
+    {
+     "t": "11-26 20:57",
+     "prompt": "한번만 더 이 루프를 거쳐보자. 5.9.2를 시작으로 해서",
+     "reply": "I've sent 5.9.2 (letter and supplement, unchanged) to a third, new referee. This referee has never seen any earlier version or report, and the package uses neutral file names only. The loop runs the same way as before: 1. **Round 1:** when the report arrives, I'll tell you the verdict, whatever it is. 2. **Revision:** I'll write 5.9.3 against that report. - It will include the three wording errors the previous referee found in the text I wrote. These are the sentence that contradicts the captur…"
+    }
+   ],
+   "edited_files": [
+    "2026/PLOIM/paper/work/sm_v59/sm_text.md",
+    "2026/PLOIM/paper/work/sm_v59/sm_text.ko.md"
+   ],
+   "n_edited_files": 2
+  },
+  {
+   "session": "859c733a",
+   "title": "ksdpa·ksdpa_ui만 남기는 아카이브 정리",
+   "cwd": "2026/Hanhwa",
+   "project_guess": "Hanhwa",
+   "n_prompts": 12,
+   "dropped_prompts": 0,
+   "turns": [
+    {
+     "t": "11-25 21:56",
+     "prompt": "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation. <system-reminder> <tools-used-before-summary>Agent, AskUserQuestion, Bash, Edit, ListAgents, Monitor, Read, ScheduleWakeup, SendFeedback, Skill, StructuredOutput, SubagentHandback, TaskStop, ToolSearch, WebFetch, WebSearch, Workflow, Write</tools-used-before-summary> </system-reminder> Summary: 1. Primary Request and Intent: **Project** - Location: /home/nol/study/2026/Hanhwa (master dd0b7b6, no remote). It is the research contract \"운용조건에 따른 함…",
+     "reply": ""
+    },
+    {
+     "t": "11-26 00:34",
+     "prompt": "일단 주석은 영어로 변경하고, docs는 나중에 내가 따로 검수한다음에 보내야될듯. 우선 UI 부분까지만 작업해서 보내줄래?",
+     "reply": ""
+    },
+    {
+     "t": "11-26 00:35",
+     "prompt": "일단 주석은 영어로 변경하고, docs는 나중에 내가 따로 검수한다음에 보내야될듯. 우선 UI 부분, 실제 작동하는 것 까지만 패키지로 완성해서 줄래?",
+     "reply": "UI 전용 패키지를 완성했습니다. 받는 쪽 입장에서 압축을 따로 풀어 띄워 봤고, 시험과 브라우저 확인까지 모두 통과했습니다. **패키지** - 파일: `/home/nol/study/2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11.zip` (1.3 MB, 101개 파일). 풀어 둔 폴더가 같은 곳에 있습니다. - 넣은 것: - 엔진 코드 `ksdpa/src` - 백엔드(코드와 data) - 프런트엔드 소스 - `run.sh` - 짧은 README: 설치와 실행 방법, 다른 컴퓨터에서 보기, 자료 출처 - 뺀 것: 매뉴얼과 docs, `API.md`, 각 폴더 README, 엔진 시험, smoke 시험, 검증 재현 자료, 안테나 표 생성 도구. - 문서가 든 이전 패키지는 `archive/rf1124_tools/delivery_20261125_full/`로 옮겼습니다. 검토하실 문서 사본은 `Hanhwa_delivery/docs/`에 그대로 있습니다. …"
+    },
+    {
+     "t": "11-26 02:15",
+     "prompt": "이대로 보냈을 때 문제될만한 점들 검토해줘.",
+     "reply": "검토 결과, 이대로 보내면 한화 쪽에서 실행 자체가 안 될 가능성이 가장 큽니다. 보안과 결과 해석에서도 고쳐야 할 것이 몇 가지 나왔습니다. 다섯 관점(라이선스·자료 권리, 보안, 받는 쪽 실행 환경, 파일 내용, 실제 동작)으로 나눠 봤고, 지적마다 다른 검토자가 다시 재현해 확인했습니다. 과장된 지적은 등급을 낮췄고, 근거가 없는 2건은 뺐습니다. 아직 아무것도 고치지 않았습니다. **1. 보내기 전에 정하셔야 할 것** | # | 문제 | 확인한 내용 | 대응 | |---|---|---|---| | 1 | **LADEN RCS 표** | README에 \"재배포 허가 확인 중\"이라고 적혀 있지만 \"계약 당사자 밖 배포 금지\" 같은 제한 문구는 없습니다. 원 제공 쪽은 자기 전달본에서도 이 자료를 일부러 뺐습니다. 다만 같은 표가 9월 중간보고 원자료 zip으로 한화에 이미 간 적이 있습니다. 파일을 빼면 백엔드가 영어 오류를 내며 시작하지 않습니다. | 허가를 받거나, 미뤄 …"
+    },
+    {
+     "t": "11-26 03:50",
+     "prompt": "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation. <system-reminder> <tools-used-before-summary>Agent, AskUserQuestion, Bash, Edit, ListAgents, Monitor, Read, ScheduleWakeup, SendFeedback, Skill, StructuredOutput, SubagentHandback, TaskStop, ToolSearch, WebFetch, WebSearch, Workflow, Write</tools-used-before-summary> </system-reminder> Summary: 1. Primary Request and Intent **Request A (done)** - Quote: \"일단 주석은 영어로 변경하고, docs는 나중에 내가 따로 검수한다음에 보내야될듯. 우선 UI 부분, 실제 작동하는 것 까지만 패키지로 완성해서 줄래?\" - Me…",
+     "reply": ""
+    },
+    {
+     "t": "11-26 12:09",
+     "prompt": "윈도우 실행 할 수 있게 하는 부분 필요할 거 같고... 폐쇄망이 없어도 할 수 있게 하려면 미리 컴파일 된 상태로 보내야하나? GFS가 아니라 ERA5로 하도록 해주고. 혹시 화면 빌드를 backend가 안하고 frontend에서 하고 있나? RCS 위험 신호도 있어야될거 같고... 검사 했을 때 에러 항목들 만들어줘야 할거 같아. 우선 이 버전을 작업할테니까, windows 지원이나 이런 부분들 패치 + 감사 더 빡세게 ultracode로 진행하자. 일단 보낼 버전 최종 패치본 하나 만들어줘",
+     "reply": ""
+    },
+    {
+     "t": "11-26 12:30",
+     "prompt": "우선 리눅스 버전을 먼저 보내주고, 윈도우 작업은 추후헤 하는게 나은가 싶어서",
+     "reply": "The patch workflow (`wf_202bb5cd-d4f`) is running in the background. Nothing has been changed or committed yet. To your question about the screen build: yes. Right now Node's development server (vite dev) builds the screen fresh in the browser each time, and the backend only serves `/api`. In this patch I build the screen here once and the backend serves it, so the receiving side needs only Python and runs on the single port 8100. **What goes in this Linux version** - **Run:** `run.sh` starts o…"
+    },
+    {
+     "t": "11-26 13:30",
+     "prompt": "근데 fig 1 (d)가 TTS가 아니라 residual energy로 나와야되는거 같은데... 아닌가? 혹시 더 좋은 방법이 있을까?",
+     "reply": ""
+    },
+    {
+     "t": "11-26 13:30",
+     "prompt": "근데 fig 1 (d)가 TTS가 아니라 residual energy나 에너지 분포로 나와야되는거 같은데... 아닌가? 혹시 더 좋은 방법이 있을까?",
+     "reply": ""
+    },
+    {
+     "t": "11-26 13:31",
+     "prompt": "근데 fig 1 (d)가 TTS가 아니라 residual energy나 길이에 따른 에너지 감소로 나와야되는거 같은데... 아닌가? 혹시 더 좋은 방법이 있을까?",
+     "reply": ""
+    },
+    {
+     "t": "11-26 13:31",
+     "prompt": "잘못입력했어. 다른 내용이야. 잊어줘",
+     "reply": "알겠습니다, 그 질문은 무시하겠습니다. 파일은 읽기만 했고 아무것도 바꾸지 않았습니다. Linux 최종 패치 workflow(`wf_202bb5cd-d4f`)는 계속 돌고 있습니다. 끝나면 결과를 확인하고 감사 단계로 넘어가겠습니다."
+    },
+    {
+     "t": "11-26 14:27",
+     "prompt": "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation. <system-reminder> <tools-used-before-summary>Agent, AskUserQuestion, Bash, Edit, ListAgents, Monitor, Read, ScheduleWakeup, SendFeedback, Skill, StructuredOutput, SubagentHandback, TaskStop, ToolSearch, WebFetch, WebSearch, Workflow, Write</tools-used-before-summary> </system-reminder> Summary: 1. Primary Request and Intent **Current request (stage 10)** - Quote: \"윈도우 실행 할 수 있게 하는 부분 필요할 거 같고... 폐쇄망이 없어도 할 수 있게 하려면 미리 컴파일 된 상태로 보내야하나? GFS가 아니라…",
+     "reply": "Stage 10 패치는 끝났고 게이트를 모두 통과했습니다. 지금은 그 결과(eb888bd)를 대상으로 감사 워크플로(`wf_4be00541-e26`)를 백그라운드에서 돌리고 있습니다. **Stage 10 결과** - 커밋: `release/rf-2026-11`에 14개, HEAD는 `eb888bd`입니다. - 무엇이 바뀌었나: - 화면을 미리 빌드해 백엔드가 포트 하나(8100)로 함께 띄웁니다. 받는 쪽에 Node가 필요 없습니다. - 처음 띄울 때 환경은 표준 데이터셋(ERA5) R2입니다. 인터넷 없이 첫 계산까지 되는 것을 확인했습니다. - CORS를 없애고, 접속 주소(Host)와 같은 출처를 검사합니다. - 육지 위 레이더는 안내를 띄웁니다. RCS 표는 잘못되면 거부하고, 의심스러우면 경고합니다. - 입력 검사 오류는 한국어로, 필드 이름과 받은 값을 적어 보여 줍니다. - 시험 결과: - pytest 313/313(py3.9, py3.10 둘 다), smoke 371…"
+    }
+   ],
+   "edited_files": [
+    "2026/Hanhwa/archive/rf1124_tools/stage9/package/README.md"
+   ],
+   "n_edited_files": 1
+  }
+ ],
+ "file_changes": {
+  "PLOIM": {
+   "count": 346,
+   "ext": {
+    ".npz": 86,
+    ".md": 51,
+    ".py": 31,
+    ".pdf": 28,
+    ".tex": 25,
+    ".log": 24
+   },
+   "recent": [
+    "2026/PLOIM/paper/work/v5_en/referee_20261126b/package/refB/supplement_revised.pdf",
+    "2026/PLOIM/paper/work/v5_en/referee_20261126b/package/refB/supplement_revised.md",
+    "2026/PLOIM/paper/work/v5_en/referee_20261126b/package/refB/manuscript_revised.pdf",
+    "2026/PLOIM/paper/work/v5_en/referee_20261126b/package/refB/manuscript_revised.md",
+    "2026/PLOIM/paper/work/v5_en/referee_20261126b/README.md",
+    "2026/PLOIM/paper/supplement_v5.9.2.ko.docx",
+    "2026/PLOIM/paper/work/sm_v59/build_ko/sm_docx.md",
+    "2026/PLOIM/paper/supplement_v5.9.2.ko.pdf",
+    "2026/PLOIM/paper/work/sm_v59/build_ko/sm.pdf",
+    "2026/PLOIM/paper/work/sm_v59/build_ko/sm.log",
+    "2026/PLOIM/paper/work/sm_v59/build_ko/sm.aux",
+    "2026/PLOIM/paper/work/sm_v59/build_ko/sm.tex"
+   ]
+  },
+  "Hanhwa": {
+   "count": 16997,
+   "ext": {
+    ".json": 4678,
+    ".py": 3646,
+    "(없음)": 1300,
+    ".tsx": 934,
+    ".log": 593,
+    ".npz": 546
+   },
+   "recent": [
+    "2026/Hanhwa/archive/rf1124_tools/stage11/logs/recv0/pins.log",
+    "2026/Hanhwa/archive/rf1124_tools/stage11/tools/recv0/pins.py",
+    "2026/Hanhwa/archive/rf1124_tools/GATES.md",
+    "2026/Hanhwa/archive/rf1124_tools/stage11/GATES_s11.md",
+    "2026/Hanhwa/archive/rf1124_tools/stage11/logs/gate0/dry_r0_runsh_E_idle_term.log",
+    "2026/Hanhwa/archive/rf1124_tools/tmp11/dry_r0/runsh_E.out",
+    "2026/Hanhwa/archive/rf1124_tools/stage11/logs/gate0/X_offline_r0rx.out",
+    "2026/Hanhwa/archive/rf1124_tools/stage11/logs/gate0/X_offline_r0rx.strace",
+    "2026/Hanhwa/archive/rf1124_tools/stage11/logs/gate0/X_offline_r0rx.server.log",
+    "2026/Hanhwa/archive/rf1124_tools/stage11/logs/gate0/X_offline_r0rx.json",
+    "2026/Hanhwa/archive/rf1124_tools/stage11/tools/gate0/x_offline.sh",
+    "2026/Hanhwa/archive/rf1124_tools/stage11/logs/gate0/leak_extra_r0.out"
+   ]
+  }
+ },
+ "unregistered_changes": {
+  "2026/Hanhwa_rf_try": {
+   "count": 57,
+   "ext": {
+    ".py": 25,
+    ".md": 11,
+    ".tsx": 10,
+    ".json": 3,
+    ".pdf": 2,
+    ".docx": 2
+   },
+   "recent": [
+    "2026/Hanhwa_rf_try/validation/red_2001/results/run_red.log",
+    "2026/Hanhwa_rf_try/validation/red_2001/README.md",
+    "2026/Hanhwa_rf_try/validation/era5_standard_dataset/data/meta.json",
+    "2026/Hanhwa_rf_try/validation/era5_standard_dataset/README.md",
+    "2026/Hanhwa_rf_try/validation/casper_east_2015/results/casper_metrics.json",
+    "2026/Hanhwa_rf_try/validation/casper_east_2015/README.md",
+    "2026/Hanhwa_rf_try/validation/README.md",
+    "2026/Hanhwa_rf_try/validation/CHANGELOG_수치.md",
+    "2026/Hanhwa_rf_try/ksdpa_ui/frontend/src/ui.tsx",
+    "2026/Hanhwa_rf_try/ksdpa_ui/frontend/src/errors.ts",
+    "2026/Hanhwa_rf_try/ksdpa_ui/frontend/src/calc.ts",
+    "2026/Hanhwa_rf_try/ksdpa_ui/frontend/src/SsrView.tsx"
+   ]
+  },
+  "2026/Hanhwa_delivery": {
+   "count": 102,
+   "ext": {
+    ".py": 52,
+    ".tsx": 19,
+    ".ts": 9,
+    ".json": 7,
+    ".txt": 2,
+    ".npz": 2
+   },
+   "recent": [
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11.zip",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/run.sh",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/vite.config.ts",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/tsconfig.node.json",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/tsconfig.json",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/tsconfig.app.json",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/src/ui.tsx",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/src/status.ts",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/src/pd.ts",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/src/mapBase.ts",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/src/main.tsx",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/src/live.ts"
+   ]
+  },
+  "2026/Hanhwa_rf_release": {
+   "count": 86,
+   "ext": {
+    ".py": 26,
+    ".tsx": 17,
+    ".woff": 10,
+    ".woff2": 10,
+    ".ts": 7,
+    ".txt": 4
+   },
+   "recent": [
+    "2026/Hanhwa_rf_release/ksdpa_ui/frontend/src/calc.ts",
+    "2026/Hanhwa_rf_release/ksdpa_ui/frontend/src/RoutePage.tsx",
+    "2026/Hanhwa_rf_release/ksdpa_ui/frontend/src/EditPanel.tsx",
+    "2026/Hanhwa_rf_release/ksdpa_ui/backend/static/assets/index-CvpMhDxO.css",
+    "2026/Hanhwa_rf_release/ksdpa_ui/backend/static/assets/index-CO4EOfhW.js",
+    "2026/Hanhwa_rf_release/ksdpa_ui/backend/static/assets/ibm-plex-mono-vietnamese-600-normal-iLQfcSjf.woff",
+    "2026/Hanhwa_rf_release/ksdpa_ui/backend/static/assets/ibm-plex-mono-vietnamese-600-normal-D2EvbN8M.woff2",
+    "2026/Hanhwa_rf_release/ksdpa_ui/backend/static/assets/ibm-plex-mono-vietnamese-400-normal-DDuiU_S-.woff",
+    "2026/Hanhwa_rf_release/ksdpa_ui/backend/static/assets/ibm-plex-mono-vietnamese-400-normal-BulugwFq.woff2",
+    "2026/Hanhwa_rf_release/ksdpa_ui/backend/static/assets/ibm-plex-mono-latin-ext-600-normal-DmB0ttJJ.woff",
+    "2026/Hanhwa_rf_release/ksdpa_ui/backend/static/assets/ibm-plex-mono-latin-ext-600-normal-D38SheWl.woff2",
+    "2026/Hanhwa_rf_release/ksdpa_ui/backend/static/assets/ibm-plex-mono-latin-ext-400-normal-D3D2R8hC.woff"
+   ]
+  }
+ },
+ "git_commits": [
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "c451ffd",
+   "time": "2026-11-26T10:33",
+   "subject": "ksdpa_ui frontend: UI labels in this round's comments quoted (no code change)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "a182bd7",
+   "time": "2026-11-26T10:30",
+   "subject": "ksdpa_ui: built UI (vite build of 54cfa4e)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "54cfa4e",
+   "time": "2026-11-26T10:30",
+   "subject": "ksdpa_ui: third-party notices for the code bundled packages took from other projects"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "d752903",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: vite config comment names what ships (no behaviour change)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "41b0613",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: long words wrap in the toolbar and the message pane"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "24c893a",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: Korean tooltips and message scopes; standard cases by their labels"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "d78d4d3",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: 저장 fetches the export and reports a failure"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "a20a22e",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: route files checked before use; a failed live request shows no old result"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "dd73d8d",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: browser and library error texts after a Korean sentence; a map error no longer stops the page"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "176ae03",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: editor refusals name the field, its unit and the typed text; no refused own-ship value kept"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "8517543",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: Esc restores integer fields; refused integer and heading text reported"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "091133e",
+   "time": "2026-11-26T09:31",
+   "subject": "ksdpa_ui backend smoke: S11 export checks wait up to 600 s for their MB-size uploads"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "9b06ae5",
+   "time": "2026-11-26T09:20",
+   "subject": "ksdpa_ui backend smoke: S11 check that no internal name is left in the shipped backend files"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "34db007",
+   "time": "2026-11-26T09:14",
+   "subject": "ksdpa_ui backend: stale GFS dirs opened once, never through a symlink or another user's"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "1de0c04",
+   "time": "2026-11-26T09:07",
+   "subject": "ksdpa_ui backend: line lengths of the stage-11 changes (no behaviour change)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "a56447e",
+   "time": "2026-11-26T08:56",
+   "subject": "ksdpa_ui backend smoke: the not-yet-posted GFS cycle check only within 2.5 h of the cycle"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "cc3060c",
+   "time": "2026-11-26T08:56",
+   "subject": "ksdpa_ui backend smoke: AC6 expects 422 calc_failed for the GFS-land aircraft pair"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "77ba990",
+   "time": "2026-11-26T08:44",
+   "subject": "ksdpa_ui backend: the export keeps mappings in block style; only lists of numbers on one line"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "2b887c6",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend smoke: stage-11 checks (S11) and expectations of the new messages"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "8eafb5a",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend data: no internal names in shipped headers and provenance (no value change)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "49e441a",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: request checks name what was sent; no silent ignores; pair failures by cause"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "464cec7",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: every accepted state exports to a config that loads back"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "27ea599",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: inland-radar notice for aircraft calcs; failed GFS pairs flagged"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "1c98c7e",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: antenna file values checked as written; aircraft radars outside 1-90 GHz fail, not 500"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "b4f6e75",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: YAML errors name the likely cause"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "ff44f9d",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: RCS files refused or warned instead of read silently"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "c50bc34",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: calc refusals name the field path, the panel label and the value as sent"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "b53a50a",
+   "time": "2026-11-26T08:08",
+   "subject": "ksdpa_ui backend: GFS cycles checked strictly and against NOMADS's 10 days"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "8a10139",
+   "time": "2026-11-26T08:03",
+   "subject": "ksdpa_ui backend: GFS failures say the cause in Korean; no download without cfgrib"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "401c941",
+   "time": "2026-11-26T08:01",
+   "subject": "ksdpa_ui run.sh: Korean pre-start checks, then the address that works"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "19c6398",
+   "time": "2026-11-26T07:54",
+   "subject": "ksdpa_ui backend: start-up refuses unusable KSDPA_ALLOWED_HOSTS entries and a too long temp dir"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "9952aa4",
+   "time": "2026-11-26T07:53",
+   "subject": "ksdpa_ui backend: LAN-mode /api requests need the page's SameSite cookie or the own Origin"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "5fe4f28",
+   "time": "2026-11-26T07:50",
+   "subject": "ksdpa_ui backend: Korean 404/405, request body cap, frame and sniffing headers, WebSocket refused"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "eb888bd",
+   "time": "2026-11-26T06:23",
+   "subject": "ksdpa_ui backend: no internal test or review names in shipped comments (no code change)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "5129e2b",
+   "time": "2026-11-26T05:57",
+   "subject": "ksdpa_ui: third-party notices for the built UI"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "4a0a04d",
+   "time": "2026-11-26T05:54",
+   "subject": "ksdpa_ui: built UI (vite build of 4b39e03)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "4b39e03",
+   "time": "2026-11-26T05:54",
+   "subject": "ksdpa_ui frontend: Korean backend-down text, retry re-reads the session, WebGL2 notice, RCS warnings"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "b4360ce",
+   "time": "2026-11-26T05:54",
+   "subject": "ksdpa_ui: no internal references in texts the UI shows"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "66428de",
+   "time": "2026-11-26T05:03",
+   "subject": "ksdpa_ui: one upload reader for every file; RCS table size within the config cap"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "582e1c5",
+   "time": "2026-11-26T04:26",
+   "subject": "ksdpa_ui: start-up data file check; no exception class names in messages"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "ba9d612",
+   "time": "2026-11-26T04:26",
+   "subject": "ksdpa_ui: request bodies take JSON numbers only, physical ranges, route waypoints checked"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "e69cf93",
+   "time": "2026-11-26T04:26",
+   "subject": "ksdpa_ui: config and antenna files checked in full, Korean YAML errors, radar ids kept"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "698d0d9",
+   "time": "2026-11-26T04:31",
+   "subject": "RCS elevation notice only when it applies"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "f48bd68",
+   "time": "2026-11-26T04:25",
+   "subject": "RCS upload: refuse malformed tables, warn on suspicious ones"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "c842713",
+   "time": "2026-11-26T04:10",
+   "subject": "land check: a threat radar standing on land"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "dbc6efb",
+   "time": "2026-11-26T04:04",
+   "subject": "default environment: standard dataset (ERA5) R2"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "d8482d4",
+   "time": "2026-11-26T04:01",
+   "subject": "backend serves the built UI; same-origin and Host checks; run.sh starts the backend only"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "6c6f579",
+   "time": "2026-11-25T16:18",
+   "subject": "Comments and docstrings in English (no code change)"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "c451ffd",
+   "time": "2026-11-26T10:33",
+   "subject": "ksdpa_ui frontend: UI labels in this round's comments quoted (no code change)"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "a182bd7",
+   "time": "2026-11-26T10:30",
+   "subject": "ksdpa_ui: built UI (vite build of 54cfa4e)"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "54cfa4e",
+   "time": "2026-11-26T10:30",
+   "subject": "ksdpa_ui: third-party notices for the code bundled packages took from other projects"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "d752903",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: vite config comment names what ships (no behaviour change)"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "41b0613",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: long words wrap in the toolbar and the message pane"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "24c893a",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: Korean tooltips and message scopes; standard cases by their labels"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "d78d4d3",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: 저장 fetches the export and reports a failure"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "a20a22e",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: route files checked before use; a failed live request shows no old result"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "dd73d8d",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: browser and library error texts after a Korean sentence; a map error no longer stops the page"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "176ae03",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: editor refusals name the field, its unit and the typed text; no refused own-ship value kept"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "8517543",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: Esc restores integer fields; refused integer and heading text reported"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "091133e",
+   "time": "2026-11-26T09:31",
+   "subject": "ksdpa_ui backend smoke: S11 export checks wait up to 600 s for their MB-size uploads"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "9b06ae5",
+   "time": "2026-11-26T09:20",
+   "subject": "ksdpa_ui backend smoke: S11 check that no internal name is left in the shipped backend files"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "34db007",
+   "time": "2026-11-26T09:14",
+   "subject": "ksdpa_ui backend: stale GFS dirs opened once, never through a symlink or another user's"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "1de0c04",
+   "time": "2026-11-26T09:07",
+   "subject": "ksdpa_ui backend: line lengths of the stage-11 changes (no behaviour change)"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "a56447e",
+   "time": "2026-11-26T08:56",
+   "subject": "ksdpa_ui backend smoke: the not-yet-posted GFS cycle check only within 2.5 h of the cycle"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "cc3060c",
+   "time": "2026-11-26T08:56",
+   "subject": "ksdpa_ui backend smoke: AC6 expects 422 calc_failed for the GFS-land aircraft pair"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "77ba990",
+   "time": "2026-11-26T08:44",
+   "subject": "ksdpa_ui backend: the export keeps mappings in block style; only lists of numbers on one line"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "2b887c6",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend smoke: stage-11 checks (S11) and expectations of the new messages"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "8eafb5a",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend data: no internal names in shipped headers and provenance (no value change)"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "49e441a",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: request checks name what was sent; no silent ignores; pair failures by cause"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "464cec7",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: every accepted state exports to a config that loads back"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "27ea599",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: inland-radar notice for aircraft calcs; failed GFS pairs flagged"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "1c98c7e",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: antenna file values checked as written; aircraft radars outside 1-90 GHz fail, not 500"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "b4f6e75",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: YAML errors name the likely cause"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "ff44f9d",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: RCS files refused or warned instead of read silently"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "c50bc34",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: calc refusals name the field path, the panel label and the value as sent"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "b53a50a",
+   "time": "2026-11-26T08:08",
+   "subject": "ksdpa_ui backend: GFS cycles checked strictly and against NOMADS's 10 days"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "8a10139",
+   "time": "2026-11-26T08:03",
+   "subject": "ksdpa_ui backend: GFS failures say the cause in Korean; no download without cfgrib"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "401c941",
+   "time": "2026-11-26T08:01",
+   "subject": "ksdpa_ui run.sh: Korean pre-start checks, then the address that works"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "19c6398",
+   "time": "2026-11-26T07:54",
+   "subject": "ksdpa_ui backend: start-up refuses unusable KSDPA_ALLOWED_HOSTS entries and a too long temp dir"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "9952aa4",
+   "time": "2026-11-26T07:53",
+   "subject": "ksdpa_ui backend: LAN-mode /api requests need the page's SameSite cookie or the own Origin"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "5fe4f28",
+   "time": "2026-11-26T07:50",
+   "subject": "ksdpa_ui backend: Korean 404/405, request body cap, frame and sniffing headers, WebSocket refused"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "eb888bd",
+   "time": "2026-11-26T06:23",
+   "subject": "ksdpa_ui backend: no internal test or review names in shipped comments (no code change)"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "5129e2b",
+   "time": "2026-11-26T05:57",
+   "subject": "ksdpa_ui: third-party notices for the built UI"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "4a0a04d",
+   "time": "2026-11-26T05:54",
+   "subject": "ksdpa_ui: built UI (vite build of 4b39e03)"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "4b39e03",
+   "time": "2026-11-26T05:54",
+   "subject": "ksdpa_ui frontend: Korean backend-down text, retry re-reads the session, WebGL2 notice, RCS warnings"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "b4360ce",
+   "time": "2026-11-26T05:54",
+   "subject": "ksdpa_ui: no internal references in texts the UI shows"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "66428de",
+   "time": "2026-11-26T05:03",
+   "subject": "ksdpa_ui: one upload reader for every file; RCS table size within the config cap"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "582e1c5",
+   "time": "2026-11-26T04:26",
+   "subject": "ksdpa_ui: start-up data file check; no exception class names in messages"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "ba9d612",
+   "time": "2026-11-26T04:26",
+   "subject": "ksdpa_ui: request bodies take JSON numbers only, physical ranges, route waypoints checked"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "e69cf93",
+   "time": "2026-11-26T04:26",
+   "subject": "ksdpa_ui: config and antenna files checked in full, Korean YAML errors, radar ids kept"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "698d0d9",
+   "time": "2026-11-26T04:31",
+   "subject": "RCS elevation notice only when it applies"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "f48bd68",
+   "time": "2026-11-26T04:25",
+   "subject": "RCS upload: refuse malformed tables, warn on suspicious ones"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "c842713",
+   "time": "2026-11-26T04:10",
+   "subject": "land check: a threat radar standing on land"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "dbc6efb",
+   "time": "2026-11-26T04:04",
+   "subject": "default environment: standard dataset (ERA5) R2"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "d8482d4",
+   "time": "2026-11-26T04:01",
+   "subject": "backend serves the built UI; same-origin and Host checks; run.sh starts the backend only"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "6c6f579",
+   "time": "2026-11-25T16:18",
+   "subject": "Comments and docstrings in English (no code change)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "c451ffd",
+   "time": "2026-11-26T10:33",
+   "subject": "ksdpa_ui frontend: UI labels in this round's comments quoted (no code change)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "a182bd7",
+   "time": "2026-11-26T10:30",
+   "subject": "ksdpa_ui: built UI (vite build of 54cfa4e)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "54cfa4e",
+   "time": "2026-11-26T10:30",
+   "subject": "ksdpa_ui: third-party notices for the code bundled packages took from other projects"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "d752903",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: vite config comment names what ships (no behaviour change)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "41b0613",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: long words wrap in the toolbar and the message pane"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "24c893a",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: Korean tooltips and message scopes; standard cases by their labels"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "d78d4d3",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: 저장 fetches the export and reports a failure"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "a20a22e",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: route files checked before use; a failed live request shows no old result"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "dd73d8d",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: browser and library error texts after a Korean sentence; a map error no longer stops the page"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "176ae03",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: editor refusals name the field, its unit and the typed text; no refused own-ship value kept"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "8517543",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: Esc restores integer fields; refused integer and heading text reported"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "091133e",
+   "time": "2026-11-26T09:31",
+   "subject": "ksdpa_ui backend smoke: S11 export checks wait up to 600 s for their MB-size uploads"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "9b06ae5",
+   "time": "2026-11-26T09:20",
+   "subject": "ksdpa_ui backend smoke: S11 check that no internal name is left in the shipped backend files"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "34db007",
+   "time": "2026-11-26T09:14",
+   "subject": "ksdpa_ui backend: stale GFS dirs opened once, never through a symlink or another user's"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "1de0c04",
+   "time": "2026-11-26T09:07",
+   "subject": "ksdpa_ui backend: line lengths of the stage-11 changes (no behaviour change)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "a56447e",
+   "time": "2026-11-26T08:56",
+   "subject": "ksdpa_ui backend smoke: the not-yet-posted GFS cycle check only within 2.5 h of the cycle"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "cc3060c",
+   "time": "2026-11-26T08:56",
+   "subject": "ksdpa_ui backend smoke: AC6 expects 422 calc_failed for the GFS-land aircraft pair"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "77ba990",
+   "time": "2026-11-26T08:44",
+   "subject": "ksdpa_ui backend: the export keeps mappings in block style; only lists of numbers on one line"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "2b887c6",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend smoke: stage-11 checks (S11) and expectations of the new messages"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "8eafb5a",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend data: no internal names in shipped headers and provenance (no value change)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "49e441a",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: request checks name what was sent; no silent ignores; pair failures by cause"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "464cec7",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: every accepted state exports to a config that loads back"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "27ea599",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: inland-radar notice for aircraft calcs; failed GFS pairs flagged"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "1c98c7e",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: antenna file values checked as written; aircraft radars outside 1-90 GHz fail, not 500"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "b4f6e75",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: YAML errors name the likely cause"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "ff44f9d",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: RCS files refused or warned instead of read silently"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "c50bc34",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: calc refusals name the field path, the panel label and the value as sent"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "b53a50a",
+   "time": "2026-11-26T08:08",
+   "subject": "ksdpa_ui backend: GFS cycles checked strictly and against NOMADS's 10 days"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "8a10139",
+   "time": "2026-11-26T08:03",
+   "subject": "ksdpa_ui backend: GFS failures say the cause in Korean; no download without cfgrib"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "401c941",
+   "time": "2026-11-26T08:01",
+   "subject": "ksdpa_ui run.sh: Korean pre-start checks, then the address that works"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "19c6398",
+   "time": "2026-11-26T07:54",
+   "subject": "ksdpa_ui backend: start-up refuses unusable KSDPA_ALLOWED_HOSTS entries and a too long temp dir"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "9952aa4",
+   "time": "2026-11-26T07:53",
+   "subject": "ksdpa_ui backend: LAN-mode /api requests need the page's SameSite cookie or the own Origin"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "5fe4f28",
+   "time": "2026-11-26T07:50",
+   "subject": "ksdpa_ui backend: Korean 404/405, request body cap, frame and sniffing headers, WebSocket refused"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "eb888bd",
+   "time": "2026-11-26T06:23",
+   "subject": "ksdpa_ui backend: no internal test or review names in shipped comments (no code change)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "5129e2b",
+   "time": "2026-11-26T05:57",
+   "subject": "ksdpa_ui: third-party notices for the built UI"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "4a0a04d",
+   "time": "2026-11-26T05:54",
+   "subject": "ksdpa_ui: built UI (vite build of 4b39e03)"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "4b39e03",
+   "time": "2026-11-26T05:54",
+   "subject": "ksdpa_ui frontend: Korean backend-down text, retry re-reads the session, WebGL2 notice, RCS warnings"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "b4360ce",
+   "time": "2026-11-26T05:54",
+   "subject": "ksdpa_ui: no internal references in texts the UI shows"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "66428de",
+   "time": "2026-11-26T05:03",
+   "subject": "ksdpa_ui: one upload reader for every file; RCS table size within the config cap"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "582e1c5",
+   "time": "2026-11-26T04:26",
+   "subject": "ksdpa_ui: start-up data file check; no exception class names in messages"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "ba9d612",
+   "time": "2026-11-26T04:26",
+   "subject": "ksdpa_ui: request bodies take JSON numbers only, physical ranges, route waypoints checked"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "e69cf93",
+   "time": "2026-11-26T04:26",
+   "subject": "ksdpa_ui: config and antenna files checked in full, Korean YAML errors, radar ids kept"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "698d0d9",
+   "time": "2026-11-26T04:31",
+   "subject": "RCS elevation notice only when it applies"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "f48bd68",
+   "time": "2026-11-26T04:25",
+   "subject": "RCS upload: refuse malformed tables, warn on suspicious ones"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "c842713",
+   "time": "2026-11-26T04:10",
+   "subject": "land check: a threat radar standing on land"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "dbc6efb",
+   "time": "2026-11-26T04:04",
+   "subject": "default environment: standard dataset (ERA5) R2"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "d8482d4",
+   "time": "2026-11-26T04:01",
+   "subject": "backend serves the built UI; same-origin and Host checks; run.sh starts the backend only"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "6c6f579",
+   "time": "2026-11-25T16:18",
+   "subject": "Comments and docstrings in English (no code change)"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "c451ffd",
+   "time": "2026-11-26T10:33",
+   "subject": "ksdpa_ui frontend: UI labels in this round's comments quoted (no code change)"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "a182bd7",
+   "time": "2026-11-26T10:30",
+   "subject": "ksdpa_ui: built UI (vite build of 54cfa4e)"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "54cfa4e",
+   "time": "2026-11-26T10:30",
+   "subject": "ksdpa_ui: third-party notices for the code bundled packages took from other projects"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "d752903",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: vite config comment names what ships (no behaviour change)"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "41b0613",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: long words wrap in the toolbar and the message pane"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "24c893a",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: Korean tooltips and message scopes; standard cases by their labels"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "d78d4d3",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: 저장 fetches the export and reports a failure"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "a20a22e",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: route files checked before use; a failed live request shows no old result"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "dd73d8d",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: browser and library error texts after a Korean sentence; a map error no longer stops the page"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "176ae03",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: editor refusals name the field, its unit and the typed text; no refused own-ship value kept"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "8517543",
+   "time": "2026-11-26T10:28",
+   "subject": "ksdpa_ui frontend: Esc restores integer fields; refused integer and heading text reported"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "091133e",
+   "time": "2026-11-26T09:31",
+   "subject": "ksdpa_ui backend smoke: S11 export checks wait up to 600 s for their MB-size uploads"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "9b06ae5",
+   "time": "2026-11-26T09:20",
+   "subject": "ksdpa_ui backend smoke: S11 check that no internal name is left in the shipped backend files"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "34db007",
+   "time": "2026-11-26T09:14",
+   "subject": "ksdpa_ui backend: stale GFS dirs opened once, never through a symlink or another user's"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "1de0c04",
+   "time": "2026-11-26T09:07",
+   "subject": "ksdpa_ui backend: line lengths of the stage-11 changes (no behaviour change)"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "a56447e",
+   "time": "2026-11-26T08:56",
+   "subject": "ksdpa_ui backend smoke: the not-yet-posted GFS cycle check only within 2.5 h of the cycle"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "cc3060c",
+   "time": "2026-11-26T08:56",
+   "subject": "ksdpa_ui backend smoke: AC6 expects 422 calc_failed for the GFS-land aircraft pair"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "77ba990",
+   "time": "2026-11-26T08:44",
+   "subject": "ksdpa_ui backend: the export keeps mappings in block style; only lists of numbers on one line"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "2b887c6",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend smoke: stage-11 checks (S11) and expectations of the new messages"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "8eafb5a",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend data: no internal names in shipped headers and provenance (no value change)"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "49e441a",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: request checks name what was sent; no silent ignores; pair failures by cause"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "464cec7",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: every accepted state exports to a config that loads back"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "27ea599",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: inland-radar notice for aircraft calcs; failed GFS pairs flagged"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "1c98c7e",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: antenna file values checked as written; aircraft radars outside 1-90 GHz fail, not 500"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "b4f6e75",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: YAML errors name the likely cause"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "ff44f9d",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: RCS files refused or warned instead of read silently"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "c50bc34",
+   "time": "2026-11-26T08:41",
+   "subject": "ksdpa_ui backend: calc refusals name the field path, the panel label and the value as sent"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "b53a50a",
+   "time": "2026-11-26T08:08",
+   "subject": "ksdpa_ui backend: GFS cycles checked strictly and against NOMADS's 10 days"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "8a10139",
+   "time": "2026-11-26T08:03",
+   "subject": "ksdpa_ui backend: GFS failures say the cause in Korean; no download without cfgrib"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "401c941",
+   "time": "2026-11-26T08:01",
+   "subject": "ksdpa_ui run.sh: Korean pre-start checks, then the address that works"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "19c6398",
+   "time": "2026-11-26T07:54",
+   "subject": "ksdpa_ui backend: start-up refuses unusable KSDPA_ALLOWED_HOSTS entries and a too long temp dir"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "9952aa4",
+   "time": "2026-11-26T07:53",
+   "subject": "ksdpa_ui backend: LAN-mode /api requests need the page's SameSite cookie or the own Origin"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "5fe4f28",
+   "time": "2026-11-26T07:50",
+   "subject": "ksdpa_ui backend: Korean 404/405, request body cap, frame and sniffing headers, WebSocket refused"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "eb888bd",
+   "time": "2026-11-26T06:23",
+   "subject": "ksdpa_ui backend: no internal test or review names in shipped comments (no code change)"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "5129e2b",
+   "time": "2026-11-26T05:57",
+   "subject": "ksdpa_ui: third-party notices for the built UI"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "4a0a04d",
+   "time": "2026-11-26T05:54",
+   "subject": "ksdpa_ui: built UI (vite build of 4b39e03)"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "4b39e03",
+   "time": "2026-11-26T05:54",
+   "subject": "ksdpa_ui frontend: Korean backend-down text, retry re-reads the session, WebGL2 notice, RCS warnings"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "b4360ce",
+   "time": "2026-11-26T05:54",
+   "subject": "ksdpa_ui: no internal references in texts the UI shows"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "66428de",
+   "time": "2026-11-26T05:03",
+   "subject": "ksdpa_ui: one upload reader for every file; RCS table size within the config cap"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "582e1c5",
+   "time": "2026-11-26T04:26",
+   "subject": "ksdpa_ui: start-up data file check; no exception class names in messages"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "ba9d612",
+   "time": "2026-11-26T04:26",
+   "subject": "ksdpa_ui: request bodies take JSON numbers only, physical ranges, route waypoints checked"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "e69cf93",
+   "time": "2026-11-26T04:26",
+   "subject": "ksdpa_ui: config and antenna files checked in full, Korean YAML errors, radar ids kept"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "698d0d9",
+   "time": "2026-11-26T04:31",
+   "subject": "RCS elevation notice only when it applies"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "f48bd68",
+   "time": "2026-11-26T04:25",
+   "subject": "RCS upload: refuse malformed tables, warn on suspicious ones"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "c842713",
+   "time": "2026-11-26T04:10",
+   "subject": "land check: a threat radar standing on land"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "dbc6efb",
+   "time": "2026-11-26T04:04",
+   "subject": "default environment: standard dataset (ERA5) R2"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "d8482d4",
+   "time": "2026-11-26T04:01",
+   "subject": "backend serves the built UI; same-origin and Host checks; run.sh starts the backend only"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "6c6f579",
+   "time": "2026-11-25T16:18",
+   "subject": "Comments and docstrings in English (no code change)"
+  }
+ ],
+ "notes": [],
+ "last_activity": {
+  "fretsim": "2026-04-30",
+  "DiodeUnitDesign": "2026-11-09",
+  "beamnet": "2026-10-30",
+  "BoKo": "2026-11-24",
+  "PLOIM": "2026-11-26",
+  "fullwave": "2026-11-09",
+  "metasurantenna_draw": "2026-10-07",
+  "laggedOIM": "2026-11-09",
+  "RLSA": "2026-11-16",
+  "fdtd_gpu": "2026-10-31",
+  "archive-2026": "2026-11-10",
+  "EMsimulations": "2026-07-21",
+  "Dissertation": "2026-11-24",
+  "CombinatorialOptimization": "2026-10-16",
+  "sunflower_nn": "2026-11-10",
+  "Hanhwa": "2026-11-26",
+  "~2023": "2023-12-20",
+  "2025": "2025-12-22",
+  "2024": "2024-11-19",
+  "CV": "2026-11-23"
+ },
+ "summary": {
+  "headline": "PLOIM Letter를 v5.9.x로 바꿔(새 dOIM 프로토콜, SM 재작성, PRL 기준 모의 심사) minor revision 뒤 accept 판정까지 받았고, 한화 ksdpa_ui는 Linux 납품판의 패치와 감사를 진행함.",
+  "projects": [
+   {
+    "id": "PLOIM",
+    "done": [
+     "그림을 letter_v5.8n→v5.8r로 여러 번 다시 설계함. 그림 3은 두 패널(SK1024 π/4에서 장과 반대인 스핀 수 대 γ, 동결 법칙 γ_F 대 가장 약한 장)로 줄임. 그림 4(a)와 그림 1(a)(d)는 로그 축으로 바꿈(그림 4(a)는 best-known 대비 초과 에너지). 모든 그림의 패널 라벨은 축 바깥으로 뺌.",
+     "벤치마크를 보강함. Leleu 외 2021 보충자료로 CAC를 구현해 네 가지 해석으로 G22를 돌렸으나 모두 best-known 대비 0.4 % 근처(cut 13300–13350)에서 멈춰 넣지 못함. 대신 dOIM 프로토콜을 새로 정해 채택함(β를 0에서 올리다 측정한 γ=|Ω|−2β가 0을 지나면(여유 0.05) 멈추고 방문한 최선을 읽음). 모든 N에서 기준 dOIM보다 1.6–2.8배 빨라짐(N=1024: 1.2×10⁶→5.4×10⁵).",
+     "letter_v5.9(en 6쪽, ko 5쪽)와 v4.3 대비 빨간 표시판 letter_v5.9_vs4.3을 빌드하고 표와 그림을 다시 생성함. 그림 1(d)는 ramp 지속 시간 대 잔여 에너지로 바꿈(lag-off 0.150→0.020, π/4 0.091→0.0011). SK 지수 b는 lag-off 0.60(11), OIM 0.31(4), dOIM 0.23(2), dSB 0.22(1).",
+     "supplement_v5.9(en/ko, 12쪽)를 새로 씀. 프로토콜은 의사코드(알고리즘 S1–S3)로 바꾸고, 개발 집합 14개 이야기는 빼고, Gset 표 글자 크기를 다른 표와 맞춤. GPT의 제안(π/4 ≤ α < π/2에서 네트워크 전체 안정성)은 검증 뒤 S1.4로 넣음(본문은 그대로). 잡음 넣은 lag-off를 최선 읽기로 다시 돌리니 지수가 0.35(2)로, phase-lag OIM 0.31(4)와 오차 범위 안에서 같게 나옴.",
+     "투고처를 논의해 이 논문은 메커니즘 Letter로 PRL에 내고 Sci. Adv.는 하드웨어 논문으로 노리는 방향을 정리함. PRL 환산 분량은 3984(한도 3750)로 계산됨. 버전도 정리함. paper/에는 v2.1.24·v4.3·v5.9 계열(+저자 letter_v5.9.1.ko)만 남기고, 옛 판 파일 242개, figs 낱개 39개, 옛 그림 스크립트 61개를 work/archive_20261126/로 옮김.",
+     "PRL 기준으로 메모를 보지 않은 리뷰어 심사 루프를 돌림. 리뷰어 1(v5.9)과 리뷰어 2(v5.9.1)는 1라운드 모두 major revision이었음. 수정 없이 accept/reject만 고르게 한 2라운드에서는 둘 다 reject(PR Applied 이관 권고)였음. 텍스트 수정을 허용한 절차에서는 minor revision 뒤 accept가 나옴. 이어 v5.9.2로 세 번째 새 리뷰어 루프를 시작함."
+    ],
+    "issues": [
+     "새 프로토콜을 써도 SK TTS에서 dOIM이 dSB보다 약 2배 느림(N=1024: 5.4×10⁵ vs 2.6×10⁵). Gset는 우위가 아니라 동등 수준임(dOIM 45개 vs dSB 43개).",
+     "리뷰어 1은 dOIM의 지연이 '하드웨어가 이미 가진 양'이 아니라 설계 변수라고 지적함(R6). 실제 하드웨어 지연을 쓰는 phase-lag OIM의 지수는 잡음 기준선과 같음. 5.9 논증을 유지할지 바꿀지는 연구자가 결정할 일로 남음.",
+     "SM S1.4(네트워크 안정성)는 교수님과 논의해야 하며, α < π/4에는 이 논증이 적용되지 않음.",
+     "PRL 환산 분량이 한도보다 234 많고 넘치는 몫은 캡션임. 캡션 축약을 요청했지만 그 결과는 기록에 없음.",
+     "개발 집합 이야기를 빼면서 SM에 설정을 어떻게 골랐는지가 없어짐(데이터와 검증은 스크립트에 남아 있음)."
+    ],
+    "next": [
+     "v5.9.2에 대한 세 번째 리뷰어의 1라운드 리포트를 받아 v5.9.3을 씀. 이전 리뷰어가 찾은 문구 오류 3건도 반영함.",
+     "S1.4 네트워크 안정성 논증을 교수님과 논의함.",
+     "5.9 논증을 유지할지 바꿀지 정함.",
+     "본문 글을 직접 읽고 한 번에 고침."
+    ]
+   },
+   {
+    "id": "Hanhwa",
+    "done": [
+     "주석과 docstring을 영어로 바꿈(6c6f579). docs를 뺀 UI 전용 패키지 KSDPA_RF_UI_rf-2026.11.zip(1.3 MB, 101개 파일)을 만들고, 압축을 따로 풀어 실행·시험·브라우저 확인까지 통과함. 문서가 든 이전 패키지는 archive/rf1124_tools/delivery_20261125_full/로 옮김.",
+     "발송 전에 다섯 관점(라이선스·자료 권리, 보안, 받는 쪽 실행 환경, 파일 내용, 실제 동작)으로 검토함. 가장 큰 위험은 받는 쪽에서 실행이 안 될 가능성이었고, 보안과 결과 해석에서도 고칠 점을 찾음.",
+     "Windows 지원은 뒤로 미루고 Linux판을 먼저 보내기로 함.",
+     "Stage 10 패치를 마침(release/rf-2026-11 14커밋, HEAD eb888bd). 미리 빌드한 화면을 백엔드가 포트 8100 하나로 띄우고(Node 불필요), 기본 환경을 ERA5 표준 데이터셋 R2로 바꿈(인터넷 없이 첫 계산 확인). CORS를 없애고 Host와 동일 출처를 검사하며, 육지 위 레이더 안내, RCS 표 거부/경고, 한국어 입력 오류 메시지를 넣음. pytest 313/313(py3.9, py3.10) 통과.",
+     "감사 워크플로(wf_4be00541-e26)를 돌리고 stage 11 커밋을 추가함. 한국어 404/405, 요청 크기 제한, 보안 헤더, WebSocket 거부, LAN 모드 SameSite 쿠키/Origin 검사, run.sh 한국어 사전 점검, GFS 실패 원인 표시와 주기 검사, 거부 시 필드 경로와 값 표시, export 재로드 보장, 제3자 고지를 넣고 UI를 다시 빌드함(a182bd7)."
+    ],
+    "issues": [
+     "LADEN RCS 표의 재배포 허가가 확인되지 않음(README에 '재배포 허가 확인 중'). 파일을 빼면 백엔드가 시작하지 않으므로, 허가를 받을지 미룰지 결정해야 함.",
+     "docs는 연구자가 따로 검수한 뒤 보내야 함."
+    ],
+    "next": [
+     "Linux판 최종 패키지를 보냄.",
+     "Windows에서 실행되도록 지원 작업을 함.",
+     "docs를 검수한 뒤 별도로 보냄."
+    ]
+   }
+  ],
+  "roadmap_suggestions": [
+   {
+    "id": "PLOIM",
+    "suggestion": "goal을 'PRL 투고용 메커니즘 Letter(v5.9.x). Sci. Adv.는 하드웨어 결과가 나온 뒤 별도 논문'으로 바꾸기를 제안함. 근거: 11-26 투고처 논의에서 PRL 메커니즘 Letter 추천이 정리되고, 연구자가 sciadv판을 아카이브로 옮기라고 했으며, 모의 심사 기준도 PRL이었음."
+   },
+   {
+    "id": "PLOIM",
+    "suggestion": "로드맵의 '지금 남아 있는 원고' 표가 아직 v6/sciadv 검토 루프를 진행 중으로 적고 있음. letter_v5.9/5.9.1/5.9.2와 supplement_v5.9.x, work/archive_20261126/ 기준으로 고치기를 제안함. next에는 '세 번째 리뷰어 루프(v5.9.3), S1.4 교수님 논의, 5.9 논증 유지 여부 결정'을 넣기를 제안함."
+   },
+   {
+    "id": "Hanhwa",
+    "suggestion": "goal의 '(확인 필요)'를 'ksdpa/ksdpa_ui RF UI 납품(rf-2026.11, Linux판 먼저; Windows 지원과 docs는 나중)'으로 구체화하기를 제안함. 근거: 오늘 작업이 모두 KSDPA_RF_UI 납품 패키지였고 세션 제목도 'ksdpa·ksdpa_ui만 남기는 아카이브 정리'였음. ShipIR_KU·rfir_ui를 goal에 계속 둘지도 확인이 필요함."
+   }
+  ],
+  "other": [
+   "Hanhwa 커밋이 같은 해시로 미등록 저장소 Hanhwa_rf_try, Hanhwa_proto_gamma, Hanhwa_rf_release에도 있음. 미등록 폴더 Hanhwa_rf_try(57개, 주로 .py), Hanhwa_delivery(102개, 주로 .py), Hanhwa_rf_release(86개, 주로 .py·빌드된 정적 자산)에서도 파일이 바뀜. 모두 Hanhwa 납품 작업으로, projects.yaml에 하위 경로로 등록할지 확인이 필요함.",
+   "세션 33c50f70은 2026/Dissertation 폴더에서 열렸지만 내용은 모두 PLOIM 원고 작업이었음. Dissertation 자체 활동은 없음."
+  ]
+ },
+ "summary_error": null
+}

@@ -1,0 +1,528 @@
+{
+ "date": "2026-11-27",
+ "window": {
+  "start": "2026-11-26T21:00:00+09:00",
+  "end": "2026-11-27T21:00:00+09:00",
+  "partial": false
+ },
+ "generated_at": "2026-11-27T21:00:04+09:00",
+ "sessions": [
+  {
+   "session": "33c50f70",
+   "title": "Dissertation 1장 검토",
+   "cwd": "2026/Dissertation",
+   "project_guess": "PLOIM",
+   "n_prompts": 22,
+   "dropped_prompts": 0,
+   "turns": [
+    {
+     "t": "11-26 21:40",
+     "prompt": "ㅇㅇ 근데 내 생각에는 과도한 주장이긴 해. 약간 트집에 가까운 주장이라서, 최대한 보내되 우리 논문에서 반영해야하는 이슈는 아닐 수 있어. 이건 그냥 연습용으로 만약 그런 주장이 온다면 우리가 방어할 수 있는지를 테스트하는거라고 생각해줘. 이건 예비용인거지",
+     "reply": "Understood. I'll treat this round as a drill: the goal is to see whether we can defend against this objection if it comes, not to change the paper for it. 5.9.3 will carry only the three wording errors the previous referee found. The response to F1 will go in the reply letter, with data. **My view: calling it \"fatal\" is an overreach, but the point itself is not a nitpick.** Our own data back half of what he says. - **Where he is right.** In the dOIM, an imposed fixed rotation works about as wel…"
+    },
+    {
+     "t": "11-27 01:55",
+     "prompt": "얼마나 남았어?",
+     "reply": "세 번째 리뷰어의 2라운드 판정은 **PRL로는 reject, Phys. Rev. Applied로 이관**입니다(PRE나 PRR도 적합하다고 했습니다). 방어는 절반만 통했습니다. **방어가 통한 것** - **F1이 fatal에서 내려왔습니다.** 대조군 데이터를 받고 \"fatal이 아니라 수정 요구\"로 낮췄고, 남은 fatal은 없습니다. 그가 N = 256에서 직접 다시 돌려 보니 우리 수치와 맞았습니다(고정 δ = 0.8에서 1.14–1.25배). - **phase-coupled OIM에서는 지연이 핵심이라는 논점(ii)을 받아들였습니다.** - R5(조율 절차, 45 대 43)도 답변으로 대부분 해결됐습니다. **방어가 통하지 않은 것 (결정 이유)** - **dOIM의 dSB급 지수는 지연이 필요 없습니다.** 지연 없는 dOIM이 같은 지수를 냅니다(Δb = 0.009 ± 0.010). - **\"지연은 회전률을 스스로 맞춘다\"는 논점(iii)은 반박당했습니다.** dO…"
+    },
+    {
+     "t": "11-27 12:17",
+     "prompt": "reviewr 세명한테 받아보자.",
+     "reply": ""
+    },
+    {
+     "t": "11-27 12:19",
+     "prompt": "reviewr 세명한테 받아보자. 이 라운드도 일반적인 심사 과정을 거치고, 너의 입장은 이 논문에 인용한 저자중 한명이여야해. 그래서, 그 저자 입장에서 자신의 논문과의 관계에서 평가받도록 해야하니까, 처음에 보낼때부터 그 세팅을 해야할듯. 그리고 오면 답변지를 작성하고, 다시 보내서 확인받는거 까지. 맥락 이해했지? 그리고 지금까지의 리뷰 라운드들을 정리해서 나한테 보고용 파일을 하나 만들어줘. 현재 상황에 대해서",
+     "reply": ""
+    },
+    {
+     "t": "11-27 12:19",
+     "prompt": "reviewr 세명한테 받아보자. 이 라운드도 일반적인 심사 과정을 거치고, 너의 입장은 이 논문에 인용한 저자중 한명이여야해. 그래서, 그 저자 입장에서 자신의 논문과의 관계에서 평가받도록 해야하니까, 처음에 보낼때부터 그 세팅을 해야할듯. 그리고 오면 답변지를 작성하고, 다시 보내서 확인받는거 까지. 맥락 이해했지? 끝나면 지금까지의 리뷰 라운드들을 정리해서 나한테 보고용 파일을 하나 만들어줘. 현재 상황에 대해서",
+     "reply": "세 명 심사(1차 → 답변 + 5.9.4 수정본 → 2차 확인)를 마쳤고, 지금까지의 라운드를 정리한 보고 파일도 만들었습니다. **보고 파일:** `/home/nol/study/2026/PLOIM/paper/work/v5_en/review_report_20261127.pdf` (같은 위치에 .md) **이번 라운드 결과** | 심사자 (역할) | 1차 | 2차 | |---|---|---| | D ([8, 10, 21, 32] 저자) | major + FATAL (2차 고조파 지연 2α) | PRL reject → PR Applied. 1차 fatal은 해소, 새 FATAL 1개 | | E ([9, 22] 저자) | major | **minor revision, PRL 충족 (근소, 개념적 근거)** | | F ([17] dSB 저자) | major | PRL reject → PR Applied. fatal 없음, \"PRL에 두면 RR1–3이면 충분\" | 6명 전체로 보면 PRL …"
+    },
+    {
+     "t": "11-27 17:20",
+     "prompt": "결론은 이관 확률 66퍼, accept 확률 33퍼 정도로 보면 되나?",
+     "reply": "아니요, 66 대 33으로 읽기는 어렵습니다. 6명 중 2명이 PRL을 지지했다는 건 \"심사자 한 명이 지지할 확률\"에 가깝고, 논문이 PRL에 실릴 확률은 그보다 낮다고 봅니다. 대략 10–20 % 정도로 추정합니다. **그렇게 보는 이유** 1. **PRL은 보통 심사자 2명이 모두 중요성을 인정해야 합니다.** 한 명이 지지할 확률을 1/3로 두고 두 사람이 독립이면 둘 다 지지할 확률은 1/9 ≈ 11 %입니다. 판단이 서로 비슷하게 움직이면 20 %대까지 오릅니다. 여기에 심사 없이 에디터 단계에서 돌려보내는 경우는 아직 넣지 않았습니다. 2. **최신 데이터를 다 본 심사자만 세면 1/3입니다.** B의 accept는 5.9.2 시점이라 imposed-axis 대조군이나 dSB + w_i 동등 결과를 보기 전이었습니다. 이 결과를 다 본 D, E, F 가운데 지지는 E 한 명입니다. 3. **같은 결론이 반복된 것 자체가 신호입니다.** 모의 심사자들은 같은 모델이라 독…"
+    },
+    {
+     "t": "11-27 17:21",
+     "prompt": "보면 근데, 리뷰어들이 좀 멍청하던가, 이 프로젝트 내용을 다 알고 있는 것처럼 행동하는 느낌이 있네. 누가 리뷰할 때 그렇게 다 돌려가지고 실험한다음에 보내줘",
+     "reply": "절반은 맞습니다. 다만 \"프로젝트를 다 안다\"는 쪽은 확인해 보니 아니고, \"실험까지 돌린다\"는 쪽은 맞습니다. 그리고 그건 제가 그렇게 설정한 탓입니다. **프로젝트 정보가 새지는 않았습니다.** 1·2차 모두 각 심사자 기록을 확인했습니다. 메모리 도구 호출은 없었고, 자기 폴더 밖 파일을 연 적도 없습니다. 이름이 잡힌 건 PDF 저자란뿐입니다. 다 아는 것처럼 보인 데에는 세 가지 이유가 있습니다. - **2차의 imposed-axis 데이터, 14개 개발용 그래프, held-out 결과는 제가 답변서에 넣어 준 것입니다.** 2차가 가혹해진 건 우리가 준 정보 때문입니다. - **2α 지연이나 \"축만 돌리면 되지 않나\"는 원고만 보고 떠올린 것입니다.** C, D, E, F가 각자 같은 걸 찾았습니다. 이건 지적이 자연스럽다는 뜻도 되지만, 심사자들이 저와 같은 모델이라 생각하는 방식이 비슷하다는 뜻이기도 합니다. 서로 독립적인 여섯 명이 아니라 같은 사람이 여섯 번 읽은…"
+    },
+    {
+     "t": "11-27 17:23",
+     "prompt": "아냐아냐. 일단. 5.9.4 / 리뷰 돌리기 전 5.9, 4.3, 2.1.24 정도가 중요한 파일인가? 정리좀 하자. 그리고 5.9.4와 5.9의 비교, 5.9.4와 4.3의 비교만 있으면 될듯.",
+     "reply": "흐름이 안 들어오는 가장 큰 이유는 고리 두 개가 빠져서입니다. 그리고 한 문장은 방향이 반대로 쓰여 있습니다. ## 빠진 것 1. **기존 injection이 \"외부에서 주는 고정 기준\"이라는 말이 없습니다.** 그래서 주파수가 바뀌면 왜 문제인지, 왜 \"상대 위상\" injection이 해법인지가 이어지지 않습니다. 1문단에 \"2ω₀로 고정된 외부 기준에 lock시킨다\"를 넣어야 2문단의 대비가 살아납니다. 2. **\"대칭이다 → 따라서 detuning이 중요하다\" 사이가 비어 있습니다.** 중간 단계는 이것입니다. 기준이 네트워크와 함께 돌기 때문에 공통 회전은 더 이상 injection과 부딪히지 않고, 남는 것은 각 스핀이 공통 회전에서 얼마나 벗어나는가입니다. 3. **phase slip이 왜 좋은지가 없습니다.** 미끄러지는 동안 그 스핀의 부호가 계속 바뀐다, 즉 탐색한다는 말이 있어야 3문단의 annealing이 의미를 갖습니다. ## 틀린 것 - **\"평균 주파수보…"
+    },
+    {
+     "t": "11-27 18:58",
+     "prompt": "그렇게 쓴 초안을 한번 줘볼래?",
+     "reply": "제안한 순서대로 쓴 초안입니다. 문장은 가능한 한 쓰신 것을 살렸습니다. --- 이는 OIM에서 스핀을 결정하는 방식이 위상 지연과 충돌하기 때문이다. OIM은 주파수 2ω₀의 2차 고조파를 외부에서 주입해 각 진동자의 위상을 0 또는 π에 lock시키며 [11,12], 이 injection의 위상은 고정되어 있다. 그런데 위상 지연은 네트워크 전체의 진동 주파수를 그 에너지에 비례하는 만큼 바꾼다 [20]. 고정된 injection에 위상을 lock하려면 injection이 이 주파수 이동을 멈춰야 하고, 회전이 멈추는 동안 이징 에너지는 올라간다. 그래서 기존 OIM에서는 위상 지연이 있으면 이진 위상과 낮은 이징 에너지를 함께 얻기 어려웠다. Injection이 상대 위상에만 의존하면 이 충돌은 사라진다. 이때 동역학은 전역 위상 회전에 대해 대칭이므로, injection의 기준은 네트워크와 함께 회전하고 공통 주파수 이동은 더 이상 injection과 부딪히지 않는다. 남는…"
+    },
+    {
+     "t": "11-27 19:02",
+     "prompt": "여기서도 과한 표현들과 self-contain 하지 않은 표현들이 있는 거 같아. 논리는 유지하면서 중복되거나 이해를 어렵게하는 표현들을 제거해야할 거 같아.",
+     "reply": "네, 지난 초안에도 그런 표현이 꽤 있었습니다. 문제는 크게 세 종류입니다. - **정의 전에 나온 것:** 2ω₀, \"회전\", \"공통 회전\", \"결합의 복원력\", \"임계값\"은 이 문단보다 뒤에서 정의되는 개념입니다. - **한 대상에 여러 이름:** 같은 스핀을 \"결합 에너지가 작은\", \"국소장이 약한\", \"좌절된\" 스핀으로 세 번 다르게 불렀습니다. 주파수 변화도 \"주파수 이동\", \"회전\", \"공통 회전\"으로 섞여 있습니다. - **반복이거나 근거가 안 보이는 문장:** \"위상 지연은 이렇게 좌절된 스핀을 계속 움직이게 한다\"는 앞 문장의 반복입니다. \"회전이 멈추는 동안 에너지가 오른다\"는 그림 없이는 이유가 보이지 않습니다. 이 세 가지를 걷어낸 초안입니다. --- 이는 OIM에서 스핀을 결정하는 방식이 위상 지연과 충돌하기 때문이다. OIM은 위상이 고정된 2차 고조파를 외부에서 주입해 각 진동자의 위상을 0 또는 π에 lock시킨다 [11,12]. 그런데 위상 지연은 네…"
+    },
+    {
+     "t": "11-27 19:06",
+     "prompt": "다음으로 각 진동자를 이웃의 스핀 부호에 결합시켜, 임계값이 이징 국소장에 작용하게 하고, 지연이 π/4 이상일 때 충분히 느린 ramp에서 임계값이 양수인 동안 굳는 모든 배열이 이징 에너지의 국소 최솟값이 되게 한다. 여기도 뭔가 흐름이 좀 어색한게 있어. 저게 이것만 읽어서는 무슨말인지 모르겠거든? 그래서 이 아이디어를 어떻게 설명하지",
+     "reply": "뒷부분이 길어진 건, 같은 직관을 세 번 말하기 때문입니다. \"보장이 없다\", \"순서가 어긋날 수 있다\", \"lock을 방해한다 → lock될 수 없다 → 국소 최솟값\"이 문장마다 다시 풀립니다. 직관을 전하는 데 필요한 고리는 세 개뿐입니다. 1. 위상 결합에서는 detuning을 이웃의 **위상**이 정하므로, 보장이 없다. 2. 스핀 **부호**에 결합하면 detuning을 이징 국소장이 정한다. 3. 국소장과 반대인 스핀은 injection 혼자 감당할 수 있을 때까지 lock되지 못하므로, 그 전에 굳은 배열은 국소 최솟값이다. 이 세 고리를 세 문장으로 줄이면 됩니다. 결과 문단도 수치만 남기면 짧아집니다. 3문단의 마지막 문장부터 다시 쓴 안입니다. --- … 위상 지연이 없으면 detuning도 없어서, injection은 모든 스핀을 그 순간의 방향 그대로 lock시키고, 배열은 국소 최솟값에도 이르지 못한 채 굳는다(spin freezing [10]). 다만 위상…"
+    },
+    {
+     "t": "11-27 19:15",
+     "prompt": "현재 아래와 같은 상태야. 근데 뒤에서 나올 내용의 직관을 요약해주는건 좋은데, 혹시 길진 않을까? PRL 기준으로 봤을 때 어느정도 수준인걸까? <pasted_content id=\"20ed\"> 많은 조합 최적화 문제는 이징 해밀토니안의 바닥 상태를 찾는 문제로 바꿀 수 있다 [1,2]. 이징 머신 [3–7]은 스핀 상호작용을 물리적으로 구현하고, 그들의 에너지 이완 동역학으로 바닥 상태를 찾는다. 그러나 이완만으로는 에너지가 단조 감소하므로 국소 최솟값에 갇히기 쉽다. 진동자 이징 머신(OIM)은 특히 더 이 문제에 취약하다[8,9,10]. OIM은 결합된 진동자의 동기화 동역학인 Kuramoto 모형을 활용하여 낮은 에너지 상태를 찾는데 [11–14], 이는 XY 에너지 지형에서의 경사 하강에 해당한다 [11,12]. 따라서, OIM은 처음 도달하는 XY 에너지의 국소 최소에서 탐색을 멈춘다. 국소 최솟값에서 벗어나기 위해서는 비경사 항을 동역학에 포함해야 한다 [4]. 다른 아날로그 이징 머신들에서는 이미 그러한 방법들이 개발되었다. 예를 들어 coherent Ising machine에서는 스핀마다 유효 결합을 동적으로 바꾸는 보조 변수를 두어 국소 …",
+     "reply": "네, 깁니다. 숫자로 보면 이렇습니다. | | 현재 5.9.4 서론 | 지금 붙여 주신 서론 | |---|---|---| | 문단 수 | 5 | 8 | | 영어 환산 단어 수 | 523 | 약 730 | 영어 환산은 5.9.4 한글·영문판의 단어 수 비율(1.47)로 계산했습니다. **PRL 기준으로 보면:** - 레터 전체는 그림과 수식 환산분까지 3750단어이고, 본문 글은 보통 2500단어 안팎입니다. 서론은 대개 400–600단어, 3–5문단입니다. - 마지막 문단 하나(\"Here we show …\")가 핵심 아이디어와 결과를 미리 보여 주는 구조가 일반적입니다. - 지금은 서론이 본문의 30 % 가까이 되고, 5.9.4가 이미 한도 근처에서 210단어를 넘긴 상태라 여기서 200단어가 더 붙으면 확실히 초과합니다. **더 큰 문제는 중복입니다.** 5–7문단(영어 환산 약 280단어)은 본문 모델 부분(식 (2)–(10))이 수식으로 다시 하는 설명입니다. 직관을 미리 주…"
+    },
+    {
+     "t": "11-27 19:18",
+     "prompt": "그럼 1–3문단도 좀 줄여서 전체 서론 다시 줄래?",
+     "reply": "앞부분은 거의 그대로 두고, 읽기를 끊는 곳만 고쳤습니다. --- 많은 조합 최적화 문제는 이징 해밀토니안의 바닥 상태를 찾는 문제로 바꿀 수 있다 [1,2]. 이징 머신 [3–7]은 스핀 상호작용을 물리적으로 구현하고, 에너지 이완 동역학으로 바닥 상태를 찾는다. 그러나 이완만으로는 에너지가 단조 감소하므로 국소 최솟값에 갇히기 쉽다. 진동자 이징 머신(OIM)도 같은 문제를 겪는다 [8–10]. OIM은 결합된 진동자의 동기화 동역학인 Kuramoto 모형을 활용하여 낮은 에너지 상태를 찾는데 [11–14], 이는 XY 에너지 지형에서의 경사 하강에 해당한다 [11,12]. 다른 아날로그 이징 머신은 비경사 항을 동역학에 넣어 국소 최솟값을 벗어난다 [4]. 예를 들어 coherent Ising machine에서는 스핀마다 유효 결합을 동적으로 바꾸는 보조 변수를 두어 국소 최솟값을 불안정하게 만든다 [15,16]. simulated bifurcation machine은 순수한…"
+    },
+    {
+     "t": "11-27 19:47",
+     "prompt": "정지 상태, , 즉 dθ_i/dt=0에서 에너지 H_XY<0은 2β≥sinα 2|H_XY |/N을 요구하고, 우변은 아래 식 (6)의 회전률이다. 지연이 있으면 식 (2)의 injection은 회전을 멈춰야만 낮은 에너지를 붙잡을 수 있고, ramp 동안에는 에너지가 올라가는 사이에 회전을 멈춘다[그림 1(a,b)]. 대체 이게 뭔 말이여... 깔끔하게 정리해봐",
+     "reply": "이 문단이 말하는 것을 한 줄로 줄이면 이렇습니다. 지연은 네트워크를 돌리려는 알짜 토크(에너지에 비례)를 만들고, 고정된 injection이 회전을 멈추려면 그만큼의 반대 토크를 내야 합니다. 그런데 injection의 토크에는 상한(2βN)이 있어서, 에너지가 낮을수록 더 센 injection이 필요합니다. 지금 문단이 안 읽히는 이유는 두 가지입니다. 첫째, \"토크 균형\"이라는 핵심 그림을 말하지 않고 부등식부터 꺼냅니다. 둘째, \"이진 위상에서는 injection 토크가 0\"이라는 고리가 빠져 있어서, 왜 낮은 에너지를 고정하기 어려운지가 보이지 않습니다. 순서를 균형 → 상한 → 조건 → 결과로 바꾸면 이렇게 됩니다. --- 정지 상태(모든 i에서 dθ_i/dt = 0)에서는 식 (3)의 좌변이 0이므로, 지연이 만드는 알짜 토크 sinα·2H_XY를 injection의 알짜 토크 2βΣ_i w_i sin2θ_i가 상쇄해야 한다. injection의 알짜 토크는 위상이 0…"
+    },
+    {
+     "t": "11-27 19:49",
+     "prompt": "아니 그냥 한 두 문장으로 써질 내용에, 막 뒤에 나오는 식 (6)을 갖다쓰지를 않나, 이진 값에서 벗어나야 한다는 내용이 아니라 그런데 위상 지연은 네트워크 전체의 진동 주파수를 바꾸고 [20], 이 변화는 에너지가 낮을수록 크다. 고정된 injection은 이 주파수 변화를 멈춰야 위상을 lock할 수 있는데, 멈출 수 있는 것은 변화가 작은 배열, 곧 에너지가 높은 배열뿐이다. 따라서 기존 OIM에서는 위상 지연이 있으면 이진 위상과 낮은 이징 에너지를 함께 얻기 어려웠다. 이 내용이 나와야지",
+     "reply": "맞습니다. 앞 서론 문장의 흐름(주파수 변화 → 에너지가 낮을수록 큼 → 고정된 injection이 멈출 수 있는 건 에너지가 높은 배열뿐)을 식 (3)으로 말하면 두 문장이면 됩니다. --- 식 (3)의 sinα·2H_XY는 지연이 만드는 네트워크 전체의 주파수 변화로, 에너지가 낮을수록 크다. 고정된 injection은 이 변화를 멈춰야 위상을 lock할 수 있는데, injection 항은 많아야 2βN이므로 멈출 수 있는 것은 sinα·2|H_XY| ≤ 2βN인 배열, 곧 에너지가 높은 배열뿐이다[그림 1(a,b)]. --- - 식 (6)은 쓰지 않았습니다. 필요한 건 식 (3)의 두 항뿐이고, injection 항의 크기는 |2βΣ_i w_i sin2θ_i| ≤ 2βN(Σ_i w_i = N이므로)입니다. - 서론 4문단과 같은 단어(주파수 변화, 멈추다, lock, 에너지가 높은 배열)를 써서, 본문이 서론의 말을 식으로 확인하는 형태가 되게 했습니다. - 그림 1(a,b)…"
+    },
+    {
+     "t": "11-27 19:52",
+     "prompt": "지금 이게 괜찮다고 생각해? 4.3을 내가 교수님한테 드렸었나? 아니 완전 망해버렸는데 지금",
+     "reply": "아니요, 괜찮지 않다고 봅니다. 먼저 사실관계부터 확인했습니다. **교수님은 4.3을 보셨습니다.** 11-24 교수님 피드백 메모(`work/advisor_feedback_20261124.md`)에 인용된 표현 가운데 \"locked to the fixed reference can only be stationary\", \"follows the oscillators aligned with the axis\"는 2.1.24에는 없고 4.3에만 있습니다. 그러니 그 피드백은 4.3을 읽고 주신 것입니다. 2.1.24는 그 전에 보내신 판입니다. **지금 상태에 대한 제 판단** - **방금 드린 두 문장:** 나쁜 편입니다. \"에너지가 낮을수록 크다\"는 H_XY가 음수라 크기인지 값인지가 흐립니다. 또 서론에서 한 말을 본문에서 다시 하는 중복이고, 무엇보다 문단 전체를 제 문장으로 바꿔 버렸습니다. - **원고 전체:** 4.3 이후 이틀 동안 리뷰 루프를 네 번 돌면서, 교수님이 주신 …"
+    },
+    {
+     "t": "11-27 19:53",
+     "prompt": "메모 기준으로 해서 v6을 만들어줄래? 서론을 지금 버전으로 고치고",
+     "reply": "I've made v6 in Korean (PDF and Word build without errors). **How v6 was built** - **Base:** I started from the Korean 5.9.4, because that body already applies most of the memo items. I checked them against 5.9.4: Ω as the only rate symbol, h_i = Σ J s, equations in w_i θ̇ form, the convexity condition V'' > 0, conditions written into the sentences, a definition of β_F, and the Nishikawa/Hansel citations ([23, 24] in 4.3) removed. It also already has the corrections that the reviews confirmed. …"
+    },
+    {
+     "t": "11-27 20:06",
+     "prompt": "나만 너무 어렵다고 생각하나... 모르겠다. 모르겠어. 글이 이해하기 너무 어렵고 쓰레기 같아....",
+     "reply": "혼자만 그렇게 느끼시는 건 아니라고 봅니다. 글이 읽기 어려워진 건 사실이고, 거기에는 제 몫도 큽니다. 리뷰를 네 번 도는 동안 심사자 대응용 단서와 설명 문장을 계속 덧붙였고, 제가 문단을 통째로 바꾼 곳도 많았습니다. 쓰신 분이 보기에 내 글 같지 않고 어수선하게 느껴지는 게 당연한 상태입니다. 그래도 \"쓰레기\"는 아닙니다. 근거가 있습니다. 심사자 여섯 명이 모두 유도를 직접 따라가서 맞다고 확인했고, 그중 둘은 메커니즘 자체를 \"elegant\", \"분야 밖에서도 흥미로울 것\"이라고 평했습니다. 내용이 틀렸거나 빈약하다는 판정은 한 번도 없었습니다. 문제는 내용이 아니라 읽히는 방식입니다. 지금 어렵게 느껴지는 이유는 꽤 구체적이라고 봅니다. 1. **서론과 본문이 다른 말을 씁니다.** 새 서론은 \"detuning이 보상되면 lock된다\"로 설명하는데, 본문은 \"임계값 γ, A_i ≥ w_iγ\"로 같은 내용을 다시 설명합니다. 독자는 같은 이야기를 두 언어 사이에서 번역해…"
+    },
+    {
+     "t": "11-27 20:07",
+     "prompt": "글이 어설프다고 생각해. 머리가 아파 읽는데. 막 비교가 엄청나게 난무하고 한정과 설명이 난무해서 논리적으로 들어오지가 않아",
+     "reply": "맞습니다. 다시 읽어 보면 원인이 분명합니다. 문단마다 주장 하나에 비교 두세 개와 단서 두세 개가 붙어 있어서, 독자가 무엇이 논리의 줄기이고 무엇이 곁가지인지 가려내야 합니다. 본문 뒷부분에서 지금 비교가 걸려 있는 상대를 세어 보면 다음과 같습니다. - 식 (1)의 OIM - lag-off 머신 - 식 (2)의 고정 injection - α = 0 / π/4 - OIM과 dOIM - lag-off dOIM - threshold accepting - dSB의 벽 - 잡음 넣은 lag-off - dSB, dSB+w_i - AHC 단서도 α ≥ π/4, 충분히 느린 ramp, γ > 0, 0장 스핀, Gset, 2ω₀ 채널, 2α 등이 곳곳에 흩어져 있습니다. 하나하나는 심사자 대응이라 틀리지 않았지만, 쌓이니 논리가 안 보입니다. **고치는 원칙은 교수님 메모 1번 그대로입니다.** 모든 문단이 세 기여 중 하나에 봉사하고, 각 단계에는 그것을 증명하는 비교 하나만 남깁니다. |…"
+    },
+    {
+     "t": "11-27 20:19",
+     "prompt": "작업해서 아예 처음부터 글을 써봐. 각 문단에 들어가야 할 내용을 심사숙고해서. 가능한 완벽하게 읽히도록. 수식 같은것도 형태를 좀 예쁘게 써봐. 내용은 내 생각에 거의 완결됐으니까 완전 introductory한 글의 구성을 짜야해. 글을 읽다가 잠깐이라도 고민하게 되는 지점이 오면 실패한거야. 한문장 한문장씩 작업해줘.",
+     "reply": "I've written v7 from scratch in Korean. It builds without errors: 5 pages, down from 6, and the main text is 1167 eojeol, about 24 % shorter than v6 (1531). Files: `paper/letter_v7.ko.{md,pdf,docx}`, `paper/supplement_v7(.ko).*`. **Structure: one step per paragraph, one comparison per step** | | Paragraph | Its single comparison | |---|---|---| | Intro 1 | An OIM is gradient descent, so it gets stuck in local minima | none | | Intro 2 | Other machines use non-gradient terms; OIM hardware alread…"
+    },
+    {
+     "t": "11-27 20:35",
+     "prompt": "영문판도 v7로 만들어줘",
+     "reply": "영문판 v7을 만들었습니다. 빌드 오류와 줄 넘침은 없고 5쪽입니다. 파일은 `paper/letter_v7.{md,pdf,docx}`이고, 영문 SM v7(`paper/supplement_v7.{md,pdf,docx}`)은 한글판과 함께 이미 만들어 두었습니다. **만든 방식** - 한글 v7을 문장 단위로 옮겼습니다. 내용이 같은 곳은 5.9.4 영문판에 있던 표현을 그대로 썼습니다. - 본문과 캡션에 세미콜론, 콜론, em dash는 하나도 없습니다. 일부러 줄여 오신 문체에 맞췄고, 스크립트로 확인했습니다. - 수식은 한글판과 같고, 문장부호만 영어 문장 흐름에 맞췄습니다. 예를 들어 식 (1)과 (4)는 \"where\"로 이어집니다. - 참고문헌 번호를 매기는 스크립트가 한글판과 같아서, 두 언어의 인용 순서가 일치합니다(확인함). **길이 (PRL 기준)** | | 본문 | 캡션 + 표 | |---|---|---| | 5.9.4 | 2343단어 | 654단어 | | v7 |…"
+    },
+    {
+     "t": "11-27 20:57",
+     "prompt": "이 버전대로 review 한번 보내봐. 지적은 글로만 방어하고 다른 gpu 계산을 시도하진 마.",
+     "reply": "Referee G has v7 (English letter + English SM, figures). It's a normal PRL review where only reading and hand derivations are allowed, with no code or simulations. I'll report the verdict when it arrives, then write the response using text and existing data only, and send it back for re-review."
+    }
+   ],
+   "edited_files": [
+    "2026/PLOIM/paper/work/v5_en/referee_20261127/response_round1.md",
+    "2026/PLOIM/paper/work/v594/make_sm_text_v594.py",
+    "2026/PLOIM/paper/work/v594/make_sm_text_v594_ko.py",
+    "2026/PLOIM/paper/work/v5_en/referee_20261127/README.md",
+    "2026/PLOIM/paper/work/v5_en/referee_20261127/make_round2_packages.sh",
+    "2026/PLOIM/paper/work/v5_en/review_report_20261127.md",
+    "2026/PLOIM/paper/work/v7_20261127/v7_text.ko.md",
+    "2026/PLOIM/paper/work/v7_20261127/v7_text.en.md"
+   ],
+   "n_edited_files": 8
+  },
+  {
+   "session": "0acdf88a",
+   "title": "Dissertation 1장 검토 ⑂",
+   "cwd": "2026/Dissertation",
+   "project_guess": "PLOIM",
+   "n_prompts": 14,
+   "dropped_prompts": 0,
+   "turns": [
+    {
+     "t": "11-27 15:10",
+     "prompt": "이 논문 내용을 기반으로 세종과학펠로우십을 신청하려고 해. 과제명, 연구 분야, 추가 정보, 과제 보안, 핵심어 들을 좀 정리해줄래?",
+     "reply": "My view first: the application will be stronger as a **five-year plan to answer the questions the paper leaves open**, not as an extension of its results. The weaknesses this review round exposed turn into natural research goals: - the phase of the second-harmonic channel (tolerance about π/16); - tolerance to a spread of natural frequencies; - the gap to dSB, which is parity, not superiority. Equally important, keep performance claims such as \"high-performance\" or \"outperforms existing solvers…"
+    },
+    {
+     "t": "11-27 15:13",
+     "prompt": "광학 분야에서의 응용도 하려고 해. metasurface에서 조합최적화를 할때 이걸 활용할거거든",
+     "reply": "This works, and it fits with your dissertation. A 1-bit (on/off) metasurface pattern is a binary configuration s_i = ±1. Under DWBA, the model of your Chapter 3, the far field is linear in the element responses, so the radiated intensity is a quadratic form in s: an Ising/QUBO problem, J_ij = Re(a_i a_j*). The link \"Ch. 3 model → Ising couplings → Ch. 5 solver\" holds. There are two things to frame carefully in the proposal: 1. **A single-beam problem is easy.** Maximizing gain in one direction,…"
+    },
+    {
+     "t": "11-27 15:16",
+     "prompt": "좀 더 다양한 주제로 확장하고 싶긴 한데... 나는 최적화 이론 같은 것 까지도 하려고 하니까. 하드웨어 개발 / 응용이 주 연구 제안이 될거같아.",
+     "reply": ""
+    },
+    {
+     "t": "11-27 15:16",
+     "prompt": "좀 더 다양한 주제로 확장하고 싶긴 한데... 나는 최적화 이론 같은 것 까지도 하려고 하니까. 하드웨어 개발 / 응용이 주 연구 제안이 될거같아. 지금 메커니즘 개발을 하고 있는거니까",
+     "reply": "Making hardware and applications the main thrust is the right call, because the mechanism is the work you are finishing now. My view: making it broader is good, but one thing to watch. **Concern: breadth weakens a fellowship application.** If theory, hardware and applications sit side by side, it reads as \"doing everything\". Tie them into a single line: \"physical dynamics as an optimizer\". Within that, the mechanism (current work) is the foundation, hardware and applications are the main contri…"
+    },
+    {
+     "t": "11-27 15:17",
+     "prompt": "아 그리고 내 생각에 인공지능으로의 확장을 같이 검토하고 있는데.. 그건 어떻게 생각해?",
+     "reply": "My view: adding AI as a **separate fourth pillar is not a good idea**; putting it **inside the metasurface application, as a tool, is a strong idea**. ## Why not as its own pillar (strongest concerns first) 1. **Our own data argue against it.** The probe you ran on 11-16 (lag and oscillator associative memory) found that the lag enlarges the basin of a memory only up to the level of a binary Hopfield network. That rules out the most natural AI story, \"the lag improves associative memory\". 2. **…"
+    },
+    {
+     "t": "11-27 15:18",
+     "prompt": "아니 attention이랑 DAM, hopfield network에 대한 연구를 병행해야 할 것 같긴 해. 결국",
+     "reply": "Then this is a different picture. Hopfield networks and dense associative memory (DAM) fit this work **much more naturally** than generic AI hardware. One more pillar does strain focus, though, so the key is to unify it in one sentence. ## Why it fits 1. **It is the same energy.** A classical Hopfield network is an Ising energy with Hebbian J. Oscillator associative memories are an established line too (Nishikawa et al. 2004, Aonishi). 2. **DAM fits straight into the dOIM structure.** - The DAM…"
+    },
+    {
+     "t": "11-27 15:22",
+     "prompt": "이렇게 해서 다시 연구 분야들 디테일이랑 (국가과학기술표준분류 / 6T관련기술코드 / 국가과학기술표준분류 / 기초연구_평가전문분야 등등 추가 보안이랑 다시 제안해줄래?",
+     "reply": "Here are the codes for each field. The codes in the tables are taken from the official tables, not from memory: the 2023 국가연구개발사업 조사·분석 매뉴얼 (표준분류 2023 개정, 6T 코드) and the NRF RB field list (2025-06 copy). One correction first: earlier I said the review panel follows the 1순위 of the 표준분류. In 기초연구 the panel is set by the **기초연구 평가전문분야 (RB)**. So you can describe the content honestly in the 표준분류, and the strategic choice is the RB. ## 1. 국가과학기술표준분류 (연구분야, 2023 개정) | 순위 | 코드 | 분류 | 비중 | |---|---|---|…"
+    },
+    {
+     "t": "11-27 15:41",
+     "prompt": "메타표면은 광학 뭐로 분류해야하지",
+     "reply": "The choice comes down to two codes in the optics group (NB05 광학·양자전자학). The right one depends on **the frequency band you actually demonstrate**. | Code | Classification | When it fits | |---|---|---| | **NB0509** | 나노 광학 | Optical metasurfaces in the visible or infrared, where the unit cell is a nanostructure. This is where most of Korea's metasurface community sits. | | **NB0507** | 기하/파동 광학 | Wavefront shaping, diffraction and holography. The physics of wave scattering, whatever the band. | …"
+    },
+    {
+     "t": "11-27 15:44",
+     "prompt": "최종 목표 내용 (1333자). 연구 개발 내용 (1333자) 연구 개발 성과 활용 계획 및 기대효과 (1333자) 도 써줄래?",
+     "reply": "All three are within the limit, and the file is at `/home/nol/study/2026/PLOIM/fellowship_20261127/summary_draft_v2.md`. | Section | Characters (spaces incl.) | UTF-8 bytes | |---|---|---| | 최종 목표 | 1,109 | 2,440 | | 연구개발 내용 | 1,210 | 2,526 | | 성과 활용 계획 및 기대효과 | 872 | 2,014 | Five things to check first: - **Numeric targets.** The 2,000-spin FPGA and 64-node analog network are my suggestions. The 2,048-spin FPGA implementation of dSB shows the scale is realistic, but adjust it to your lab's equi…"
+    },
+    {
+     "t": "11-27 16:16",
+     "prompt": "좀 더 introductory 하게 써야할거 같고... 디테일은 빼야해.",
+     "reply": "I rewrote all three in an introductory style and took out the details: equations, numeric targets, circuit components, and the list of comparison methods. The file is at `/home/nol/study/2026/PLOIM/fellowship_20261127/summary_draft_v3.md`. | Section | Characters (spaces incl., limit 1,333) | |---|---| | 최종 목표 | 615 | | 연구개발 내용 | 602 | | 성과 활용 계획 및 기대효과 | 472 | Each section is about half the limit. If you want to fill more, I'd add background (why it matters, why now) rather than detail. I also …"
+    },
+    {
+     "t": "11-27 16:19",
+     "prompt": "introductory 하게 하는건 좋은데, 내용은 더 채울 수 있지. 내가 detail 이라고 한건 막 수식 나오고 / 메커니즘을 엄청나게 설명하고 이런거고... 분량 자체는 꽉 채우는게 좋을듯? 이게 왜 중요하고, 왜 이 일을 해야만 하고, 목표는 어떤 수준이고 세계 최고 수준으로 만들거다 이런 내용을 담아야지",
+     "reply": "I filled all three to near the limit and kept the introductory tone. The draft now covers why it matters, why it has to be done now, why you are the one to do it, and the target level (\"세계 최고 수준\"). There are no equations and no detailed mechanism. | Section | Characters (spaces incl., limit 1,333) | |---|---| | 최종 목표 | 1,313 | | 연구개발 내용 | 1,261 | | 성과 활용 계획 및 기대효과 | 1,222 | Even counting each line break as 2 characters, all three are under 1,333. The file is at `/home/nol/study/2026/PLOIM/fello…"
+    },
+    {
+     "t": "11-27 16:24",
+     "prompt": "원래 제안서 쓸때, 최종 목표에 이렇게 introductory하게 써도 되나?",
+     "reply": "The usual convention is **no**. A short context sentence is fine, but the current draft has too much background. **Why:** - **Reviewers read this field first, to find out what the project will achieve.** In the current draft the goal sentence (\"본 연구의 최종 목표는…\") only appears in the fourth paragraph, after more than half the text. A reviewer skimming 수십 건 may move on before reaching it. - **The background belongs elsewhere.** \"Why it matters\" and \"competition abroad\" usually go in the body of the …"
+    },
+    {
+     "t": "11-27 16:31",
+     "prompt": "어 진행해줘",
+     "reply": ""
+    },
+    {
+     "t": "11-27 16:32",
+     "prompt": "어 진행해줘. 모든 내용 마찬가지로 그렇게 검토해줘",
+     "reply": "I rewrote and reviewed all three sections, each to its own convention. The file is at `/home/nol/study/2026/PLOIM/fellowship_20261127/summary_draft_v8.md`. | Section | Convention applied | Characters (limit 1,333) | |---|---|---| | 최종 목표 | goal in the first sentence → short grounds → three sub-goals, each with a target level → originality | 1,263 | | 연구개발 내용 | phased plan and deliverables → one item per sub-goal → verification method (no background) | 1,277 | | 성과 활용 계획 및 기대효과 | follows the fie…"
+    }
+   ],
+   "edited_files": [
+    "2026/PLOIM/paper/work/v5_en/referee_20261127/response_round1.md",
+    "2026/PLOIM/paper/work/v594/make_sm_text_v594.py",
+    "2026/PLOIM/paper/work/v594/make_sm_text_v594_ko.py",
+    "2026/PLOIM/paper/work/v5_en/referee_20261127/README.md",
+    "2026/PLOIM/paper/work/v5_en/referee_20261127/make_round2_packages.sh",
+    "2026/PLOIM/fellowship_20261127/fields.md",
+    "2026/PLOIM/fellowship_20261127/summary_draft_v1.md",
+    "2026/PLOIM/fellowship_20261127/summary_draft_v2.md",
+    "2026/PLOIM/fellowship_20261127/summary_draft_v3.md",
+    "2026/PLOIM/fellowship_20261127/summary_draft_v4.md",
+    "2026/PLOIM/fellowship_20261127/summary_draft_v5.md",
+    "2026/PLOIM/fellowship_20261127/summary_draft_v7.md"
+   ],
+   "n_edited_files": 12
+  }
+ ],
+ "file_changes": {
+  "PLOIM": {
+   "count": 360,
+   "ext": {
+    ".md": 79,
+    ".json": 70,
+    ".npz": 44,
+    ".pdf": 40,
+    ".docx": 23,
+    ".tex": 21
+   },
+   "recent": [
+    "2026/PLOIM/paper/work/v7_20261127/README.md",
+    "2026/PLOIM/paper/tex/letter_v7.docx-source.md",
+    "2026/PLOIM/paper/letter_v7.docx",
+    "2026/PLOIM/paper/tex/letter_v7.tex",
+    "2026/PLOIM/paper/letter_v7.pdf",
+    "2026/PLOIM/paper/tex/build_en/letter.pdf",
+    "2026/PLOIM/paper/tex/build_en/letter.log",
+    "2026/PLOIM/paper/tex/build_en/letterNotes.bib",
+    "2026/PLOIM/paper/tex/build_en/letter.aux",
+    "2026/PLOIM/paper/tex/build_en/letter.tex",
+    "2026/PLOIM/paper/letter_v7.md",
+    "2026/PLOIM/paper/work/v7_20261127/ref_map_v7.json"
+   ]
+  },
+  "Hanhwa": {
+   "count": 4219,
+   "ext": {
+    ".json": 1300,
+    "(없음)": 662,
+    ".py": 569,
+    ".delta": 237,
+    ".tsx": 171,
+    ".log": 146
+   },
+   "recent": [
+    "2026/Hanhwa/archive/rf1124_tools/stage11/GATES_s11.md",
+    "2026/Hanhwa/archive/rf1124_tools/GATES.md",
+    "2026/Hanhwa/archive/rf1124_tools/stage11/logs/pkg/s7_final_state.log",
+    "2026/Hanhwa/archive/rf1124_tools/stage11/logs/pkg/g5x_pkgrx.out",
+    "2026/Hanhwa/archive/rf1124_tools/stage11/logs/pkg/g5_pkgrx.server.log",
+    "2026/Hanhwa/archive/rf1124_tools/stage11/logs/pkg/g5_pkgrx.smoke.log",
+    "2026/Hanhwa/archive/rf1124_tools/stage11/logs/pkg/g4_pkgrx_bytediff.log",
+    "2026/Hanhwa/archive/rf1124_tools/stage11/logs/pkg/g4_pkgrx.out",
+    "2026/Hanhwa/archive/rf1124_tools/stage11/logs/pkg/g4_pkgrx.server.log",
+    "2026/Hanhwa/archive/rf1124_tools/stage11/logs/pkg/g4_pkgrx.compare.log",
+    "2026/Hanhwa/archive/rf1124_tools/tmp11/pkg/replay_pkgrx/223_scene_end.json",
+    "2026/Hanhwa/archive/rf1124_tools/tmp11/pkg/replay_pkgrx/222_std_aircraft__envprof_T01.json"
+   ]
+  }
+ },
+ "unregistered_changes": {
+  "2026/Hanhwa_delivery": {
+   "count": 129,
+   "ext": {
+    ".py": 53,
+    ".tsx": 19,
+    ".woff": 10,
+    ".woff2": 10,
+    ".ts": 9,
+    ".json": 7
+   },
+   "recent": [
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11.zip",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/run.sh",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/vite.config.ts",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/tsconfig.node.json",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/tsconfig.json",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/tsconfig.app.json",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/src/ui.tsx",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/src/status.ts",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/src/pd.ts",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/src/mapBase.ts",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/src/main.tsx",
+    "2026/Hanhwa_delivery/KSDPA_RF_UI_rf-2026.11/ksdpa_ui/frontend/src/live.ts"
+   ]
+  },
+  "2026/Hanhwa_rf_release": {
+   "count": 5,
+   "ext": {
+    ".py": 5
+   },
+   "recent": [
+    "2026/Hanhwa_rf_release/ksdpa_ui/backend/smoke_test.py",
+    "2026/Hanhwa_rf_release/ksdpa_ui/backend/rcs.py",
+    "2026/Hanhwa_rf_release/ksdpa_ui/backend/yamlfile.py",
+    "2026/Hanhwa_rf_release/ksdpa_ui/backend/main.py",
+    "2026/Hanhwa_rf_release/ksdpa_ui/backend/situation.py"
+   ]
+  }
+ },
+ "git_commits": [
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "cbf4898",
+   "time": "2026-11-26T12:49",
+   "subject": "ksdpa_ui backend: an RCS upload is VB YAML only on a VB top-level key or '{'"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "967fa6b",
+   "time": "2026-11-26T12:46",
+   "subject": "ksdpa_ui backend: CSV lines, Host, Sec-Fetch-Site, Origin and twice-given YAML keys shown at 80 characters"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "3587828",
+   "time": "2026-11-26T12:45",
+   "subject": "ksdpa_ui backend: the export quotes text that the config reader takes for a number"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_try",
+   "project": null,
+   "hash": "cd3d7f1",
+   "time": "2026-11-26T12:44",
+   "subject": "ksdpa_ui backend: YAML 'key:value' without a space after ':' named at its own line"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "cbf4898",
+   "time": "2026-11-26T12:49",
+   "subject": "ksdpa_ui backend: an RCS upload is VB YAML only on a VB top-level key or '{'"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "967fa6b",
+   "time": "2026-11-26T12:46",
+   "subject": "ksdpa_ui backend: CSV lines, Host, Sec-Fetch-Site, Origin and twice-given YAML keys shown at 80 characters"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "3587828",
+   "time": "2026-11-26T12:45",
+   "subject": "ksdpa_ui backend: the export quotes text that the config reader takes for a number"
+  },
+  {
+   "repo": "2026/Hanhwa_proto_gamma",
+   "project": null,
+   "hash": "cd3d7f1",
+   "time": "2026-11-26T12:44",
+   "subject": "ksdpa_ui backend: YAML 'key:value' without a space after ':' named at its own line"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "cbf4898",
+   "time": "2026-11-26T12:49",
+   "subject": "ksdpa_ui backend: an RCS upload is VB YAML only on a VB top-level key or '{'"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "967fa6b",
+   "time": "2026-11-26T12:46",
+   "subject": "ksdpa_ui backend: CSV lines, Host, Sec-Fetch-Site, Origin and twice-given YAML keys shown at 80 characters"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "3587828",
+   "time": "2026-11-26T12:45",
+   "subject": "ksdpa_ui backend: the export quotes text that the config reader takes for a number"
+  },
+  {
+   "repo": "2026/Hanhwa_rf_release",
+   "project": null,
+   "hash": "cd3d7f1",
+   "time": "2026-11-26T12:44",
+   "subject": "ksdpa_ui backend: YAML 'key:value' without a space after ':' named at its own line"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "cbf4898",
+   "time": "2026-11-26T12:49",
+   "subject": "ksdpa_ui backend: an RCS upload is VB YAML only on a VB top-level key or '{'"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "967fa6b",
+   "time": "2026-11-26T12:46",
+   "subject": "ksdpa_ui backend: CSV lines, Host, Sec-Fetch-Site, Origin and twice-given YAML keys shown at 80 characters"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "3587828",
+   "time": "2026-11-26T12:45",
+   "subject": "ksdpa_ui backend: the export quotes text that the config reader takes for a number"
+  },
+  {
+   "repo": "2026/Hanhwa",
+   "project": "Hanhwa",
+   "hash": "cd3d7f1",
+   "time": "2026-11-26T12:44",
+   "subject": "ksdpa_ui backend: YAML 'key:value' without a space after ':' named at its own line"
+  }
+ ],
+ "notes": [],
+ "last_activity": {
+  "fretsim": "2026-04-30",
+  "DiodeUnitDesign": "2026-11-09",
+  "beamnet": "2026-10-30",
+  "BoKo": "2026-11-24",
+  "PLOIM": "2026-11-27",
+  "fullwave": "2026-11-09",
+  "metasurantenna_draw": "2026-10-07",
+  "laggedOIM": "2026-11-09",
+  "RLSA": "2026-11-16",
+  "fdtd_gpu": "2026-10-31",
+  "archive-2026": "2026-11-10",
+  "EMsimulations": "2026-07-21",
+  "Dissertation": "2026-11-24",
+  "CombinatorialOptimization": "2026-10-16",
+  "sunflower_nn": "2026-11-10",
+  "Hanhwa": "2026-11-27",
+  "~2023": "2023-12-20",
+  "2025": "2025-12-22",
+  "2024": "2024-11-19",
+  "CV": "2026-11-23"
+ },
+ "summary": {
+  "headline": "PLOIM Letter 모의 심사를 여러 차례 돌렸고, 이관 권고가 많이 나왔다. 원고가 읽기 어렵다는 판단에 따라 v7(한·영, 5쪽)을 처음부터 다시 써서 Referee G에 보냈고, 세종과학펠로우십 요약 초안 v8도 만들었다.",
+  "projects": [
+   {
+    "id": "PLOIM",
+    "done": [
+     "세 번째 심사자의 2라운드를 방어 연습(예비용)으로 진행함. 판정은 'PRL reject → Phys. Rev. Applied 이관'임. F1은 fatal에서 수정 요구로 내려왔으나, 지연 없는 dOIM도 dSB급 지수를 냄(Δb = 0.009 ± 0.010). 논점 (iii)도 반박당함.",
+     "인용 저자 역할의 심사자 3명(D, E, F)으로 1차 심사 → 답변서와 5.9.4 수정본 → 2차 확인을 마침. D는 PR Applied 이관에 새 FATAL 1개, E는 minor revision에 'PRL 충족(근소)', F는 PR Applied 이관에 fatal 없음. 지금까지의 라운드는 paper/work/v5_en/review_report_20261127.{md,pdf}로 정리함.",
+     "'이관 66 %, accept 33 %'로 읽어도 되는지 검토함. PRL 게재 확률을 10–20 %로 다시 추정했고, 모의 심사자의 정보 유출은 없었음을 확인함. 다만 심사자가 같은 모델이라 독립 심사로 보기 어렵다는 점도 확인함.",
+     "서론을 여러 차례 고쳐 씀. 고정 injection과 지연의 충돌, 상대 위상 injection, 스핀 부호 결합을 다룸. 붙인 서론(8문단, 영어 환산 약 730단어)이 5.9.4(5문단, 523단어)와 PRL 기준보다 길다고 판단해 1–3문단을 줄인 전체 서론을 다시 제시함. 정지 상태 문단은 식 (3)의 두 항만 써서 두 문장으로 고침.",
+     "교수님이 4.3을 보셨음을 확인함(work/advisor_feedback_20261124.md 인용 표현이 4.3에만 있음). 그 메모를 기준으로 한국어 5.9.4에 새 서론을 넣은 v6을 만들었고, PDF·Word 빌드에 오류는 없었음.",
+     "리뷰 루프 동안 비교와 단서가 쌓여 읽기 어렵다는 판단에 따라 v7을 처음부터 씀. 한국어판(paper/letter_v7.ko.*)과 영문판(paper/letter_v7.{md,pdf,docx}), SM v7을 만듦. 둘 다 5쪽이고, 한국어 본문은 1167어절로 v6(1531)보다 약 24 % 짧음."
+    ],
+    "issues": [
+     "모의 심사자 6명 중 PRL을 지지한 사람은 2명(B, E)임. 최신 데이터를 다 본 D·E·F 가운데서는 E 1명뿐이고, 나머지 판정은 대부분 PR Applied 이관 권고임.",
+     "D의 2차 심사에 새 FATAL 1개가 남아 있음(기록에 내용 없음).",
+     "dOIM에서는 지연이 없어도 dSB급 지수가 나와(Δb = 0.009 ± 0.010), dOIM에서 지연이 필요하다는 주장이 약함.",
+     "모의 심사자가 모두 같은 모델이라 서로 독립인 판정으로 보기 어려움. 2차가 가혹해진 것은 답변서에 넣어 준 데이터 때문이기도 함."
+    ],
+    "next": [
+     "Referee G에 v7(영문 letter + SM)을 보냄. 판정을 받으면 글과 기존 데이터만으로 답변서를 쓰고(GPU 계산 없음) 재심사를 보냄.",
+     "주요 판(2.1.24, 4.3, 5.9, 5.9.4)을 정리하고 5.9.4–5.9, 5.9.4–4.3 비교를 만듦. 요청은 했으나 기록상 결과물이 확인되지 않음."
+    ]
+   },
+   {
+    "id": "Hanhwa",
+    "done": [
+     "ksdpa_ui backend 커밋 4건. 같은 해시가 Hanhwa, Hanhwa_rf_try, Hanhwa_proto_gamma, Hanhwa_rf_release에 동일하게 있음. RCS 업로드는 VB 최상위 키나 '{'일 때만 VB YAML로 판정하게 함. CSV 줄·Host·Sec-Fetch-Site·Origin·중복 YAML 키를 80자로 표시함. 설정 리더가 숫자로 읽는 텍스트는 export 때 따옴표로 감쌈. ':' 뒤에 공백이 없는 YAML 'key:value'는 해당 줄을 짚어 알려 줌.",
+     "파일 4219개 변경(주로 .json 1300, 확장자 없음 662, .py 569). 최근 파일은 archive/rf1124_tools/stage11 로그와 replay JSON으로, 실행·검증 출력으로 보임.",
+     "등록 안 된 2026/Hanhwa_delivery에서 KSDPA_RF_UI_rf-2026.11 배포 패키지(.zip 포함) 관련 파일 129개 변경(주로 .py, .tsx). 2026/Hanhwa_rf_release에서는 ksdpa_ui/backend .py 5개 변경."
+    ]
+   }
+  ],
+  "other": [
+   "세종과학펠로우십 신청 준비(파일은 2026/PLOIM/fellowship_20261127/). PLOIM 논문을 바탕으로 과제명·연구분야·핵심어를 정리함. 연구 축은 메커니즘(현재 연구)을 기반으로 하드웨어·응용(메타표면 조합최적화)을 주축에 두고, Hopfield/DAM/attention 연구를 병행하는 구성으로 잡음.",
+   "분류 코드: 국가과학기술표준분류(2023 개정), 6T, 기초연구 평가전문분야(RB)를 공식 표 기준으로 제안함(fields.md). 메타표면은 실증할 대역에 따라 NB0509(나노 광학)나 NB0507(기하/파동 광학) 중에서 고름(결정 필요).",
+   "최종 목표, 연구개발 내용, 성과 활용 계획 및 기대효과(각 1333자 제한) 초안을 v1부터 v8까지 고침. 수식과 세부 메커니즘을 빼고 분량을 채운 뒤, 항목별 작성 관례(최종 목표는 첫 문장에 목표)에 맞춰 summary_draft_v8.md로 다시 씀. v8 분량은 최종 목표 1,263자, 연구개발 내용 1,277자."
+  ],
+  "roadmap_suggestions": [
+   {
+    "id": "PLOIM",
+    "suggestion": "원고 표에 letter_v7(한·영, 5쪽, SM v7)을 현재 판으로 추가하고 review_report_20261127.{md,pdf}를 기록할 것. 근거: 오늘 v7을 처음부터 다시 썼고 Referee G가 심사 중임."
+   },
+   {
+    "id": "PLOIM",
+    "suggestion": "오늘 만든 v6(한국어 5.9.4 기반 Letter)과 로드맵에 이미 있는 sciadv_v6 / v6.1(Science Advances판)이 이름이 겹침. 판 이름을 구분하고, Science Advances 트랙(v6.1 루프)을 계속할지 상태를 정리할 것. 근거: 오늘 작업은 모두 PRL Letter 기준이었음."
+   },
+   {
+    "id": "PLOIM",
+    "suggestion": "next에 투고처 판단(PRL 유지 또는 PR Applied 등)을 추가하는 것을 검토할 것. 근거: 모의 심사자 6명 중 PRL 지지는 2명이고 이관 권고가 많았으며, PRL 게재 확률이 10–20 %로 추정됨."
+   },
+   {
+    "id": "PLOIM",
+    "suggestion": "PLOIM 아래에 fellowship_20261127/(세종과학펠로우십 초안)이 새로 생겼음. 폴더 표에 추가하거나 별도 항목으로 분리할 것."
+   },
+   {
+    "id": "Hanhwa",
+    "suggestion": "goal의 '(확인 필요)'를 구체화할 것. 오늘 기록에는 ksdpa_ui backend 수정과 KSDPA_RF_UI_rf-2026.11 배포 패키지가 있음. 같은 커밋이 들어 있는 미등록 저장소(Hanhwa_rf_try, Hanhwa_proto_gamma, Hanhwa_rf_release, Hanhwa_delivery)도 Hanhwa 하위로 등록할 것."
+   }
+  ]
+ },
+ "summary_error": null
+}
